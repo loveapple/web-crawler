@@ -33,6 +33,13 @@ dependencies {
 	runtimeOnly 'com.h2database:h2'
 	runtimeOnly 'com.mysql:mysql-connector-j'
 	annotationProcessor 'org.projectlombok:lombok'
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.19.1'
+	//implementation 'org.springframework.batch:spring-batch-core'
+	
+	//todo delete?
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework:spring-web:6.2.8'
+    
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.batch:spring-batch-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
