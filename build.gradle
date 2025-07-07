@@ -57,5 +57,10 @@ jacocoTestReport {
         xml.required = true
         csv.required = false
     }
+    afterEvaluate {
+	    classDirectories.setFrom(classDirectories.files.collect {
+	      fileTree(dir: it, excludes: ["com/happinesea/webcrawler/WebCrawlerApplication.class"])
+	    })
+	}
 }
 
