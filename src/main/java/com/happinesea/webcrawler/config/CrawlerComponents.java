@@ -18,6 +18,7 @@ public class CrawlerComponents {
 
     @Bean
     public ItemReader<String> urlReader() {
+    	// 分类URL单位生成Reader
         List<String> urls = List.of(
                 "https://httpbin.org/get",
                 "https://httpbin.org/headers"
@@ -29,6 +30,7 @@ public class CrawlerComponents {
     @Bean
     public ItemProcessor<String, WebPage> webCrawlerProcessor(RestTemplate restTemplate) {
         return url -> {
+        	// 取得内容URL列表，进行各个内容DB插入处理，如果出现异常，跳过进行下一步处理
             try {
                 String content = restTemplate.getForObject(url, String.class);
                 return new WebPage(url, content);

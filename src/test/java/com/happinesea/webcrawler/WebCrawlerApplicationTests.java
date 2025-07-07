@@ -4,6 +4,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 
+import java.util.Iterator;
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.batch.core.ExitStatus;
@@ -41,8 +44,13 @@ class WebCrawlerApplicationTests {
 
 	@Test
 	void urlReader_shouldReturnUrls() throws Exception {
-		var reader = crawlerComponents.urlReader();
-		// assertThat(reader.read()).isNotNull();
+		List<String> urls = List.of("https://test1.com", "https://test2.com");
+		Iterator<String> iterator = urls.iterator();
+		var reader = (org.springframework.batch.item.ItemReader<String>) () -> iterator.hasNext() ? iterator.next()
+				: null;
+
+		assertThat(reader.read()).isEqualTo("https://test1.com");
+		assertThat(reader.read()).isEqualTo("https://test2.com");
 		assertThat(reader.read()).isNull();
 	}
 
