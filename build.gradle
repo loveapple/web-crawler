@@ -40,11 +40,15 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
-}
+}　
 //test {
 //    finalizedBy jacocoTestReport // report is always generated after tests run
 //}
-//jacocoCoverage {
-//    dependsOn test // tests are required to run before generating the report
-// }
+jacocoTestReport {
+    reports {
+        xml.enabled true // coveralls plugin depends on xml format report
+        html.enabled true
+        html.destination "${buildDir}/jacocoHtml"
+    }
+}
 
