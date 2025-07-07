@@ -8,6 +8,7 @@ class WebCrawlerApplicationTests {
 
 	@Test
 	void contextLoads() {
+		
 	}
 
 }

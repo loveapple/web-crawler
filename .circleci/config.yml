@@ -3,7 +3,7 @@
 version: 2.1
 
 orbs:
-  browser-tools: circleci/browser-tools@1.2.3
+  coveralls: coveralls/coveralls@2.2.5
 
 jobs:
   test-java:
