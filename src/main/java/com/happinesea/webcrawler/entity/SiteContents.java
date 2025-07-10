@@ -7,16 +7,26 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@Table(name = "site_contents")
 public class SiteContents {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long siteContentsId;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "site_contents_id")
+	private Long siteContentsId;
 
-    private String url;
-    @Lob
-    private String title;
-    @Lob
-    private String contents;
-    private Integer siteCategoyId;
-    private String processStatus;
+	@Column(name = "url")
+	private String url;
+	@Lob
+	@Column(name = "title")
+	private String title;
+	@Lob
+	@Column(name = "contents")
+	private String contents;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "site_categoy_id", nullable = false)
+	private SiteCategory siteCategory;
+
+	@Column(name = "process_status")
+	private String processStatus;
 }
