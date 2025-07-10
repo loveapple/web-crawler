@@ -17,6 +17,7 @@ import org.springframework.batch.test.context.SpringBatchTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
@@ -25,6 +26,7 @@ import com.happinesea.webcrawler.model.WebPage;
 
 @SpringBootTest
 @SpringBatchTest
+@ActiveProfiles("test")
 class WebCrawlerApplicationTests {
 
 	@Autowired
@@ -88,7 +90,7 @@ class WebCrawlerApplicationTests {
 
 	@Test
 	void testSpringApplicationRun() {
-		try (ConfigurableApplicationContext context = WebCrawlerApplication.runApplication(new String[] {})) {
+		try (ConfigurableApplicationContext context = WebCrawlerApplication.runApplication(new String[] {"--spring.profiles.active=test"})) {
 			// アプリケーションコンテキストが起動しているか
 			assertThat(context).isNotNull();
 			assertThat(context.isActive()).isTrue();

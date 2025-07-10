@@ -42,6 +42,7 @@ public class CrawlerComponents {
 
     @Bean
     public ItemWriter<WebPage> webPageWriter() {
+    	// 最后写入处理
         return items -> items.forEach(page -> System.out.println("[Crawled] " + page));
     }
 
