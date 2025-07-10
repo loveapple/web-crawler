@@ -1,6 +1,9 @@
 package com.happinesea.webcrawler.repository;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,17 +20,24 @@ class SiteInfoRepositoryTest {
     private SiteInfoRepository repository;
 
     @Test
-    void saveAndFind() {
-        var entity = new SiteInfo();
-        entity.setSiteName("Test Site");
-        entity.setSiteUrl("https://example.com");
-        entity.setDeleteFlg("0");
-        entity.setContentsType("1");
+    void findActiveSites() {
+        var entity1 = new SiteInfo();
+        entity1.setSiteName("Test Site");
+        entity1.setSiteUrl("https://example.com");
+        entity1.setDeleteFlg("0");
+        entity1.setContentsType("1");
+        var entity2 = new SiteInfo();
+        entity2.setSiteName("Test Site2");
+        entity2.setSiteUrl("https://example2.com");
+        entity2.setDeleteFlg("1");
+        entity2.setContentsType("1");
 
-        repository.save(entity);
+        repository.save(entity1);
+        repository.save(entity2);
 
-        var result = repository.findAll();
-        assertThat(result).isNotEmpty();
-        assertThat(result.get(0).getSiteName()).isEqualTo("Test Site");
+        
+        List<SiteInfo> siteList= repository.findActiveSites();
+        assertEquals(1, siteList.size());
+        assertEquals("Test Site", siteList.get(0).getSiteName());
     }
 }
