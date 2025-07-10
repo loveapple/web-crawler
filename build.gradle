@@ -35,10 +35,15 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	implementation 'com.fasterxml.jackson.core:jackson-databind:2.19.1'
 	//implementation 'org.springframework.batch:spring-batch-core'
+	implementation 'org.flywaydb:flyway-core'
+	implementation 'com.mysql:mysql-connector-j'
 	
-	//todo delete?
+	//TODO delete? wait for RWS-lib
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework:spring-web:6.2.8'
+    
+    runtimeOnly 'com.h2database:h2'
+//    implementation 'org.flywaydb:flyway-core'
     
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.batch:spring-batch-test'
