@@ -13,8 +13,11 @@ import org.springframework.util.CollectionUtils;
 import com.happinesea.webcrawler.entity.SiteCategory;
 import com.happinesea.webcrawler.entity.SiteInfo;
 
+import jakarta.transaction.Transactional;
+
 @SpringBootTest
 @ActiveProfiles("test")
+@Transactional
 class SiteCategoryRepositoryTest {
 
     @Autowired

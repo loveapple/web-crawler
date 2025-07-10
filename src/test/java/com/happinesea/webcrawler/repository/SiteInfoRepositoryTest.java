@@ -1,6 +1,5 @@
 package com.happinesea.webcrawler.repository;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
@@ -12,8 +11,11 @@ import org.springframework.test.context.ActiveProfiles;
 
 import com.happinesea.webcrawler.entity.SiteInfo;
 
+import jakarta.transaction.Transactional;
+
 @SpringBootTest
 @ActiveProfiles("test")
+@Transactional
 class SiteInfoRepositoryTest {
 
     @Autowired
