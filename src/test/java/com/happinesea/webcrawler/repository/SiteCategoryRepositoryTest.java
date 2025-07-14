@@ -10,6 +10,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.util.CollectionUtils;
 
+import com.happinesea.webcrawler.Const.ContentsType;
+import com.happinesea.webcrawler.Const.DeleteFlg;
 import com.happinesea.webcrawler.entity.SiteCategory;
 import com.happinesea.webcrawler.entity.SiteInfo;
 
@@ -30,13 +32,13 @@ class SiteCategoryRepositoryTest {
         var entity1 = new SiteInfo();
         entity1.setSiteName("Test Site");
         entity1.setSiteUrl("https://example.com");
-        entity1.setDeleteFlg("0");
-        entity1.setContentsType("1");
+        entity1.setDeleteFlg(DeleteFlg.OFF);
+        entity1.setContentsType(ContentsType.HTML);
         var entity2 = new SiteInfo();
         entity2.setSiteName("Test Site2");
         entity2.setSiteUrl("https://example2.com");
-        entity2.setDeleteFlg("1");
-        entity2.setContentsType("1");
+        entity2.setDeleteFlg(DeleteFlg.ON);
+        entity2.setContentsType(ContentsType.HTML);
 
         siteInfoRepository.save(entity1);
         siteInfoRepository.save(entity2);
@@ -44,11 +46,11 @@ class SiteCategoryRepositoryTest {
         var category1 = new SiteCategory();
         category1.setSiteInfo(entity1);
         category1.setCategoryName("test1");
-        category1.setDeleteFlg("0");        
+        category1.setDeleteFlg(DeleteFlg.OFF);        
         var category2 = new SiteCategory();
         category2.setSiteInfo(entity1);
         category2.setCategoryName("test2");
-        category2.setDeleteFlg("1");
+        category2.setDeleteFlg(DeleteFlg.ON);
 
         categoryRepository.save(category1);
         categoryRepository.save(category2);

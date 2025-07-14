@@ -1,6 +1,19 @@
 package com.happinesea.webcrawler.entity;
 
-import jakarta.persistence.*;
+import com.happinesea.webcrawler.Const.ProcessStatus;
+import com.happinesea.webcrawler.entity.converter.ProcessStatusConverter;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Convert;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.Lob;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -28,5 +41,6 @@ public class SiteContents {
 	private SiteCategory siteCategory;
 
 	@Column(name = "process_status")
-	private String processStatus;
+	@Convert(converter = ProcessStatusConverter.class)
+	private ProcessStatus processStatus;
 }

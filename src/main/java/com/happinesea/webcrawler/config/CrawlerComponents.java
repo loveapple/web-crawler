@@ -18,13 +18,18 @@ public class CrawlerComponents {
 
     @Bean
     public ItemReader<String> urlReader() {
-    	// 分类URL单位生成Reader
         List<String> urls = List.of(
-                "https://httpbin.org/get",
-                "https://httpbin.org/headers"
+            "https://httpbin.org/get",
+            "https://httpbin.org/headers"
         );
+
+        if (urls.isEmpty()) {
+            throw new IllegalStateException("URLリストが空です。Crawlerを実行できません。");
+        }
+
         Iterator<String> iterator = urls.iterator();
-        return () -> iterator.hasNext() ? iterator.next() : null;
+       // return () -> iterator.hasNext() ? iterator.next() : null;
+        return () ->null;
     }
 
     @Bean

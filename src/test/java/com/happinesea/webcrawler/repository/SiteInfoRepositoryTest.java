@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
+import com.happinesea.webcrawler.Const.ContentsType;
+import com.happinesea.webcrawler.Const.DeleteFlg;
 import com.happinesea.webcrawler.entity.SiteInfo;
 
 import jakarta.transaction.Transactional;
@@ -26,13 +28,13 @@ class SiteInfoRepositoryTest {
         var entity1 = new SiteInfo();
         entity1.setSiteName("Test Site");
         entity1.setSiteUrl("https://example.com");
-        entity1.setDeleteFlg("0");
-        entity1.setContentsType("1");
+        entity1.setDeleteFlg(DeleteFlg.OFF);
+        entity1.setContentsType(ContentsType.HTML);
         var entity2 = new SiteInfo();
         entity2.setSiteName("Test Site2");
         entity2.setSiteUrl("https://example2.com");
-        entity2.setDeleteFlg("1");
-        entity2.setContentsType("1");
+        entity2.setDeleteFlg(DeleteFlg.ON);
+        entity2.setContentsType(ContentsType.HTML);
 
         repository.save(entity1);
         repository.save(entity2);

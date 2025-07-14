@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import com.happinesea.webcrawler.Const.ProcessStatus;
 import com.happinesea.webcrawler.entity.SiteCategory;
 import com.happinesea.webcrawler.entity.SiteContents;
 
@@ -26,6 +27,6 @@ public interface SiteContentsRepository extends JpaRepository<SiteContents, Long
 	 * @param category
 	 * @return
 	 */
-	@Query("select sc from SiteContents sc where sc.siteCategory = :category and sc.processStatus = :status")
-	public List<SiteContents> findContents4Post(@Param("category") SiteCategory category,@Param("status")  String status);
+	@Query("select sc from SiteContents sc where sc.siteCategory = :category and sc.processStatus = :status order by sc.siteContentsId asc")
+	public List<SiteContents> findContents4Post(@Param("category") SiteCategory category,@Param("status")  ProcessStatus status);
 }
