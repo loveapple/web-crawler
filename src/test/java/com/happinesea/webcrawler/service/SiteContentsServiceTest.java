@@ -1,10 +1,6 @@
-package com.happinesea.webcrawler.repository;
+package com.happinesea.webcrawler.service;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
-import static org.mockito.Mockito.CALLS_REAL_METHODS;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,13 +15,16 @@ import com.happinesea.webcrawler.Const.ProcessStatus;
 import com.happinesea.webcrawler.entity.SiteCategory;
 import com.happinesea.webcrawler.entity.SiteContents;
 import com.happinesea.webcrawler.entity.SiteInfo;
-
-import jakarta.transaction.Transactional;
+import com.happinesea.webcrawler.repository.SiteCategoryRepository;
+import com.happinesea.webcrawler.repository.SiteContentsRepository;
+import com.happinesea.webcrawler.repository.SiteInfoRepository;
 
 @SpringBootTest
 @ActiveProfiles("test")
-@Transactional
-class SiteContentsRepositoryTest {
+class SiteContentsServiceTest {
+
+	@Autowired
+	private SiteContentsService siteContentsService;
 
 	@Autowired
 	private SiteContentsRepository siteContentsRepository;
@@ -75,39 +74,20 @@ class SiteContentsRepositoryTest {
 		s4.setUrl("http://url4");
 		s4.setSiteCategory(category1);
 
-		contentsList.add(siteContentsRepository.save(s1));
-		contentsList.add(siteContentsRepository.save(s2));
-		contentsList.add(siteContentsRepository.save(s3));
-		contentsList.add(siteContentsRepository.save(s4));
+		contentsList.add(s1);
+		contentsList.add(s2);
+		contentsList.add(s3);
+		contentsList.add(s4);
+
 	}
 
 	@Test
-	void testFindAllByUrlIn() {
-		List<String> urlList = new ArrayList<String>();
-		urlList.add("http://url3");// target. status is none
-		urlList.add("http://url4");// target. status is processing
-		urlList.add("http://url5");// not target
-		List<SiteContents> resultList = siteContentsRepository.findAllByUrlIn(urlList);
-		assertEquals(2, resultList.size());
-		assertTrue(resultList.contains(contentsList.get(2)));
-		assertTrue(resultList.contains(contentsList.get(3)));
+	void testBulkInsertIfNotExists() {
+		siteContentsService.bulkInsertIfNotExists(contentsList);
 
-		assertFalse(resultList.contains(contentsList.get(0)));
-		assertFalse(resultList.contains(contentsList.get(1)));
-	}
-
-	@Test
-	void testFindContents4Post() {
-		List<SiteContents> result1 = siteContentsRepository.findContents4Post(category2, ProcessStatus.NONE);
-		assertEquals(0, result1.size());
+		List<SiteContents> result = siteContentsRepository.findAll();
 		
-		List<SiteContents> result2 = siteContentsRepository.findContents4Post(category1, ProcessStatus.NONE);
-		assertEquals(1, result2.size());
-		assertTrue(result2.contains(contentsList.get(0)));
-		assertFalse(result2.contains(contentsList.get(1)));
-		assertFalse(result2.contains(contentsList.get(2)));
-		assertFalse(result2.contains(contentsList.get(3)));
-
+		assertEquals(4, result.size());
 	}
 
 }
