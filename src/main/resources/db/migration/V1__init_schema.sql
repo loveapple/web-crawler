@@ -35,7 +35,7 @@ CREATE TABLE site_contents (
   UNIQUE KEY url (url(255))
 );
 
-CREATE TABLE site_info_process (
+CREATE TABLE site_info_process_pool (
   site_info_process_id int(10) NOT NULL,
   site_category_id int(10) NOT NULL,
   process_status char(1) NOT NULL DEFAULT '0' COMMENT '1:NONE、2:processing、9:fail、0:sucess',
