@@ -16,8 +16,10 @@ public class SiteContentsService {
     private SiteContentsRepository repository;
 	
 	/**
-     * 重複しないデータだけを一括保存
-     */
+	 * 重複しないデータだけを一括保存
+	 * 
+	 * @param newContents
+	 */
     @Transactional
     public void bulkInsertIfNotExists(List<SiteContents> newContents) {
         // 1. URLリスト抽出

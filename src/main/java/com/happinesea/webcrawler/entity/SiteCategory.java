@@ -3,7 +3,7 @@ package com.happinesea.webcrawler.entity;
 import java.time.LocalDateTime;
 
 import com.happinesea.webcrawler.Const.DeleteFlg;
-import com.happinesea.webcrawler.entity.converter.ProcessStatusConverter;
+import com.happinesea.webcrawler.entity.converter.DeleteFlgConverter;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Convert;
@@ -37,7 +37,7 @@ public class SiteCategory {
 	private String categoryName;
 
 	@Column(name = "delete_flg")
-	@Convert(converter = ProcessStatusConverter.class)
+	@Convert(converter = DeleteFlgConverter.class)
 	private DeleteFlg deleteFlg;
 
 	@Column(name = "category_url")
