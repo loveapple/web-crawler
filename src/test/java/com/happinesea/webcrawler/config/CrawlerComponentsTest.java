@@ -1,115 +1,102 @@
 package com.happinesea.webcrawler.config;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
-import java.time.LocalDateTime;
-import java.util.EnumSet;
 import java.util.List;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.ArgumentCaptor;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.batch.item.Chunk;
 import org.springframework.batch.item.ItemProcessor;
-import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.item.ItemWriter;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
-import com.happinesea.webcrawler.Const.ContentsType;
-import com.happinesea.webcrawler.Const.DeleteFlg;
 import com.happinesea.webcrawler.Const.ProcessStatus;
 import com.happinesea.webcrawler.entity.SiteCategory;
-import com.happinesea.webcrawler.entity.SiteInfo;
 import com.happinesea.webcrawler.entity.SiteInfoProcessPool;
-import com.happinesea.webcrawler.repository.SiteCategoryRepository;
 import com.happinesea.webcrawler.repository.SiteInfoProcessRepository;
-import com.happinesea.webcrawler.repository.SiteInfoRepository;
 
 @SpringBootTest
 @ActiveProfiles("test")
 @AutoConfigureTestDatabase
+@ExtendWith(MockitoExtension.class)
 class CrawlerComponentsTest {
 
-    @Autowired
-    private CrawlerComponents crawlerComponents;
-
-    @Autowired
+    @Mock
     private SiteInfoProcessRepository siteInfoProcessRepository;
 
-    @Autowired
-    private SiteCategoryRepository siteCategoryRepository;
+    @InjectMocks
+    private CrawlerComponents crawlerComponents;
 
-    @Autowired
-    private SiteInfoRepository siteInfoRepository;
-
-    @BeforeEach
-    void setUp() {
-        SiteInfo siteInfo = new SiteInfo();
-        siteInfo.setSiteName("Test Site");
-        siteInfo.setSiteUrl("https://example.com");
-        siteInfo.setContentsType(ContentsType.HTML);
-        siteInfo.setDeleteFlg(DeleteFlg.OFF);
-        siteInfo = siteInfoRepository.save(siteInfo);
-
-        SiteCategory category = new SiteCategory();
-        category.setSiteInfo(siteInfo);
-        category.setCategoryName("News");
-        category.setCategoryUrl("https://httpbin.org/get");
-        category.setDeleteFlg(DeleteFlg.OFF);
-        category = siteCategoryRepository.save(category);
-
+    @Test
+    void testSiteInfoProcessor_success() throws Exception {
         SiteInfoProcessPool process = new SiteInfoProcessPool();
+        SiteCategory category = new SiteCategory();
+        category.setCategoryUrl("http://example.com");
         process.setSiteCategory(category);
-        process.setProcessId("test-process");
-        process.setProcessStatus(ProcessStatus.NONE);
-        process.setProcessTime(LocalDateTime.now());
-        process.setSiteInfoProcessId(1);
-        siteInfoProcessRepository.save(process);
-    }
 
-    @Test
-    void testSiteInfoProcessReader() {
-//        ItemReader<SiteInfoProcessPool> reader = crawlerComponents.siteInfoProcessReader();
-//        SiteInfoProcessPool process = null;
-//        try {
-//            process = reader.read();
-//        } catch (Exception e) {
-//            fail("Reader failed: " + e.getMessage());
-//        }
-//        assertNotNull(process);
-//        assertEquals("https://httpbin.org/get", process.getSiteCategory().getCategoryUrl());
-    }
+        // save時にそのまま返す
+        when(siteInfoProcessRepository.save(any())).thenAnswer(invocation -> invocation.getArgument(0));
 
-    @Test
-    void testSiteInfoProcessor() throws Exception {
-        SiteInfoProcessPool input = siteInfoProcessRepository.findAll().get(0);
         ItemProcessor<SiteInfoProcessPool, SiteInfoProcessPool> processor = crawlerComponents.siteInfoProcessor();
 
-        SiteInfoProcessPool result = processor.process(input);
-        assertNotNull(result);
-        assertTrue(EnumSet.of(ProcessStatus.SUCCESS, ProcessStatus.FAIL).contains(result.getProcessStatus()));
+        SiteInfoProcessPool result = processor.process(process);
+
+        assertEquals(ProcessStatus.SUCCESS, result.getProcessStatus());
         assertNotNull(result.getProcessTime());
     }
 
     @Test
-    void testSiteInfoProcessWriter() throws Exception {
-        List<SiteInfoProcessPool> items = siteInfoProcessRepository.findAll();
-        items.forEach(i -> {
-            i.setProcessStatus(ProcessStatus.SUCCESS);
-            i.setProcessTime(LocalDateTime.now());
-        });
+    void testSiteInfoProcessor_failure() throws Exception {
+        SiteInfoProcessPool process = new SiteInfoProcessPool();
+        SiteCategory category = mock(SiteCategory.class);
+
+        when(category.getCategoryUrl()).thenThrow(new RuntimeException("URL取得失敗"));
+        process.setSiteCategory(category);
+
+        when(siteInfoProcessRepository.save(any())).thenAnswer(invocation -> invocation.getArgument(0));
+
+        ItemProcessor<SiteInfoProcessPool, SiteInfoProcessPool> processor = crawlerComponents.siteInfoProcessor();
+
+        SiteInfoProcessPool result = processor.process(process);
+
+        assertEquals(ProcessStatus.FAIL, result.getProcessStatus());
+        assertNotNull(result.getProcessTime());
+    }
+
+    @Test
+    void testSiteInfoWriter() throws Exception {
+        // Arrange
+        SiteInfoProcessPool p1 = new SiteInfoProcessPool();
+        SiteInfoProcessPool p2 = new SiteInfoProcessPool();
+        List<SiteInfoProcessPool> expected = List.of(p1, p2);
+
+        Chunk<SiteInfoProcessPool> chunk = new Chunk<>(expected);
 
         ItemWriter<SiteInfoProcessPool> writer = crawlerComponents.siteInfoProcessWriter();
 
-        // Spring Batch 5.x では Chunk でラップする必要がある
-        writer.write(new Chunk<>(items));
+        // Act
+        writer.write(chunk);
 
-        List<SiteInfoProcessPool> updated = siteInfoProcessRepository.findAll();
-        assertEquals(ProcessStatus.SUCCESS, updated.get(0).getProcessStatus());
+        // Assert
+        ArgumentCaptor<List<SiteInfoProcessPool>> captor = ArgumentCaptor.forClass(List.class);
+        verify(siteInfoProcessRepository, times(1)).saveAll(captor.capture());
+
+        List<SiteInfoProcessPool> actualSaved = captor.getValue();
+        assertThat(actualSaved).containsExactlyElementsOf(expected);
     }
 }
+

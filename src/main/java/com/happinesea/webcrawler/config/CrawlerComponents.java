@@ -53,7 +53,7 @@ public class CrawlerComponents {
 
     @Bean
     public ItemWriter<SiteInfoProcessPool> siteInfoProcessWriter() {
-        return items -> siteInfoProcessRepository.saveAll(items);
+        return chunk -> siteInfoProcessRepository.saveAll(chunk.getItems());  // ←修正ポイント
     }
 
     @Bean
