@@ -37,6 +37,8 @@ dependencies {
 	//implementation 'org.springframework.batch:spring-batch-core'
 	implementation 'org.flywaydb:flyway-core'
 	implementation 'com.mysql:mysql-connector-j'
+	implementation 'com.happinesea:rws-lib:1.0.0_preview'
+	implementation 'org.jsoup:jsoup:1.21.1'
 	
 	//TODO delete? wait for RWS-lib
     implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -50,6 +52,8 @@ dependencies {
     testImplementation 'org.mockito:mockito-core'
     testImplementation 'org.mockito:mockito-junit-jupiter'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	testImplementation 'org.mockito:mockito-inline:4.0.0'
+	testImplementation 'ch.qos.logback:logback-classic'
 }
 
 tasks.named('test') {
