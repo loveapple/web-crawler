@@ -55,8 +55,12 @@ public class BatchConfig {
         ThreadPoolTaskExecutor taskExecutor = new ThreadPoolTaskExecutor();
         taskExecutor.setCorePoolSize(threadCount);
         taskExecutor.setMaxPoolSize(threadCount);
+        //TODO 
         taskExecutor.setQueueCapacity(0);
         taskExecutor.setThreadNamePrefix("crawler-");
+        //TODO
+        taskExecutor.setWaitForTasksToCompleteOnShutdown(true);
+        taskExecutor.setAwaitTerminationSeconds(30);
         taskExecutor.initialize();
 
         return new StepBuilder("crawlStep", jobRepository)

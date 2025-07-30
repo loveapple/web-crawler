@@ -1,15 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration>
+<configuration scan="true">
 
-    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
-        <encoder>
-            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
-            <charset>UTF-8</charset>
-        </encoder>
-    </appender>
+	<!-- 共通の設定 -->
+	<property name="LOG_PATTERN"
+		value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n" />
 
-    <root level="INFO">
-        <appender-ref ref="CONSOLE"/>
-    </root>
+	<!-- === dev プロファイル用設定 === -->
+	<springProfile name="dev">
+		<appender name="CONSOLE"
+			class="ch.qos.logback.core.ConsoleAppender">
+			<encoder>
+				<pattern>${LOG_PATTERN}</pattern>
+				<charset>UTF-8</charset>
+			</encoder>
+		</appender>
 
+		<root level="INFO">
+			<appender-ref ref="CONSOLE" />
+		</root>
+	</springProfile>
+
+	<springProfile name="test">
+		<appender name="CONSOLE"
+			class="ch.qos.logback.core.ConsoleAppender">
+			<encoder>
+				<pattern>${LOG_PATTERN}</pattern>
+				<charset>UTF-8</charset>
+			</encoder>
+		</appender>
+
+		<root level="DEBUG">
+			<appender-ref ref="CONSOLE" />
+		</root>
+	</springProfile>
+	<!-- === test プロファイル用設定 === <springProfile name="test"> <appender name="TEST_FILE" 
+		class="ch.qos.logback.core.FileAppender"> <file>logs/test.log</file> <encoder> 
+		<pattern>${LOG_PATTERN}</pattern> <charset>UTF-8</charset> </encoder> </appender> 
+		<root level="INFO"> <appender-ref ref="TEST_FILE"/> </root> </springProfile> -->
 </configuration>
