@@ -8,31 +8,30 @@ import static org.mockito.Mockito.when;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.sql.DataSource;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.batch.core.JobExecution;
+import org.springframework.batch.core.JobParameters;
+import org.springframework.batch.core.JobParametersBuilder;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.StepExecution;
 import org.springframework.batch.core.repository.JobRepository;
-import org.springframework.batch.core.repository.support.JobRepositoryFactoryBean;
 import org.springframework.batch.core.step.builder.StepBuilder;
 import org.springframework.batch.item.Chunk;
+import org.springframework.batch.item.ExecutionContext;
 import org.springframework.batch.item.ItemProcessor;
+import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.item.ItemStreamReader;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.batch.item.support.ListItemReader;
 import org.springframework.batch.item.support.SynchronizedItemStreamReader;
-import org.springframework.batch.support.transaction.ResourcelessTransactionManager;
-import org.springframework.batch.test.MetaDataInstanceFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
+import org.springframework.core.task.TaskExecutor;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.PlatformTransactionManager;
@@ -72,7 +71,9 @@ class CrawlerComponentsTest {
 	@Autowired
 	private SiteContentsRepository siteContentsRepository;
 	@Autowired
-	private SiteContentsService siteContentsService;
+	private JobRepository jobRepository;
+	@Autowired
+	private PlatformTransactionManager transactionManager;
 
 	private SiteInfoProcessPool process;
 	private SiteCategory category;
@@ -150,7 +151,7 @@ class CrawlerComponentsTest {
 		writer.write(new Chunk<>(List.of(process)));
 
 		// Assert
-	    verify(siteContentsServiceMock).saveAllProcessPools(List.of(process));
+		verify(siteContentsServiceMock).saveAllProcessPools(List.of(process));
 	}
 
 	// TODO siteInfoProcessWriter失敗のテストは必要か？不明のため、一旦放置
@@ -172,68 +173,83 @@ class CrawlerComponentsTest {
 //		verify(siteContentsServiceMock).changSiteInfoProcess2Fail(any(SiteInfoProcessPool.class));
 //	}
 
-//	@Test
-//	void testParallelExecution_withMultipleThreads() throws Exception {
-//		PlatformTransactionManager transactionManager = new ResourcelessTransactionManager();
-//
-//		// H2 組み込みDBを用意
-//		DataSource dataSource = new EmbeddedDatabaseBuilder()
-//				.setType(EmbeddedDatabaseType.H2)
-//				.addScript(BatchDatabaseInitializer.DEFAULT_SCHEMA) // Spring Batchのテーブルスキーマ
-//				.build();
-//
-//		// JobRepository を初期化
-//		JobRepositoryFactoryBean factory = new JobRepositoryFactoryBean();
-//		factory.setDataSource(dataSource); // これを忘れるとエラーになる
-//		factory.setTransactionManager(transactionManager);
-//		factory.afterPropertiesSet();
-//		JobRepository jobRepository = factory.getObject();
-//
-//		StepExecution stepExecution = MetaDataInstanceFactory.createStepExecution();
-//
-//		// テストデータ
-//		List<SiteInfoProcessPool> items = new ArrayList<>();
-//		for (int i = 0; i < 10; i++) {
-//			SiteInfoProcessPool item = new SiteInfoProcessPool();
-//			item.setProcessId(String.valueOf(i));
-//			items.add(item);
-//		}
-//
-//		// Processor
-//		ItemProcessor<SiteInfoProcessPool, SiteInfoProcessPool> processor = item -> {
-//			System.out.println(Thread.currentThread().getName() + " processing ID = " + item.getProcessId());
-//			return item;
-//		};
-//
-//		// Writer
-//		ItemWriter<SiteInfoProcessPool> writer = list -> {
-//			for (SiteInfoProcessPool item : list) {
-//				System.out.println(Thread.currentThread().getName() + " writing ID = " + item.getProcessId());
-//			}
-//		};
-//
-//		// Executor
-//		ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-//		executor.setCorePoolSize(3);
-//		executor.setMaxPoolSize(3);
-//		executor.setQueueCapacity(0);
-//		executor.setThreadNamePrefix("test-thread-");
-//		executor.initialize();
-//
-//		// Reader
-//		ListItemReader<SiteInfoProcessPool> listReader = new ListItemReader<>(items);
-//		SynchronizedItemStreamReader<SiteInfoProcessPool> reader = new SynchronizedItemStreamReader<>();
-//		reader.setDelegate((ItemStreamReader<SiteInfoProcessPool>) listReader); // これでコンパイルOK
-//
-//
-//		Step step = new StepBuilder("testStep", jobRepository)
-//				.<SiteInfoProcessPool, SiteInfoProcessPool>chunk(2, transactionManager).reader(reader)
-//				.processor(processor).writer(writer).taskExecutor(executor).build(); // throttleLimit は不要
-//
-//		// 実行
-//		step.execute(stepExecution);
-//
-//		System.out.println("Completed all steps.");
-//	}
+	@Test
+	void testParallelExecution_withMultipleThreads() throws Exception {
+		// ① JobExecution を jobRepository から作成
+		JobParameters jobParameters = new JobParametersBuilder().addLong("time", System.currentTimeMillis()).toJobParameters();
+		JobExecution jobExecution = jobRepository.createJobExecution("testJob", jobParameters);
+
+		// ② StepExecution を jobExecution から取得
+		StepExecution stepExecution = jobExecution.createStepExecution("testStep");
+		jobRepository.add(stepExecution); // ←これも必要
+
+		// ③ テストデータ作成
+		List<SiteInfoProcessPool> items = new ArrayList<>();
+		for (int i = 0; i < 10; i++) {
+			SiteInfoProcessPool item = new SiteInfoProcessPool();
+			item.setProcessId(String.valueOf(i));
+			items.add(item);
+		}
+
+		// ④ ItemReader 構築
+		ItemReader<SiteInfoProcessPool> listReader = new ListItemReader<>(items);
+		ItemStreamReader<SiteInfoProcessPool> streamReader = new ItemStreamReader<>() {
+			@Override
+			public SiteInfoProcessPool read() {
+				try {
+					return listReader.read();
+				} catch (Exception e) {
+					return null;
+				}
+			}
+
+			@Override public void open(ExecutionContext executionContext) {}
+			@Override public void update(ExecutionContext executionContext) {}
+			@Override public void close() {}
+		};
+
+		SynchronizedItemStreamReader<SiteInfoProcessPool> synchronizedReader = new SynchronizedItemStreamReader<>();
+		synchronizedReader.setDelegate(streamReader);
+
+		// ⑤ Processor & Writer
+		ItemProcessor<SiteInfoProcessPool, SiteInfoProcessPool> processor = item -> {
+			System.out.println(Thread.currentThread().getName() + " processing ID = " + item.getProcessId());
+			return item;
+		};
+
+		ItemWriter<SiteInfoProcessPool> writer = chunk -> {
+			for (SiteInfoProcessPool item : chunk) {
+				System.out.println(Thread.currentThread().getName() + " writing ID = " + item.getProcessId());
+			}
+		};
+
+		// ⑥ TaskExecutor（スレッドプール）
+		TaskExecutor executor = createTaskExecutor();
+
+		// ⑦ Step 構築
+		Step step = new StepBuilder("testStep", jobRepository)
+				.<SiteInfoProcessPool, SiteInfoProcessPool>chunk(2, transactionManager)
+				.reader(synchronizedReader)
+				.processor(processor)
+				.writer(writer)
+				.taskExecutor(executor)
+				.build();
+
+		// ⑧ Step 実行
+		step.execute(stepExecution);
+
+		System.out.println("Completed all steps.");
+	}
+
+
+	private TaskExecutor createTaskExecutor() {
+		ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
+		executor.setCorePoolSize(10);
+		executor.setMaxPoolSize(20);
+		executor.setQueueCapacity(100);
+		executor.setThreadNamePrefix("test-thread-");
+		executor.initialize();
+		return executor;
+	}
 
 }
