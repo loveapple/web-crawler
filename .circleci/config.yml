@@ -42,7 +42,7 @@ jobs:
 
   deploy-docs:
     docker:
-      - image: cimg/openjdk:17.0
+      - image: cimg/openjdk:23.0.2
     steps:
       - checkout
 
@@ -54,7 +54,7 @@ jobs:
 
       - run:
           name: Gradle Javadoc ビルド
-          command: chmod +x ./gradlew;./gradlew javadoc projectReport
+          command: chmod +x ./gradlew;./gradlew clean javadoc projectReport
 
       - run:
           name: deploy ディレクトリ準備
