@@ -87,8 +87,6 @@ workflows:
   build-and-test:
     jobs:
       - test-java
-  deploy-dock:
       - deploy-docs
-    # - deploy:
-    #     requires:
-    #       - test-java
+         requires:
+           - test-java
