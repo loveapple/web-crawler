@@ -88,5 +88,5 @@ workflows:
     jobs:
       - test-java
       - deploy-docs
-         requires:
-           - test-java
+          requires:
+            - test-java
