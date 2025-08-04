@@ -1,8 +1,0 @@
-[![CircleCI](https://dl.circleci.com/status-badge/img/circleci/YCfPJGARVj7bQmffvDjAjK/SrPbgKgrfe5d1EkJcJU1L2/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/circleci/YCfPJGARVj7bQmffvDjAjK/SrPbgKgrfe5d1EkJcJU1L2/tree/main)
-[![Coverage Status](https://coveralls.io/repos/github/loveapple/web-crawler/badge.svg?branch=main)](https://coveralls.io/github/loveapple/web-crawler?branch=main)
-
-
-
-[![X (formerly Twitter) Follow](https://img.shields.io/twitter/follow/ThumbJava)](https://x.com/ThumbJava)
-
-
