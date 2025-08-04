@@ -33,9 +33,6 @@ public class ContentsParser {
 
 			List<SiteContents> result = new ArrayList<SiteContents>();
 			for (Element element : elements) {
-				if (element == null) {
-					continue;
-				}
 				SiteContents contents = new SiteContents();
 				contents.setSiteCategory(category);
 				contents.setTitle(element.select(category.getTitleRecordSelectId()).html());
@@ -72,12 +69,9 @@ public class ContentsParser {
 
 			StringBuilder sb = new StringBuilder(1024);
 			for (Element element : elements) {
-				if (element == null) {
-					continue;
-				}
 				// TODO 全文を読むリンクがある場合の取り込み
 				// TODO 画像取り込み実装
-				System.out.println(element.html());
+				log.debug(element.html());
 				sb.append(element.html());
 			}
 			contents.setContents(sb.toString());
