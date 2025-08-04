@@ -84,9 +84,9 @@ jobs:
             git commit -m "Update docs [ci skip]" || echo "No changes"
             git push origin gh-pages
 workflows:
-  build-and-test:
+  build-and-deploy:
     jobs:
       - test-java
-      - deploy-docs
+      - deploy-docs:
           requires:
             - test-java
