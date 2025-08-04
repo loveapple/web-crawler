@@ -267,40 +267,4 @@ public class ContentsParserTest {
 	}
 
 
-//	/**
-//	 * @see https://coveralls.io/builds/74902235/source?filename=src%2Fmain%2Fjava%2Fcom%2Fhappinesea%2Fwebcrawler%2FContentsParser.java#L76
-//	 * @throws Exception
-//	 */
-//	@Test
-//	void testLoadCategoryContentsList_whenElementsContainNull_skipsNullElement() throws Exception {
-//		// Arrange
-//		mockCategory.setTitleRecordSelectId("div.title");
-//		mockCategory.setContentsUrlSelectId("a.link");
-//
-//		Elements elements = new Elements();
-//		elements.add(null); // null 要素
-//		// 正常な要素
-//		Element validElement = new Element("li");
-//		validElement.appendChild(new Element("div").addClass("title").html("Valid Title"));
-//		validElement.appendChild(new Element("a").addClass("link").attr("href", "https://example.com/valid"));
-//		elements.add(validElement);
-//
-//		Document mockDoc = mock(Document.class);
-//		when(mockDoc.select(anyString())).thenReturn(elements);
-//
-//		try (MockedStatic<Jsoup> jsoupMock = mockStatic(Jsoup.class)) {
-//			Connection connectionMock = mock(Connection.class);
-//			jsoupMock.when(() -> Jsoup.connect("http://test.com")).thenReturn(connectionMock);
-//			when(connectionMock.get()).thenReturn(mockDoc);
-//
-//			// Act
-//			List<SiteContents> result = parser.loadCategoryContentsList(mockCategory);
-//
-//			// Assert
-//			assertThat(result).hasSize(1);
-//			assertThat(result.get(0).getTitle()).isEqualTo("Valid Title");
-//			assertThat(result.get(0).getUrl()).isEqualTo("https://example.com/valid");
-//		}
-//	}
-
 }
