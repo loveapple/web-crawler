@@ -71,7 +71,7 @@ jobs:
 
       - add_ssh_keys:
           fingerprints:
-            - "your:ssh:key:64:ab:b5:02:f7:08:25:91:ec:96:26:74:1b:9f:7a:6c"
+            - "SHA256:zJYjF+zRQjPWqfm+Iryhy/aBpXD2lYV4m7zqhC97GNQ circleci@web-crawler"
 
       - run:
           name: GitHub Pages へデプロイ
