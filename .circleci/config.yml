@@ -54,7 +54,7 @@ jobs:
 
       - run:
           name: Gradle Javadoc ビルド
-          command: ./gradlew javadoc
+          command: chmod +x ./gradlew;./gradlew javadoc projectReport
 
       - run:
           name: deploy ディレクトリ準備
@@ -87,6 +87,7 @@ workflows:
   build-and-test:
     jobs:
       - test-java
+  deploy-dock:
       - deploy-docs
     # - deploy:
     #     requires:
