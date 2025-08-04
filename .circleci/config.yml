@@ -41,6 +41,7 @@ workflows:
   build-and-test:
     jobs:
       - test-java
+          context: web-crawler
     # - deploy:
     #     requires:
     #       - test-java
