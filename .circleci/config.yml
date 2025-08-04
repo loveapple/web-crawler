@@ -54,7 +54,7 @@ jobs:
 
       - run:
           name: Gradle Javadoc ビルド
-          command: chmod +x ./gradlew;./gradlew clean javadoc projectReport
+          command: chmod +x ./gradlew;./gradlew clean projectReport #javadoc をやめる
 
       - run:
           name: deploy ディレクトリ準備
