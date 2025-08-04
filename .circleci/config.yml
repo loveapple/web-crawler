@@ -57,7 +57,7 @@ jobs:
           command: chmod +x ./gradlew;./gradlew clean projectReport #javadoc をやめる
 
       - run:
-          name: deploy ディレクトリ準備
+          name: deploy  ディレクトリ準備 
           command: |
             mkdir -p deploy/javadoc
             mkdir -p deploy/jacoco
