@@ -90,3 +90,6 @@ workflows:
       - deploy-docs:
           requires:
             - test-java
+          filters:
+            branches:
+              only: main
