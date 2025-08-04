@@ -62,7 +62,7 @@ jobs:
             mkdir -p deploy/javadoc
             mkdir -p deploy/jacoco
 
-            cp -r build/docs/javadoc/* deploy/javadoc/
+            #cp -r build/docs/javadoc/* deploy/javadoc/
             cp -r build/reports/* deploy/
 
             #./scripts/generate-site.sh > deploy/index.html
