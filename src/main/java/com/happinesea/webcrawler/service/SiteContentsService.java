@@ -2,12 +2,15 @@ package com.happinesea.webcrawler.service;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.happinesea.webcrawler.Const.ProcessStatus;
+import com.happinesea.webcrawler.entity.SiteCategory;
 import com.happinesea.webcrawler.entity.SiteContents;
 import com.happinesea.webcrawler.entity.SiteInfoProcessPool;
 import com.happinesea.webcrawler.repository.SiteContentsRepository;
@@ -23,6 +26,8 @@ public class SiteContentsService {
 	private SiteContentsRepository siteContentsRepository;
 	@Autowired
 	private SiteInfoProcessRepository siteInfoProcessRepository;
+	@Value("post-contents-limit-count")
+	private int postContentsLimitCount;
 
 	public List<SiteInfoProcessPool> findAliveProcess() {
 		return siteInfoProcessRepository.findByProcessStatusNot(ProcessStatus.PROCESSING);
@@ -42,7 +47,7 @@ public class SiteContentsService {
 		return siteInfoProcessRepository.save(process);
 
 	}
-	
+
 	@Transactional
 	public SiteInfoProcessPool changSiteInfoProcess2Fail(SiteInfoProcessPool process) {
 		process.setProcessStatus(ProcessStatus.FAIL);
@@ -58,6 +63,14 @@ public class SiteContentsService {
 		for (SiteInfoProcessPool siteInfoProcessPool : pools) {
 			if (ProcessStatus.PROCESSING.equals(siteInfoProcessPool.getProcessStatus())) {
 				// TODO CMSにコンテンツ登録
+				SiteCategory category = siteInfoProcessPool.getSiteCategory();
+				List<SiteContents> contentsList = siteContentsRepository.findContents4Post(category,
+						ProcessStatus.NONE);
+				int limit = contentsList.size() < postContentsLimitCount ? contentsList.size() : postContentsLimitCount;
+				for (int i = 0; i < limit; i++) {
+					
+				}
+
 				log.debug("send cms  : " + result);
 				// 処理後、成功状態更新
 				result.add(changSiteInfoProcess2Sucess(siteInfoProcessPool));

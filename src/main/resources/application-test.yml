@@ -15,3 +15,7 @@ spring:
     show-sql: true
   flyway:
     enabled: false
+
+web-crawler:
+  host-info: baidu.tokyo
+  post-contents-limit-count: 10

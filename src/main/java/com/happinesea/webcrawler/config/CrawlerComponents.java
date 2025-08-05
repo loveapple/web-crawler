@@ -12,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.happinesea.webcrawler.Const.ProcessStatus;
 import com.happinesea.webcrawler.ContentsParser;
 import com.happinesea.webcrawler.NotFoundContentsException;
 import com.happinesea.webcrawler.entity.SiteCategory;

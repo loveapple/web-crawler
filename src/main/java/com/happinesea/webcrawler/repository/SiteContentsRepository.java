@@ -16,15 +16,17 @@ import com.happinesea.webcrawler.entity.SiteContents;
 public interface SiteContentsRepository extends JpaRepository<SiteContents, Long> {
 	/**
 	 * 添加抓取内容
-	 * @param contents
-	 * @param category
+	 * 
+	 * @param urls
 	 * @return
 	 */
 	List<SiteContents> findAllByUrlIn(Collection<String> urls);
 	
 	/**
 	 * 搜索投放内容数据
+	 * 
 	 * @param category
+	 * @param status
 	 * @return
 	 */
 	@Query("select sc from SiteContents sc where sc.siteCategory = :category and sc.processStatus = :status order by sc.siteContentsId asc")
