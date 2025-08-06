@@ -4,42 +4,44 @@ Root project 'web-crawler'
 ------------------------------------------------------------
 
 allprojects: [root project 'web-crawler']
-ant: org.gradle.api.internal.project.DefaultAntBuilder@7219ff67
-antBuilderFactory: org.gradle.api.internal.project.DefaultAntBuilderFactory@779e369e
+ant: org.gradle.api.internal.project.DefaultAntBuilder@6cd92d6c
+antBuilderFactory: org.gradle.api.internal.project.DefaultAntBuilderFactory@45cff2e
 archivesBaseName: web-crawler
-artifacts: org.gradle.api.internal.artifacts.dsl.DefaultArtifactHandler_Decorated@73dd0217
+artifacts: org.gradle.api.internal.artifacts.dsl.DefaultArtifactHandler_Decorated@791b7196
 asDynamicObject: DynamicObject for root project 'web-crawler'
 autoTargetJvmDisabled: false
 base: extension 'base'
-baseClassLoaderScope: org.gradle.api.internal.initialization.DefaultClassLoaderScope@4b863181
+baseClassLoaderScope: org.gradle.api.internal.initialization.DefaultClassLoaderScope@1a95e279
+bootJar: task ':bootJar'
 buildDir: /home/circleci/project/build
 buildFile: /home/circleci/project/build.gradle
 buildPath: :
-buildScriptSource: org.gradle.groovy.scripts.TextResourceScriptSource@76591d51
+buildScriptSource: org.gradle.groovy.scripts.TextResourceScriptSource@3f021e0a
 buildTreePath: :
-buildscript: org.gradle.api.internal.initialization.DefaultScriptHandler_Decorated@7075ffc2
+buildscript: org.gradle.api.internal.initialization.DefaultScriptHandler_Decorated@5c44334b
 childProjects: {}
 childProjectsUnchecked: {}
 class: class org.gradle.api.internal.project.DefaultProject_Decorated
-classLoaderScope: org.gradle.api.internal.initialization.DefaultClassLoaderScope@583254b8
+classLoaderScope: org.gradle.api.internal.initialization.DefaultClassLoaderScope@6504c436
+classes: task ':classes'
 clean: task ':clean'
 compileJava: task ':compileJava'
 compileTestJava: task ':compileTestJava'
 components: SoftwareComponent container
-configurationActions: org.gradle.configuration.project.DefaultProjectConfigurationActionContainer@6b238661
-configurationTargetIdentifier: org.gradle.configuration.ConfigurationTargetIdentifier$1@1153a8bd
+configurationActions: org.gradle.configuration.project.DefaultProjectConfigurationActionContainer@7e717e94
+configurationTargetIdentifier: org.gradle.configuration.ConfigurationTargetIdentifier$1@4b42dd09
 configurations: configuration container for root project 'web-crawler'
-convention: org.gradle.internal.extensibility.DefaultConvention@2f5e9c53
-conventionMapping: org.gradle.internal.extensibility.ConventionAwareHelper@700afd95
+convention: org.gradle.internal.extensibility.DefaultConvention@649f7825
+conventionMapping: org.gradle.internal.extensibility.ConventionAwareHelper@19bcd196
 coveralls: extension 'coveralls'
-crossProjectModelAccess: org.gradle.api.internal.project.DefaultCrossProjectModelAccess@7ed7d7b
+crossProjectModelAccess: org.gradle.api.internal.project.DefaultCrossProjectModelAccess@6ccc89eb
 defaultArtifacts: extension 'defaultArtifacts'
 defaultTasks: []
-deferredProjectConfiguration: org.gradle.api.internal.project.DeferredProjectConfiguration@bf72b7b
-dependencies: org.gradle.api.internal.artifacts.dsl.dependencies.DefaultDependencyHandler_Decorated@50909252
-dependencyFactory: org.gradle.api.internal.artifacts.DefaultDependencyFactory@77d13b80
-dependencyLocking: org.gradle.internal.locking.DefaultDependencyLockingHandler_Decorated@1bbb96a4
-dependencyManagement: io.spring.gradle.dependencymanagement.internal.dsl.StandardDependencyManagementExtension@29a5ca5b
+deferredProjectConfiguration: org.gradle.api.internal.project.DeferredProjectConfiguration@31bbabee
+dependencies: org.gradle.api.internal.artifacts.dsl.dependencies.DefaultDependencyHandler_Decorated@2efaa3ac
+dependencyFactory: org.gradle.api.internal.artifacts.DefaultDependencyFactory@5135f784
+dependencyLocking: org.gradle.internal.locking.DefaultDependencyLockingHandler_Decorated@593ebf98
+dependencyManagement: io.spring.gradle.dependencymanagement.internal.dsl.StandardDependencyManagementExtension@35368b8a
 dependencyReport: task ':dependencyReport'
 depth: 0
 description: null
@@ -50,47 +52,50 @@ distsDirectory: extension 'base' property 'distsDirectory'
 docsDir: /home/circleci/project/build/docs
 docsDirName: docs
 eclipse: extension 'eclipse'
-ext: org.gradle.internal.extensibility.DefaultExtraPropertiesExtension@20d096f7
-extensions: org.gradle.internal.extensibility.DefaultConvention@2f5e9c53
-fileOperations: org.gradle.api.internal.file.DefaultFileOperations@246505f1
-fileResolver: org.gradle.api.internal.file.BaseDirFileResolver@2a50b43b
+ext: org.gradle.internal.extensibility.DefaultExtraPropertiesExtension@623a5b7
+extensions: org.gradle.internal.extensibility.DefaultConvention@649f7825
+fileOperations: org.gradle.api.internal.file.DefaultFileOperations@595758e0
+fileResolver: org.gradle.api.internal.file.BaseDirFileResolver@5f4b54fe
 gradle: build 'web-crawler'
 group: com.happinesea
 htmlDependencyReport: task ':htmlDependencyReport'
 identityPath: :
-inheritedScope: org.gradle.internal.extensibility.ExtensibleDynamicObject$InheritedDynamicObject@24fbf79a
+inheritedScope: org.gradle.internal.extensibility.ExtensibleDynamicObject$InheritedDynamicObject@576bf7e
 internalStatus: property(java.lang.Object, fixed(class java.lang.String, integration))
 isolated: DefaultIsolatedProject{root project 'web-crawler'}
 jacoco: extension 'jacoco'
 jacocoTestReport: task ':jacocoTestReport'
+jar: task ':jar'
 java: extension 'java'
 javaToolchains: extension 'javaToolchains'
-layout: org.gradle.api.internal.file.DefaultProjectLayout@c7e6da7
+layout: org.gradle.api.internal.file.DefaultProjectLayout@7d90771e
 libsDirName: libs
 libsDirectory: extension 'base' property 'libsDirectory'
 lifecycleActionsState: null
-listenerBuildOperationDecorator: org.gradle.configuration.internal.DefaultListenerBuildOperationDecorator@23a0e17f
-logger: org.gradle.internal.logging.slf4j.OutputEventListenerBackedLogger@581c95b6
-logging: org.gradle.internal.logging.services.DefaultLoggingManager@1db72a33
+listenerBuildOperationDecorator: org.gradle.configuration.internal.DefaultListenerBuildOperationDecorator@787930f6
+logger: org.gradle.internal.logging.slf4j.OutputEventListenerBackedLogger@4844fdc8
+logging: org.gradle.internal.logging.services.DefaultLoggingManager@4b4718c6
 model: root project 'web-crawler'
 modelIdentityDisplayName: null
-modelRegistry: org.gradle.model.internal.registry.DefaultModelRegistry@62db6f77
+modelRegistry: org.gradle.model.internal.registry.DefaultModelRegistry@3591be37
 name: web-crawler
-normalization: org.gradle.normalization.internal.DefaultInputNormalizationHandler_Decorated@46d4d14a
-objects: org.gradle.api.internal.model.DefaultObjectFactory@7ad95d03
+normalization: org.gradle.normalization.internal.DefaultInputNormalizationHandler_Decorated@4ded6f3
+objects: org.gradle.api.internal.model.DefaultObjectFactory@6b9bc11d
 owner: root project 'web-crawler'
 parent: null
 parentIdentifier: null
 path: :
 pluginContext: false
-pluginManager: org.gradle.api.internal.plugins.DefaultPluginManager_Decorated@5e9b06d9
+pluginManager: org.gradle.api.internal.plugins.DefaultPluginManager_Decorated@18697580
 plugins: Plugin collection
-processOperations: org.gradle.process.internal.DefaultExecActionFactory$DecoratingExecActionFactory@67826aaa
+processOperations: org.gradle.process.internal.DefaultExecActionFactory$DecoratingExecActionFactory@203100bc
+processResources: task ':processResources'
+processTestResources: task ':processTestResources'
 project: root project 'web-crawler'
-projectConfigurator: org.gradle.api.internal.project.BuildOperationCrossProjectConfigurator@7bcb991
+projectConfigurator: org.gradle.api.internal.project.BuildOperationCrossProjectConfigurator@52aa3307
 projectDir: /home/circleci/project
 projectEvaluationBroadcaster: ProjectEvaluationListener broadcast
-projectEvaluator: org.gradle.configuration.project.LifecycleProjectEvaluator@373dcd20
+projectEvaluator: org.gradle.configuration.project.LifecycleProjectEvaluator@670c8366
 projectIdentity: root project :
 projectPath: :
 projectReport: task ':projectReport'
@@ -99,32 +104,33 @@ projectReportDirName: project
 projects: [root project 'web-crawler']
 properties: {...}
 propertyReport: task ':propertyReport'
-providers: org.gradle.api.internal.provider.DefaultProviderFactory_Decorated@3196b8d0
+providers: org.gradle.api.internal.provider.DefaultProviderFactory_Decorated@341a3f72
 publicType: org.gradle.api.plugins.ProjectReportsPluginConvention
 reporting: extension 'reporting'
 repositories: repository container
-resources: org.gradle.api.internal.resources.DefaultResourceHandler@45354372
+resources: org.gradle.api.internal.resources.DefaultResourceHandler@1c06fdad
 rootDir: /home/circleci/project
 rootProject: root project 'web-crawler'
 rootScript: false
 script: false
-scriptHandlerFactory: org.gradle.api.internal.initialization.DefaultScriptHandlerFactory@27a71a74
-scriptPluginFactory: org.gradle.configuration.ScriptPluginFactorySelector@7eaa876d
-serviceRegistryFactory: org.gradle.internal.service.scopes.BuildScopeServiceRegistryFactory@7afee050
+scriptHandlerFactory: org.gradle.api.internal.initialization.DefaultScriptHandlerFactory@1f37d721
+scriptPluginFactory: org.gradle.configuration.ScriptPluginFactorySelector@1c236012
+serviceRegistryFactory: org.gradle.internal.service.scopes.BuildScopeServiceRegistryFactory@79a73d4b
 services: project services
 sourceCompatibility: 23
 sourceSets: SourceSet container
 springBoot: extension 'springBoot'
-standardOutputCapture: org.gradle.internal.logging.services.DefaultLoggingManager@1db72a33
+standardOutputCapture: org.gradle.internal.logging.services.DefaultLoggingManager@4b4718c6
 state: project state 'EXECUTED'
 status: integration
 subprojects: []
 targetCompatibility: 23
-taskDependencyFactory: org.gradle.api.internal.tasks.DefaultTaskDependencyFactory@15bf12ae
+taskDependencyFactory: org.gradle.api.internal.tasks.DefaultTaskDependencyFactory@52e75c47
 taskReport: task ':taskReport'
 taskThatOwnsThisObject: null
 tasks: task set
 test: task ':test'
+testClasses: task ':testClasses'
 testReportDir: /home/circleci/project/build/reports/tests
 testReportDirName: tests
 testResultsDir: /home/circleci/project/build/test-results

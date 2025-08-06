@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - SiteContentsServiceTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>SiteContentsServiceTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.happinesea.webcrawler.service.html">com.happinesea.webcrawler.service</a> &gt; SiteContentsServiceTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">6</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.131s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testBulkInsertIfNotExists()</td>
+<td class="success">0.027s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testChangSiteInfoProcess2Fail()</td>
+<td class="success">0.015s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testChangSiteInfoProcess2Processing()</td>
+<td class="success">0.041s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testChangSiteInfoProcess2Sucess()</td>
+<td class="success">0.015s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testFindAliveProcess()</td>
+<td class="success">0.014s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testSaveAllProcessPools()</td>
+<td class="success">0.019s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2025-08-06 13:44:08.772 [Test worker] DEBUG o.s.b.t.c.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [SiteContentsServiceTest]: using SpringBootContextLoader
+2025-08-06 13:44:08.772 [Test worker] DEBUG o.s.t.c.s.AbstractContextLoader - Could not detect default resource locations for test class [com.happinesea.webcrawler.service.SiteContentsServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2025-08-06 13:44:08.772 [Test worker] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.happinesea.webcrawler.service.SiteContentsServiceTest]: SiteContentsServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-08-06 13:44:08.773 [Test worker] DEBUG o.s.b.t.c.SpringBootTestContextBootstrapper - Using ContextCustomizerFactory implementations for test class [SiteContentsServiceTest]: [BatchTestContextCustomizerFactory, OnFailureConditionReportContextCustomizerFactory, OverrideAutoConfigurationContextCustomizerFactory, ObservabilityContextCustomizerFactory, TypeExcludeFiltersContextCustomizerFactory, PropertyMappingContextCustomizerFactory, WebDriverContextCustomizerFactory, ImportsContextCustomizerFactory, ExcludeFilterContextCustomizerFactory, HttpGraphQlTesterContextCustomizerFactory, DuplicateJsonObjectContextCustomizerFactory, MockitoContextCustomizerFactory, TestRestTemplateContextCustomizerFactory, WebTestClientContextCustomizerFactory, DisableReactorResourceFactoryGlobalResourcesContextCustomizerFactory, BeanOverrideContextCustomizerFactory, MockServerContainerContextCustomizerFactory, DynamicPropertiesContextCustomizerFactory]
+2025-08-06 13:44:08.773 [Test worker] DEBUG o.s.b.t.c.SpringBootTestContextBootstrapper - Using ContextCustomizers for test class [SiteContentsServiceTest]: [OnFailureConditionReportContextCustomizer, DisableObservabilityContextCustomizer, PropertyMappingContextCustomizer, WebDriverContextCustomizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer, TestRestTemplateContextCustomizer, DisableReactorResourceFactoryGlobalResourcesContextCustomizerCustomizer, DynamicPropertiesContextCustomizer]
+2025-08-06 13:44:08.778 [Test worker] DEBUG o.s.c.a.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/home/circleci/project/build/classes/java/main/com/happinesea/webcrawler/WebCrawlerApplication.class]
+2025-08-06 13:44:08.778 [Test worker] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.happinesea.webcrawler.WebCrawlerApplication for test class com.happinesea.webcrawler.service.SiteContentsServiceTest
+2025-08-06 13:44:08.778 [Test worker] DEBUG o.s.t.c.u.TestContextSpringFactoriesUtils - Skipping candidate TestExecutionListener [org.springframework.test.context.observation.MicrometerObservationRegistryTestExecutionListener] due to a missing dependency. Specify custom TestExecutionListener classes or make the default TestExecutionListener classes and their required dependencies available. Offending class: io.micrometer.context.ThreadLocalAccessor. MicrometerObservationRegistryTestExecutionListener requires io.micrometer:micrometer-observation:1.10.8 or higher and io.micrometer:context-propagation:1.0.3 or higher.
+2025-08-06 13:44:08.779 [Test worker] DEBUG o.s.b.t.c.SpringBootTestContextBootstrapper - Using TestExecutionListeners for test class [SiteContentsServiceTest]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, BeanOverrideTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, CommonCachesTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, EventPublishingTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener, ResetMocksTestExecutionListener, MockitoResetTestExecutionListener]
+2025-08-06 13:44:08.779 [Test worker] DEBUG o.s.t.c.s.DirtiesContextBeforeModesTestExecutionListener - Before test class: class [SiteContentsServiceTest], class annotated with @DirtiesContext [false] with mode [null]
+2025-08-06 13:44:08.779 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 212, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.779 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 213, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.779 [Test worker] DEBUG o.s.t.c.w.ServletTestExecutionListener - Setting up MockHttpServletRequest, MockHttpServletResponse, ServletWebRequest, and RequestContextHolder for test class com.happinesea.webcrawler.service.SiteContentsServiceTest
+2025-08-06 13:44:08.779 [Test worker] DEBUG o.s.t.c.s.DependencyInjectionTestExecutionListener - Performing dependency injection for test class com.happinesea.webcrawler.service.SiteContentsServiceTest
+2025-08-06 13:44:08.780 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 214, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.780 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 215, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.781 [Test worker] DEBUG o.s.t.c.s.DirtiesContextBeforeModesTestExecutionListener - Before test method: class [SiteContentsServiceTest], method [testChangSiteInfoProcess2Processing], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2025-08-06 13:44:08.781 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 216, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.781 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 217, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.782 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 218, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.782 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-08-06 13:44:08.782 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(1626361432&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.782 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2025-08-06 13:44:08.782 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - begin
+2025-08-06 13:44:08.782 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@39165aaf]
+2025-08-06 13:44:08.782 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.783 [Test worker] DEBUG o.hibernate.engine.spi.ActionQueue - Executing identity-insert immediately
+2025-08-06 13:44:08.783 [Test worker] DEBUG org.hibernate.SQL - insert into site_info (contents_type,delete_flg,logo_url,site_name,site_url,site_info_id) values (?,?,?,?,?,default)
+Hibernate: insert into site_info (contents_type,delete_flg,logo_url,site_name,site_url,site_info_id) values (?,?,?,?,?,default)
+2025-08-06 13:44:08.783 [Test worker] DEBUG org.hibernate.orm.results - Initializer list is empty
+2025-08-06 13:44:08.783 [Test worker] DEBUG o.h.id.IdentifierGeneratorHelper - Extracted generated values [com.happinesea.webcrawler.entity.SiteInfo]: [Ljava.lang.Object;@2332a2d
+2025-08-06 13:44:08.784 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-08-06 13:44:08.784 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(1626361432&lt;open&gt;)]
+2025-08-06 13:44:08.784 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - committing
+2025-08-06 13:44:08.784 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+2025-08-06 13:44:08.784 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+2025-08-06 13:44:08.784 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2025-08-06 13:44:08.784 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2025-08-06 13:44:08.784 [Test worker] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+2025-08-06 13:44:08.784 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteInfo{siteUrl=null, contentsType=null, deleteFlg=null, siteName=null, siteInfoId=7, logoUrl=null}
+2025-08-06 13:44:08.784 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(1626361432&lt;open&gt;)] after transaction
+2025-08-06 13:44:08.784 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-08-06 13:44:08.784 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(63161534&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.784 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2025-08-06 13:44:08.784 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - begin
+2025-08-06 13:44:08.784 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@600c489b]
+2025-08-06 13:44:08.785 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.785 [Test worker] DEBUG o.hibernate.engine.spi.ActionQueue - Executing identity-insert immediately
+2025-08-06 13:44:08.785 [Test worker] DEBUG org.hibernate.SQL - insert into site_category (body_select_id,category_list_url,category_name,category_url,contents_url_select_id,delete_flg,last_scan_time,list_record_select_id,more_body_select_id,site_info_id,target_category,title_record_select_id,site_category_id) values (?,?,?,?,?,?,?,?,?,?,?,?,default)
+Hibernate: insert into site_category (body_select_id,category_list_url,category_name,category_url,contents_url_select_id,delete_flg,last_scan_time,list_record_select_id,more_body_select_id,site_info_id,target_category,title_record_select_id,site_category_id) values (?,?,?,?,?,?,?,?,?,?,?,?,default)
+2025-08-06 13:44:08.785 [Test worker] DEBUG org.hibernate.orm.results - Initializer list is empty
+2025-08-06 13:44:08.785 [Test worker] DEBUG o.h.id.IdentifierGeneratorHelper - Extracted generated values [com.happinesea.webcrawler.entity.SiteCategory]: [Ljava.lang.Object;@1609df03
+2025-08-06 13:44:08.786 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-08-06 13:44:08.786 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(63161534&lt;open&gt;)]
+2025-08-06 13:44:08.786 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - committing
+2025-08-06 13:44:08.786 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+2025-08-06 13:44:08.786 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+2025-08-06 13:44:08.786 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2025-08-06 13:44:08.786 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2025-08-06 13:44:08.786 [Test worker] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+2025-08-06 13:44:08.786 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteCategory{lastScanTime=null, titleRecordSelectId=null, deleteFlg=null, bodySelectId=null, contentsUrlSelectId=null, siteInfo=com.happinesea.webcrawler.entity.SiteInfo#7, categoryName=name1, siteCategoryId=7, targetCategory=null, listRecordSelectId=null, categoryUrl=null, moreBodySelectId=null, categoryListUrl=null}
+2025-08-06 13:44:08.786 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(63161534&lt;open&gt;)] after transaction
+2025-08-06 13:44:08.786 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-08-06 13:44:08.786 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(425589944&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.786 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2025-08-06 13:44:08.786 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - begin
+2025-08-06 13:44:08.786 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@55f1e5f2]
+2025-08-06 13:44:08.787 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.792 [Test worker] DEBUG org.hibernate.orm.sql.ast.create - Created new SQL alias : si1_0
+2025-08-06 13:44:08.792 [Test worker] DEBUG org.hibernate.orm.sql.ast.create - Registration of TableGroup [StandardTableGroup(com.happinesea.webcrawler.entity.SiteInfo)] with identifierForTableGroup [com.happinesea.webcrawler.entity.SiteInfo] for NavigablePath [com.happinesea.webcrawler.entity.SiteInfo] 
+2025-08-06 13:44:08.793 [Test worker] DEBUG org.hibernate.orm.results.graph.AST - DomainResult Graph:
+ \-EntityResultImpl [com.happinesea.webcrawler.entity.SiteInfo]
+ |  +-BasicFetch [com.happinesea.webcrawler.entity.SiteInfo.contentsType]
+ |  +-BasicFetch [com.happinesea.webcrawler.entity.SiteInfo.deleteFlg]
+ |  +-BasicFetch [com.happinesea.webcrawler.entity.SiteInfo.logoUrl]
+ |  +-BasicFetch [com.happinesea.webcrawler.entity.SiteInfo.siteName]
+ |  \-BasicFetch [com.happinesea.webcrawler.entity.SiteInfo.siteUrl]
+
+2025-08-06 13:44:08.793 [Test worker] DEBUG org.hibernate.orm.sql.ast.tree - SQL AST Tree:
+    SelectStatement {
+      FromClause {
+        StandardTableGroup (si1 : com.happinesea.webcrawler.entity.SiteInfo) {
+          primaryTableReference : site_info as si1_0
+        }
+      }
+    }
+
+2025-08-06 13:44:08.793 [Test worker] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE
+2025-08-06 13:44:08.793 [Test worker] DEBUG org.hibernate.SQL - select si1_0.site_info_id,si1_0.contents_type,si1_0.delete_flg,si1_0.logo_url,si1_0.site_name,si1_0.site_url from site_info si1_0 where si1_0.site_info_id=?
+Hibernate: select si1_0.site_info_id,si1_0.contents_type,si1_0.delete_flg,si1_0.logo_url,si1_0.site_name,si1_0.site_url from site_info si1_0 where si1_0.site_info_id=?
+2025-08-06 13:44:08.794 [Test worker] DEBUG org.hibernate.orm.results - Initializer list:
+	  com.happinesea.webcrawler.entity.SiteInfo -&gt; EntityJoinedFetchInitializer(com.happinesea.webcrawler.entity.SiteInfo)@269821274 (SingleTableEntityPersister(com.happinesea.webcrawler.entity.SiteInfo))
+
+2025-08-06 13:44:08.796 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-08-06 13:44:08.796 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(425589944&lt;open&gt;)]
+2025-08-06 13:44:08.796 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - committing
+2025-08-06 13:44:08.796 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+2025-08-06 13:44:08.796 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+2025-08-06 13:44:08.796 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2025-08-06 13:44:08.796 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2025-08-06 13:44:08.796 [Test worker] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+2025-08-06 13:44:08.796 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteInfo{siteUrl=null, contentsType=null, deleteFlg=null, siteName=null, siteInfoId=7, logoUrl=null}
+2025-08-06 13:44:08.796 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(425589944&lt;open&gt;)] after transaction
+2025-08-06 13:44:08.796 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-08-06 13:44:08.797 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(613212972&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.797 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2025-08-06 13:44:08.797 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - begin
+2025-08-06 13:44:08.797 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@754b42de]
+2025-08-06 13:44:08.797 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.797 [Test worker] DEBUG o.hibernate.engine.spi.ActionQueue - Executing identity-insert immediately
+2025-08-06 13:44:08.797 [Test worker] DEBUG org.hibernate.SQL - insert into site_category (body_select_id,category_list_url,category_name,category_url,contents_url_select_id,delete_flg,last_scan_time,list_record_select_id,more_body_select_id,site_info_id,target_category,title_record_select_id,site_category_id) values (?,?,?,?,?,?,?,?,?,?,?,?,default)
+Hibernate: insert into site_category (body_select_id,category_list_url,category_name,category_url,contents_url_select_id,delete_flg,last_scan_time,list_record_select_id,more_body_select_id,site_info_id,target_category,title_record_select_id,site_category_id) values (?,?,?,?,?,?,?,?,?,?,?,?,default)
+2025-08-06 13:44:08.798 [Test worker] DEBUG org.hibernate.orm.results - Initializer list is empty
+2025-08-06 13:44:08.798 [Test worker] DEBUG o.h.id.IdentifierGeneratorHelper - Extracted generated values [com.happinesea.webcrawler.entity.SiteCategory]: [Ljava.lang.Object;@a967b28
+2025-08-06 13:44:08.798 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-08-06 13:44:08.798 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(613212972&lt;open&gt;)]
+2025-08-06 13:44:08.798 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - committing
+2025-08-06 13:44:08.798 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+2025-08-06 13:44:08.798 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+2025-08-06 13:44:08.798 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2025-08-06 13:44:08.798 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2025-08-06 13:44:08.798 [Test worker] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+2025-08-06 13:44:08.798 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteCategory{lastScanTime=null, titleRecordSelectId=null, deleteFlg=null, bodySelectId=null, contentsUrlSelectId=null, siteInfo=com.happinesea.webcrawler.entity.SiteInfo#7, categoryName=name2, siteCategoryId=8, targetCategory=null, listRecordSelectId=null, categoryUrl=null, moreBodySelectId=null, categoryListUrl=null}
+2025-08-06 13:44:08.798 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(613212972&lt;open&gt;)] after transaction
+2025-08-06 13:44:08.799 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-08-06 13:44:08.799 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(1559728348&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.799 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2025-08-06 13:44:08.799 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - begin
+2025-08-06 13:44:08.799 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@79b440f8]
+2025-08-06 13:44:08.799 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.799 [Test worker] DEBUG org.hibernate.orm.sql.ast.create - Created new SQL alias : sipp1_0
+2025-08-06 13:44:08.799 [Test worker] DEBUG org.hibernate.orm.sql.ast.create - Registration of TableGroup [StandardTableGroup(com.happinesea.webcrawler.entity.SiteInfoProcessPool)] with identifierForTableGroup [com.happinesea.webcrawler.entity.SiteInfoProcessPool] for NavigablePath [com.happinesea.webcrawler.entity.SiteInfoProcessPool] 
+2025-08-06 13:44:08.800 [Test worker] DEBUG org.hibernate.orm.sql.ast.create - Registration of TableGroup [org.hibernate.sql.ast.tree.from.LazyTableGroup@3dd05779] with identifierForTableGroup [com.happinesea.webcrawler.entity.SiteInfoProcessPool.siteCategory] for NavigablePath [com.happinesea.webcrawler.entity.SiteInfoProcessPool.siteCategory] 
+2025-08-06 13:44:08.800 [Test worker] DEBUG org.hibernate.orm.results.graph.AST - DomainResult Graph:
+ \-EntityResultImpl [com.happinesea.webcrawler.entity.SiteInfoProcessPool]
+ |  +-BasicFetch [com.happinesea.webcrawler.entity.SiteInfoProcessPool.processId]
+ |  +-BasicFetch [com.happinesea.webcrawler.entity.SiteInfoProcessPool.processStatus]
+ |  +-BasicFetch [com.happinesea.webcrawler.entity.SiteInfoProcessPool.processTime]
+ |  \-EntityDelayedFetchImpl [com.happinesea.webcrawler.entity.SiteInfoProcessPool.siteCategory]
+
+2025-08-06 13:44:08.800 [Test worker] DEBUG org.hibernate.orm.sql.ast.tree - SQL AST Tree:
+    SelectStatement {
+      FromClause {
+        StandardTableGroup (sipp1 : com.happinesea.webcrawler.entity.SiteInfoProcessPool) {
+          primaryTableReference : site_info_process_pool as sipp1_0
+          TableGroupJoins {
+            left  join LazyTableGroup (sc1 : com.happinesea.webcrawler.entity.SiteInfoProcessPool.siteCategory) {
+            }
+          }
+        }
+      }
+    }
+
+2025-08-06 13:44:08.800 [Test worker] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE
+2025-08-06 13:44:08.800 [Test worker] DEBUG org.hibernate.SQL - select sipp1_0.site_info_process_id,sipp1_0.process_id,sipp1_0.process_status,sipp1_0.process_time,sipp1_0.site_category_id from site_info_process_pool sipp1_0 where sipp1_0.site_info_process_id=?
+Hibernate: select sipp1_0.site_info_process_id,sipp1_0.process_id,sipp1_0.process_status,sipp1_0.process_time,sipp1_0.site_category_id from site_info_process_pool sipp1_0 where sipp1_0.site_info_process_id=?
+2025-08-06 13:44:08.801 [Test worker] DEBUG org.hibernate.orm.results - Initializer list:
+	  com.happinesea.webcrawler.entity.SiteInfoProcessPool.siteCategory -&gt; EntityDelayedFetchInitializer(com.happinesea.webcrawler.entity.SiteInfoProcessPool.siteCategory)@1398072224 (ToOneAttributeMapping(NavigableRole[com.happinesea.webcrawler.entity.SiteInfoProcessPool.siteCategory])@980073751)
+	  com.happinesea.webcrawler.entity.SiteInfoProcessPool -&gt; EntityJoinedFetchInitializer(com.happinesea.webcrawler.entity.SiteInfoProcessPool)@1993635802 (SingleTableEntityPersister(com.happinesea.webcrawler.entity.SiteInfoProcessPool))
+
+2025-08-06 13:44:08.808 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-08-06 13:44:08.808 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(1559728348&lt;open&gt;)]
+2025-08-06 13:44:08.808 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - committing
+2025-08-06 13:44:08.808 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+2025-08-06 13:44:08.808 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+2025-08-06 13:44:08.808 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 1 insertions, 0 updates, 0 deletions to 1 objects
+2025-08-06 13:44:08.808 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2025-08-06 13:44:08.808 [Test worker] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+2025-08-06 13:44:08.808 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteInfoProcessPool{processStatus=NONE, processId=null, siteCategory=&lt;uninitialized&gt;, processTime=2025-08-06T13:44:08.798905056, siteInfoProcessId=1}
+2025-08-06 13:44:08.809 [Test worker] DEBUG org.hibernate.SQL - insert into site_info_process_pool (process_id,process_status,process_time,site_category_id,site_info_process_id) values (?,?,?,?,?)
+Hibernate: insert into site_info_process_pool (process_id,process_status,process_time,site_category_id,site_info_process_id) values (?,?,?,?,?)
+2025-08-06 13:44:08.810 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(1559728348&lt;open&gt;)] after transaction
+2025-08-06 13:44:08.811 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 219, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.811 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [com.happinesea.webcrawler.service.SiteContentsService.changSiteInfoProcess2Processing]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-08-06 13:44:08.811 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(727716488&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.811 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2025-08-06 13:44:08.811 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - begin
+2025-08-06 13:44:08.811 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@73257b80]
+2025-08-06 13:44:08.811 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(727716488&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.811 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating in existing transaction
+2025-08-06 13:44:08.811 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.812 [Test worker] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE
+2025-08-06 13:44:08.812 [Test worker] DEBUG org.hibernate.SQL - select sipp1_0.site_info_process_id,sipp1_0.process_id,sipp1_0.process_status,sipp1_0.process_time,sipp1_0.site_category_id from site_info_process_pool sipp1_0 where sipp1_0.site_info_process_id=?
+Hibernate: select sipp1_0.site_info_process_id,sipp1_0.process_id,sipp1_0.process_status,sipp1_0.process_time,sipp1_0.site_category_id from site_info_process_pool sipp1_0 where sipp1_0.site_info_process_id=?
+2025-08-06 13:44:08.813 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-08-06 13:44:08.813 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(727716488&lt;open&gt;)]
+2025-08-06 13:44:08.813 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - committing
+2025-08-06 13:44:08.813 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+2025-08-06 13:44:08.813 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+2025-08-06 13:44:08.815 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 insertions, 1 updates, 0 deletions to 1 objects
+2025-08-06 13:44:08.815 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2025-08-06 13:44:08.815 [Test worker] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+2025-08-06 13:44:08.815 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteInfoProcessPool{processStatus=PROCESSING, processId=null, siteCategory=&lt;uninitialized&gt;, processTime=2025-08-06T13:44:08.811856502, siteInfoProcessId=1}
+2025-08-06 13:44:08.817 [Test worker] DEBUG org.hibernate.SQL - update site_info_process_pool set process_id=?,process_status=?,process_time=?,site_category_id=? where site_info_process_id=?
+Hibernate: update site_info_process_pool set process_id=?,process_status=?,process_time=?,site_category_id=? where site_info_process_id=?
+2025-08-06 13:44:08.819 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(727716488&lt;open&gt;)] after transaction
+2025-08-06 13:44:08.819 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 220, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.819 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 221, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.820 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 222, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.820 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 223, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.820 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 224, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.821 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 225, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.821 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 226, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.821 [Test worker] DEBUG o.s.t.c.s.DirtiesContextTestExecutionListener - After test method: class [SiteContentsServiceTest], method [testChangSiteInfoProcess2Processing], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2025-08-06 13:44:08.821 [Test worker] DEBUG o.s.t.c.w.ServletTestExecutionListener - Resetting RequestContextHolder for test class com.happinesea.webcrawler.service.SiteContentsServiceTest
+2025-08-06 13:44:08.822 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 227, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.822 [Test worker] DEBUG o.s.t.c.w.ServletTestExecutionListener - Setting up MockHttpServletRequest, MockHttpServletResponse, ServletWebRequest, and RequestContextHolder for test class com.happinesea.webcrawler.service.SiteContentsServiceTest
+2025-08-06 13:44:08.822 [Test worker] DEBUG o.s.t.c.s.DependencyInjectionTestExecutionListener - Performing dependency injection for test class com.happinesea.webcrawler.service.SiteContentsServiceTest
+2025-08-06 13:44:08.822 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 228, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.822 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 229, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.823 [Test worker] DEBUG o.s.t.c.s.DirtiesContextBeforeModesTestExecutionListener - Before test method: class [SiteContentsServiceTest], method [testSaveAllProcessPools], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2025-08-06 13:44:08.823 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 230, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.823 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 231, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.823 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 232, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.824 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-08-06 13:44:08.824 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(991966691&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.824 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2025-08-06 13:44:08.824 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - begin
+2025-08-06 13:44:08.824 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@3bbe38a2]
+2025-08-06 13:44:08.824 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.824 [Test worker] DEBUG o.hibernate.engine.spi.ActionQueue - Executing identity-insert immediately
+2025-08-06 13:44:08.825 [Test worker] DEBUG org.hibernate.SQL - insert into site_info (contents_type,delete_flg,logo_url,site_name,site_url,site_info_id) values (?,?,?,?,?,default)
+Hibernate: insert into site_info (contents_type,delete_flg,logo_url,site_name,site_url,site_info_id) values (?,?,?,?,?,default)
+2025-08-06 13:44:08.825 [Test worker] DEBUG org.hibernate.orm.results - Initializer list is empty
+2025-08-06 13:44:08.825 [Test worker] DEBUG o.h.id.IdentifierGeneratorHelper - Extracted generated values [com.happinesea.webcrawler.entity.SiteInfo]: [Ljava.lang.Object;@18c01798
+2025-08-06 13:44:08.825 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-08-06 13:44:08.825 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(991966691&lt;open&gt;)]
+2025-08-06 13:44:08.825 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - committing
+2025-08-06 13:44:08.825 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+2025-08-06 13:44:08.825 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+2025-08-06 13:44:08.825 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2025-08-06 13:44:08.825 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2025-08-06 13:44:08.825 [Test worker] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+2025-08-06 13:44:08.825 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteInfo{siteUrl=null, contentsType=null, deleteFlg=null, siteName=null, siteInfoId=8, logoUrl=null}
+2025-08-06 13:44:08.826 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(991966691&lt;open&gt;)] after transaction
+2025-08-06 13:44:08.826 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-08-06 13:44:08.826 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(2021672421&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.826 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2025-08-06 13:44:08.826 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - begin
+2025-08-06 13:44:08.826 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@fd2e0f5]
+2025-08-06 13:44:08.826 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.826 [Test worker] DEBUG o.hibernate.engine.spi.ActionQueue - Executing identity-insert immediately
+2025-08-06 13:44:08.827 [Test worker] DEBUG org.hibernate.SQL - insert into site_category (body_select_id,category_list_url,category_name,category_url,contents_url_select_id,delete_flg,last_scan_time,list_record_select_id,more_body_select_id,site_info_id,target_category,title_record_select_id,site_category_id) values (?,?,?,?,?,?,?,?,?,?,?,?,default)
+Hibernate: insert into site_category (body_select_id,category_list_url,category_name,category_url,contents_url_select_id,delete_flg,last_scan_time,list_record_select_id,more_body_select_id,site_info_id,target_category,title_record_select_id,site_category_id) values (?,?,?,?,?,?,?,?,?,?,?,?,default)
+2025-08-06 13:44:08.827 [Test worker] DEBUG org.hibernate.orm.results - Initializer list is empty
+2025-08-06 13:44:08.827 [Test worker] DEBUG o.h.id.IdentifierGeneratorHelper - Extracted generated values [com.happinesea.webcrawler.entity.SiteCategory]: [Ljava.lang.Object;@7f36aaaf
+2025-08-06 13:44:08.827 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-08-06 13:44:08.827 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(2021672421&lt;open&gt;)]
+2025-08-06 13:44:08.827 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - committing
+2025-08-06 13:44:08.827 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+2025-08-06 13:44:08.827 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+2025-08-06 13:44:08.827 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2025-08-06 13:44:08.827 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2025-08-06 13:44:08.827 [Test worker] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+2025-08-06 13:44:08.828 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteCategory{lastScanTime=null, titleRecordSelectId=null, deleteFlg=null, bodySelectId=null, contentsUrlSelectId=null, siteInfo=com.happinesea.webcrawler.entity.SiteInfo#8, categoryName=name1, siteCategoryId=9, targetCategory=null, listRecordSelectId=null, categoryUrl=null, moreBodySelectId=null, categoryListUrl=null}
+2025-08-06 13:44:08.828 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(2021672421&lt;open&gt;)] after transaction
+2025-08-06 13:44:08.828 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-08-06 13:44:08.828 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(560858028&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.828 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2025-08-06 13:44:08.828 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - begin
+2025-08-06 13:44:08.828 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@bb865bf]
+2025-08-06 13:44:08.828 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.828 [Test worker] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE
+2025-08-06 13:44:08.828 [Test worker] DEBUG org.hibernate.SQL - select si1_0.site_info_id,si1_0.contents_type,si1_0.delete_flg,si1_0.logo_url,si1_0.site_name,si1_0.site_url from site_info si1_0 where si1_0.site_info_id=?
+Hibernate: select si1_0.site_info_id,si1_0.contents_type,si1_0.delete_flg,si1_0.logo_url,si1_0.site_name,si1_0.site_url from site_info si1_0 where si1_0.site_info_id=?
+2025-08-06 13:44:08.829 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-08-06 13:44:08.829 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(560858028&lt;open&gt;)]
+2025-08-06 13:44:08.829 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - committing
+2025-08-06 13:44:08.829 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+2025-08-06 13:44:08.829 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+2025-08-06 13:44:08.829 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2025-08-06 13:44:08.829 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2025-08-06 13:44:08.829 [Test worker] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+2025-08-06 13:44:08.829 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteInfo{siteUrl=null, contentsType=null, deleteFlg=null, siteName=null, siteInfoId=8, logoUrl=null}
+2025-08-06 13:44:08.829 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(560858028&lt;open&gt;)] after transaction
+2025-08-06 13:44:08.829 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-08-06 13:44:08.829 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(1991261872&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.829 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2025-08-06 13:44:08.829 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - begin
+2025-08-06 13:44:08.830 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@670ac207]
+2025-08-06 13:44:08.830 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.830 [Test worker] DEBUG o.hibernate.engine.spi.ActionQueue - Executing identity-insert immediately
+2025-08-06 13:44:08.830 [Test worker] DEBUG org.hibernate.SQL - insert into site_category (body_select_id,category_list_url,category_name,category_url,contents_url_select_id,delete_flg,last_scan_time,list_record_select_id,more_body_select_id,site_info_id,target_category,title_record_select_id,site_category_id) values (?,?,?,?,?,?,?,?,?,?,?,?,default)
+Hibernate: insert into site_category (body_select_id,category_list_url,category_name,category_url,contents_url_select_id,delete_flg,last_scan_time,list_record_select_id,more_body_select_id,site_info_id,target_category,title_record_select_id,site_category_id) values (?,?,?,?,?,?,?,?,?,?,?,?,default)
+2025-08-06 13:44:08.830 [Test worker] DEBUG org.hibernate.orm.results - Initializer list is empty
+2025-08-06 13:44:08.830 [Test worker] DEBUG o.h.id.IdentifierGeneratorHelper - Extracted generated values [com.happinesea.webcrawler.entity.SiteCategory]: [Ljava.lang.Object;@11ebe278
+2025-08-06 13:44:08.830 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-08-06 13:44:08.830 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(1991261872&lt;open&gt;)]
+2025-08-06 13:44:08.830 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - committing
+2025-08-06 13:44:08.831 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+2025-08-06 13:44:08.831 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+2025-08-06 13:44:08.831 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2025-08-06 13:44:08.831 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2025-08-06 13:44:08.831 [Test worker] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+2025-08-06 13:44:08.831 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteCategory{lastScanTime=null, titleRecordSelectId=null, deleteFlg=null, bodySelectId=null, contentsUrlSelectId=null, siteInfo=com.happinesea.webcrawler.entity.SiteInfo#8, categoryName=name2, siteCategoryId=10, targetCategory=null, listRecordSelectId=null, categoryUrl=null, moreBodySelectId=null, categoryListUrl=null}
+2025-08-06 13:44:08.831 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(1991261872&lt;open&gt;)] after transaction
+2025-08-06 13:44:08.831 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-08-06 13:44:08.831 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(855517296&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.831 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2025-08-06 13:44:08.831 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - begin
+2025-08-06 13:44:08.831 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@71c7a55b]
+2025-08-06 13:44:08.831 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.832 [Test worker] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE
+2025-08-06 13:44:08.832 [Test worker] DEBUG org.hibernate.SQL - select sipp1_0.site_info_process_id,sipp1_0.process_id,sipp1_0.process_status,sipp1_0.process_time,sipp1_0.site_category_id from site_info_process_pool sipp1_0 where sipp1_0.site_info_process_id=?
+Hibernate: select sipp1_0.site_info_process_id,sipp1_0.process_id,sipp1_0.process_status,sipp1_0.process_time,sipp1_0.site_category_id from site_info_process_pool sipp1_0 where sipp1_0.site_info_process_id=?
+2025-08-06 13:44:08.832 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-08-06 13:44:08.832 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(855517296&lt;open&gt;)]
+2025-08-06 13:44:08.832 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - committing
+2025-08-06 13:44:08.832 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+2025-08-06 13:44:08.832 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+2025-08-06 13:44:08.832 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 insertions, 1 updates, 0 deletions to 1 objects
+2025-08-06 13:44:08.832 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2025-08-06 13:44:08.833 [Test worker] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+2025-08-06 13:44:08.833 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteInfoProcessPool{processStatus=NONE, processId=null, siteCategory=&lt;uninitialized&gt;, processTime=2025-08-06T13:44:08.831531863, siteInfoProcessId=1}
+2025-08-06 13:44:08.833 [Test worker] DEBUG org.hibernate.SQL - update site_info_process_pool set process_id=?,process_status=?,process_time=?,site_category_id=? where site_info_process_id=?
+Hibernate: update site_info_process_pool set process_id=?,process_status=?,process_time=?,site_category_id=? where site_info_process_id=?
+2025-08-06 13:44:08.833 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(855517296&lt;open&gt;)] after transaction
+2025-08-06 13:44:08.834 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 233, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.834 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-08-06 13:44:08.834 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(628428920&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.834 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2025-08-06 13:44:08.834 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - begin
+2025-08-06 13:44:08.834 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@2183bca]
+2025-08-06 13:44:08.834 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.834 [Test worker] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE
+2025-08-06 13:44:08.834 [Test worker] DEBUG org.hibernate.SQL - select sipp1_0.site_info_process_id,sipp1_0.process_id,sipp1_0.process_status,sipp1_0.process_time,sipp1_0.site_category_id from site_info_process_pool sipp1_0 where sipp1_0.site_info_process_id=?
+Hibernate: select sipp1_0.site_info_process_id,sipp1_0.process_id,sipp1_0.process_status,sipp1_0.process_time,sipp1_0.site_category_id from site_info_process_pool sipp1_0 where sipp1_0.site_info_process_id=?
+2025-08-06 13:44:08.835 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-08-06 13:44:08.835 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(628428920&lt;open&gt;)]
+2025-08-06 13:44:08.835 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - committing
+2025-08-06 13:44:08.835 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+2025-08-06 13:44:08.835 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+2025-08-06 13:44:08.835 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 1 insertions, 0 updates, 0 deletions to 1 objects
+2025-08-06 13:44:08.835 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2025-08-06 13:44:08.835 [Test worker] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+2025-08-06 13:44:08.835 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteInfoProcessPool{processStatus=PROCESSING, processId=null, siteCategory=&lt;uninitialized&gt;, processTime=2025-08-06T13:44:08.834396463, siteInfoProcessId=2}
+2025-08-06 13:44:08.835 [Test worker] DEBUG org.hibernate.SQL - insert into site_info_process_pool (process_id,process_status,process_time,site_category_id,site_info_process_id) values (?,?,?,?,?)
+Hibernate: insert into site_info_process_pool (process_id,process_status,process_time,site_category_id,site_info_process_id) values (?,?,?,?,?)
+2025-08-06 13:44:08.836 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(628428920&lt;open&gt;)] after transaction
+2025-08-06 13:44:08.836 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [com.happinesea.webcrawler.service.SiteContentsService.saveAllProcessPools]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-08-06 13:44:08.836 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(1899248174&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.836 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2025-08-06 13:44:08.836 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - begin
+2025-08-06 13:44:08.836 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@6177c7e9]
+2025-08-06 13:44:08.837 [Test worker] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = NORMAL
+2025-08-06 13:44:08.837 [Test worker] DEBUG org.hibernate.SQL - select sc1_0.site_contents_id,sc1_0.contents,sc1_0.process_status,sc1_0.site_categoy_id,sc1_0.title,sc1_0.url from site_contents sc1_0 where sc1_0.site_categoy_id=? and sc1_0.process_status=? order by sc1_0.site_contents_id
+Hibernate: select sc1_0.site_contents_id,sc1_0.contents,sc1_0.process_status,sc1_0.site_categoy_id,sc1_0.title,sc1_0.url from site_contents sc1_0 where sc1_0.site_categoy_id=? and sc1_0.process_status=? order by sc1_0.site_contents_id
+2025-08-06 13:44:08.838 [Test worker] DEBUG c.h.w.service.SiteContentsService - send cms  : []
+2025-08-06 13:44:08.838 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(1899248174&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.838 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating in existing transaction
+2025-08-06 13:44:08.838 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.838 [Test worker] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE
+2025-08-06 13:44:08.838 [Test worker] DEBUG org.hibernate.SQL - select sipp1_0.site_info_process_id,sipp1_0.process_id,sipp1_0.process_status,sipp1_0.process_time,sipp1_0.site_category_id from site_info_process_pool sipp1_0 where sipp1_0.site_info_process_id=?
+Hibernate: select sipp1_0.site_info_process_id,sipp1_0.process_id,sipp1_0.process_status,sipp1_0.process_time,sipp1_0.site_category_id from site_info_process_pool sipp1_0 where sipp1_0.site_info_process_id=?
+2025-08-06 13:44:08.839 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-08-06 13:44:08.839 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(1899248174&lt;open&gt;)]
+2025-08-06 13:44:08.839 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - committing
+2025-08-06 13:44:08.839 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+2025-08-06 13:44:08.839 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+2025-08-06 13:44:08.839 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 insertions, 1 updates, 0 deletions to 1 objects
+2025-08-06 13:44:08.839 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2025-08-06 13:44:08.839 [Test worker] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+2025-08-06 13:44:08.839 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteInfoProcessPool{processStatus=SUCCESS, processId=null, siteCategory=&lt;uninitialized&gt;, processTime=2025-08-06T13:44:08.838124274, siteInfoProcessId=2}
+2025-08-06 13:44:08.839 [Test worker] DEBUG org.hibernate.SQL - update site_info_process_pool set process_id=?,process_status=?,process_time=?,site_category_id=? where site_info_process_id=?
+Hibernate: update site_info_process_pool set process_id=?,process_status=?,process_time=?,site_category_id=? where site_info_process_id=?
+2025-08-06 13:44:08.840 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(1899248174&lt;open&gt;)] after transaction
+2025-08-06 13:44:08.840 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 234, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.840 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 235, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.841 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 236, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.841 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 237, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.841 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 238, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.841 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 239, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.841 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 240, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.841 [Test worker] DEBUG o.s.t.c.s.DirtiesContextTestExecutionListener - After test method: class [SiteContentsServiceTest], method [testSaveAllProcessPools], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2025-08-06 13:44:08.842 [Test worker] DEBUG o.s.t.c.w.ServletTestExecutionListener - Resetting RequestContextHolder for test class com.happinesea.webcrawler.service.SiteContentsServiceTest
+2025-08-06 13:44:08.842 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 241, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.842 [Test worker] DEBUG o.s.t.c.w.ServletTestExecutionListener - Setting up MockHttpServletRequest, MockHttpServletResponse, ServletWebRequest, and RequestContextHolder for test class com.happinesea.webcrawler.service.SiteContentsServiceTest
+2025-08-06 13:44:08.842 [Test worker] DEBUG o.s.t.c.s.DependencyInjectionTestExecutionListener - Performing dependency injection for test class com.happinesea.webcrawler.service.SiteContentsServiceTest
+2025-08-06 13:44:08.842 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 242, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.843 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 243, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.843 [Test worker] DEBUG o.s.t.c.s.DirtiesContextBeforeModesTestExecutionListener - Before test method: class [SiteContentsServiceTest], method [testChangSiteInfoProcess2Sucess], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2025-08-06 13:44:08.843 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 244, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.843 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 245, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.844 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 246, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.844 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-08-06 13:44:08.844 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(693399211&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.844 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2025-08-06 13:44:08.844 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - begin
+2025-08-06 13:44:08.844 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@791a231a]
+2025-08-06 13:44:08.844 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.845 [Test worker] DEBUG o.hibernate.engine.spi.ActionQueue - Executing identity-insert immediately
+2025-08-06 13:44:08.845 [Test worker] DEBUG org.hibernate.SQL - insert into site_info (contents_type,delete_flg,logo_url,site_name,site_url,site_info_id) values (?,?,?,?,?,default)
+Hibernate: insert into site_info (contents_type,delete_flg,logo_url,site_name,site_url,site_info_id) values (?,?,?,?,?,default)
+2025-08-06 13:44:08.845 [Test worker] DEBUG org.hibernate.orm.results - Initializer list is empty
+2025-08-06 13:44:08.845 [Test worker] DEBUG o.h.id.IdentifierGeneratorHelper - Extracted generated values [com.happinesea.webcrawler.entity.SiteInfo]: [Ljava.lang.Object;@3d940d6f
+2025-08-06 13:44:08.845 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-08-06 13:44:08.845 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(693399211&lt;open&gt;)]
+2025-08-06 13:44:08.845 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - committing
+2025-08-06 13:44:08.845 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+2025-08-06 13:44:08.845 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+2025-08-06 13:44:08.846 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2025-08-06 13:44:08.846 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2025-08-06 13:44:08.846 [Test worker] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+2025-08-06 13:44:08.846 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteInfo{siteUrl=null, contentsType=null, deleteFlg=null, siteName=null, siteInfoId=9, logoUrl=null}
+2025-08-06 13:44:08.846 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(693399211&lt;open&gt;)] after transaction
+2025-08-06 13:44:08.846 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-08-06 13:44:08.846 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(503928984&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.846 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2025-08-06 13:44:08.846 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - begin
+2025-08-06 13:44:08.846 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@6f0fbc3e]
+2025-08-06 13:44:08.846 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.846 [Test worker] DEBUG o.hibernate.engine.spi.ActionQueue - Executing identity-insert immediately
+2025-08-06 13:44:08.847 [Test worker] DEBUG org.hibernate.SQL - insert into site_category (body_select_id,category_list_url,category_name,category_url,contents_url_select_id,delete_flg,last_scan_time,list_record_select_id,more_body_select_id,site_info_id,target_category,title_record_select_id,site_category_id) values (?,?,?,?,?,?,?,?,?,?,?,?,default)
+Hibernate: insert into site_category (body_select_id,category_list_url,category_name,category_url,contents_url_select_id,delete_flg,last_scan_time,list_record_select_id,more_body_select_id,site_info_id,target_category,title_record_select_id,site_category_id) values (?,?,?,?,?,?,?,?,?,?,?,?,default)
+2025-08-06 13:44:08.847 [Test worker] DEBUG org.hibernate.orm.results - Initializer list is empty
+2025-08-06 13:44:08.847 [Test worker] DEBUG o.h.id.IdentifierGeneratorHelper - Extracted generated values [com.happinesea.webcrawler.entity.SiteCategory]: [Ljava.lang.Object;@66fd6d0f
+2025-08-06 13:44:08.847 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-08-06 13:44:08.847 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(503928984&lt;open&gt;)]
+2025-08-06 13:44:08.847 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - committing
+2025-08-06 13:44:08.847 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+2025-08-06 13:44:08.847 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+2025-08-06 13:44:08.847 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2025-08-06 13:44:08.847 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2025-08-06 13:44:08.847 [Test worker] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+2025-08-06 13:44:08.848 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteCategory{lastScanTime=null, titleRecordSelectId=null, deleteFlg=null, bodySelectId=null, contentsUrlSelectId=null, siteInfo=com.happinesea.webcrawler.entity.SiteInfo#9, categoryName=name1, siteCategoryId=11, targetCategory=null, listRecordSelectId=null, categoryUrl=null, moreBodySelectId=null, categoryListUrl=null}
+2025-08-06 13:44:08.848 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(503928984&lt;open&gt;)] after transaction
+2025-08-06 13:44:08.848 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-08-06 13:44:08.848 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(861585788&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.848 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2025-08-06 13:44:08.848 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - begin
+2025-08-06 13:44:08.848 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@782e100d]
+2025-08-06 13:44:08.848 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.848 [Test worker] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE
+2025-08-06 13:44:08.848 [Test worker] DEBUG org.hibernate.SQL - select si1_0.site_info_id,si1_0.contents_type,si1_0.delete_flg,si1_0.logo_url,si1_0.site_name,si1_0.site_url from site_info si1_0 where si1_0.site_info_id=?
+Hibernate: select si1_0.site_info_id,si1_0.contents_type,si1_0.delete_flg,si1_0.logo_url,si1_0.site_name,si1_0.site_url from site_info si1_0 where si1_0.site_info_id=?
+2025-08-06 13:44:08.849 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-08-06 13:44:08.849 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(861585788&lt;open&gt;)]
+2025-08-06 13:44:08.849 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - committing
+2025-08-06 13:44:08.849 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+2025-08-06 13:44:08.849 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+2025-08-06 13:44:08.849 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2025-08-06 13:44:08.849 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2025-08-06 13:44:08.849 [Test worker] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+2025-08-06 13:44:08.849 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteInfo{siteUrl=null, contentsType=null, deleteFlg=null, siteName=null, siteInfoId=9, logoUrl=null}
+2025-08-06 13:44:08.849 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(861585788&lt;open&gt;)] after transaction
+2025-08-06 13:44:08.849 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-08-06 13:44:08.849 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(610296489&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.849 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2025-08-06 13:44:08.849 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - begin
+2025-08-06 13:44:08.849 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@32194945]
+2025-08-06 13:44:08.849 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.850 [Test worker] DEBUG o.hibernate.engine.spi.ActionQueue - Executing identity-insert immediately
+2025-08-06 13:44:08.850 [Test worker] DEBUG org.hibernate.SQL - insert into site_category (body_select_id,category_list_url,category_name,category_url,contents_url_select_id,delete_flg,last_scan_time,list_record_select_id,more_body_select_id,site_info_id,target_category,title_record_select_id,site_category_id) values (?,?,?,?,?,?,?,?,?,?,?,?,default)
+Hibernate: insert into site_category (body_select_id,category_list_url,category_name,category_url,contents_url_select_id,delete_flg,last_scan_time,list_record_select_id,more_body_select_id,site_info_id,target_category,title_record_select_id,site_category_id) values (?,?,?,?,?,?,?,?,?,?,?,?,default)
+2025-08-06 13:44:08.850 [Test worker] DEBUG org.hibernate.orm.results - Initializer list is empty
+2025-08-06 13:44:08.850 [Test worker] DEBUG o.h.id.IdentifierGeneratorHelper - Extracted generated values [com.happinesea.webcrawler.entity.SiteCategory]: [Ljava.lang.Object;@6e8f37d9
+2025-08-06 13:44:08.850 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-08-06 13:44:08.850 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(610296489&lt;open&gt;)]
+2025-08-06 13:44:08.850 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - committing
+2025-08-06 13:44:08.850 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+2025-08-06 13:44:08.851 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+2025-08-06 13:44:08.851 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2025-08-06 13:44:08.851 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2025-08-06 13:44:08.851 [Test worker] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+2025-08-06 13:44:08.851 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteCategory{lastScanTime=null, titleRecordSelectId=null, deleteFlg=null, bodySelectId=null, contentsUrlSelectId=null, siteInfo=com.happinesea.webcrawler.entity.SiteInfo#9, categoryName=name2, siteCategoryId=12, targetCategory=null, listRecordSelectId=null, categoryUrl=null, moreBodySelectId=null, categoryListUrl=null}
+2025-08-06 13:44:08.851 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(610296489&lt;open&gt;)] after transaction
+2025-08-06 13:44:08.851 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-08-06 13:44:08.851 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(415032254&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.851 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2025-08-06 13:44:08.851 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - begin
+2025-08-06 13:44:08.851 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@5b600af1]
+2025-08-06 13:44:08.851 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.851 [Test worker] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE
+2025-08-06 13:44:08.851 [Test worker] DEBUG org.hibernate.SQL - select sipp1_0.site_info_process_id,sipp1_0.process_id,sipp1_0.process_status,sipp1_0.process_time,sipp1_0.site_category_id from site_info_process_pool sipp1_0 where sipp1_0.site_info_process_id=?
+Hibernate: select sipp1_0.site_info_process_id,sipp1_0.process_id,sipp1_0.process_status,sipp1_0.process_time,sipp1_0.site_category_id from site_info_process_pool sipp1_0 where sipp1_0.site_info_process_id=?
+2025-08-06 13:44:08.852 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-08-06 13:44:08.852 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(415032254&lt;open&gt;)]
+2025-08-06 13:44:08.852 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - committing
+2025-08-06 13:44:08.852 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+2025-08-06 13:44:08.852 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+2025-08-06 13:44:08.852 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 insertions, 1 updates, 0 deletions to 1 objects
+2025-08-06 13:44:08.852 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2025-08-06 13:44:08.852 [Test worker] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+2025-08-06 13:44:08.852 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteInfoProcessPool{processStatus=NONE, processId=null, siteCategory=&lt;uninitialized&gt;, processTime=2025-08-06T13:44:08.851451092, siteInfoProcessId=1}
+2025-08-06 13:44:08.852 [Test worker] DEBUG org.hibernate.SQL - update site_info_process_pool set process_id=?,process_status=?,process_time=?,site_category_id=? where site_info_process_id=?
+Hibernate: update site_info_process_pool set process_id=?,process_status=?,process_time=?,site_category_id=? where site_info_process_id=?
+2025-08-06 13:44:08.853 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(415032254&lt;open&gt;)] after transaction
+2025-08-06 13:44:08.853 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 247, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.854 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [com.happinesea.webcrawler.service.SiteContentsService.changSiteInfoProcess2Sucess]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-08-06 13:44:08.854 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(352841938&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.854 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2025-08-06 13:44:08.854 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - begin
+2025-08-06 13:44:08.854 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@6b793102]
+2025-08-06 13:44:08.854 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(352841938&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.854 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating in existing transaction
+2025-08-06 13:44:08.854 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.854 [Test worker] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE
+2025-08-06 13:44:08.854 [Test worker] DEBUG org.hibernate.SQL - select sipp1_0.site_info_process_id,sipp1_0.process_id,sipp1_0.process_status,sipp1_0.process_time,sipp1_0.site_category_id from site_info_process_pool sipp1_0 where sipp1_0.site_info_process_id=?
+Hibernate: select sipp1_0.site_info_process_id,sipp1_0.process_id,sipp1_0.process_status,sipp1_0.process_time,sipp1_0.site_category_id from site_info_process_pool sipp1_0 where sipp1_0.site_info_process_id=?
+2025-08-06 13:44:08.855 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-08-06 13:44:08.855 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(352841938&lt;open&gt;)]
+2025-08-06 13:44:08.855 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - committing
+2025-08-06 13:44:08.855 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+2025-08-06 13:44:08.855 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+2025-08-06 13:44:08.855 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 insertions, 1 updates, 0 deletions to 1 objects
+2025-08-06 13:44:08.855 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2025-08-06 13:44:08.855 [Test worker] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+2025-08-06 13:44:08.855 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteInfoProcessPool{processStatus=SUCCESS, processId=null, siteCategory=&lt;uninitialized&gt;, processTime=2025-08-06T13:44:08.854411984, siteInfoProcessId=1}
+2025-08-06 13:44:08.855 [Test worker] DEBUG org.hibernate.SQL - update site_info_process_pool set process_id=?,process_status=?,process_time=?,site_category_id=? where site_info_process_id=?
+Hibernate: update site_info_process_pool set process_id=?,process_status=?,process_time=?,site_category_id=? where site_info_process_id=?
+2025-08-06 13:44:08.856 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(352841938&lt;open&gt;)] after transaction
+2025-08-06 13:44:08.856 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 248, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.856 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 249, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.857 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 250, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.857 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 251, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.857 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 252, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.857 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 253, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.858 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 254, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.858 [Test worker] DEBUG o.s.t.c.s.DirtiesContextTestExecutionListener - After test method: class [SiteContentsServiceTest], method [testChangSiteInfoProcess2Sucess], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2025-08-06 13:44:08.858 [Test worker] DEBUG o.s.t.c.w.ServletTestExecutionListener - Resetting RequestContextHolder for test class com.happinesea.webcrawler.service.SiteContentsServiceTest
+2025-08-06 13:44:08.858 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 255, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.858 [Test worker] DEBUG o.s.t.c.w.ServletTestExecutionListener - Setting up MockHttpServletRequest, MockHttpServletResponse, ServletWebRequest, and RequestContextHolder for test class com.happinesea.webcrawler.service.SiteContentsServiceTest
+2025-08-06 13:44:08.858 [Test worker] DEBUG o.s.t.c.s.DependencyInjectionTestExecutionListener - Performing dependency injection for test class com.happinesea.webcrawler.service.SiteContentsServiceTest
+2025-08-06 13:44:08.858 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 256, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.859 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 257, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.859 [Test worker] DEBUG o.s.t.c.s.DirtiesContextBeforeModesTestExecutionListener - Before test method: class [SiteContentsServiceTest], method [testBulkInsertIfNotExists], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2025-08-06 13:44:08.859 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 258, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.859 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 259, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.860 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 260, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.860 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-08-06 13:44:08.860 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(1794045617&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.860 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2025-08-06 13:44:08.860 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - begin
+2025-08-06 13:44:08.860 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@6b16075]
+2025-08-06 13:44:08.861 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.861 [Test worker] DEBUG o.hibernate.engine.spi.ActionQueue - Executing identity-insert immediately
+2025-08-06 13:44:08.861 [Test worker] DEBUG org.hibernate.SQL - insert into site_info (contents_type,delete_flg,logo_url,site_name,site_url,site_info_id) values (?,?,?,?,?,default)
+Hibernate: insert into site_info (contents_type,delete_flg,logo_url,site_name,site_url,site_info_id) values (?,?,?,?,?,default)
+2025-08-06 13:44:08.861 [Test worker] DEBUG org.hibernate.orm.results - Initializer list is empty
+2025-08-06 13:44:08.861 [Test worker] DEBUG o.h.id.IdentifierGeneratorHelper - Extracted generated values [com.happinesea.webcrawler.entity.SiteInfo]: [Ljava.lang.Object;@5fa8e568
+2025-08-06 13:44:08.861 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-08-06 13:44:08.862 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(1794045617&lt;open&gt;)]
+2025-08-06 13:44:08.862 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - committing
+2025-08-06 13:44:08.862 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+2025-08-06 13:44:08.862 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+2025-08-06 13:44:08.862 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2025-08-06 13:44:08.862 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2025-08-06 13:44:08.862 [Test worker] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+2025-08-06 13:44:08.862 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteInfo{siteUrl=null, contentsType=null, deleteFlg=null, siteName=null, siteInfoId=10, logoUrl=null}
+2025-08-06 13:44:08.862 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(1794045617&lt;open&gt;)] after transaction
+2025-08-06 13:44:08.862 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-08-06 13:44:08.862 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(560297640&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.862 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2025-08-06 13:44:08.862 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - begin
+2025-08-06 13:44:08.862 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@73683346]
+2025-08-06 13:44:08.862 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.863 [Test worker] DEBUG o.hibernate.engine.spi.ActionQueue - Executing identity-insert immediately
+2025-08-06 13:44:08.863 [Test worker] DEBUG org.hibernate.SQL - insert into site_category (body_select_id,category_list_url,category_name,category_url,contents_url_select_id,delete_flg,last_scan_time,list_record_select_id,more_body_select_id,site_info_id,target_category,title_record_select_id,site_category_id) values (?,?,?,?,?,?,?,?,?,?,?,?,default)
+Hibernate: insert into site_category (body_select_id,category_list_url,category_name,category_url,contents_url_select_id,delete_flg,last_scan_time,list_record_select_id,more_body_select_id,site_info_id,target_category,title_record_select_id,site_category_id) values (?,?,?,?,?,?,?,?,?,?,?,?,default)
+2025-08-06 13:44:08.863 [Test worker] DEBUG org.hibernate.orm.results - Initializer list is empty
+2025-08-06 13:44:08.863 [Test worker] DEBUG o.h.id.IdentifierGeneratorHelper - Extracted generated values [com.happinesea.webcrawler.entity.SiteCategory]: [Ljava.lang.Object;@256532bb
+2025-08-06 13:44:08.863 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-08-06 13:44:08.863 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(560297640&lt;open&gt;)]
+2025-08-06 13:44:08.863 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - committing
+2025-08-06 13:44:08.863 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+2025-08-06 13:44:08.863 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+2025-08-06 13:44:08.864 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2025-08-06 13:44:08.864 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2025-08-06 13:44:08.864 [Test worker] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+2025-08-06 13:44:08.864 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteCategory{lastScanTime=null, titleRecordSelectId=null, deleteFlg=null, bodySelectId=null, contentsUrlSelectId=null, siteInfo=com.happinesea.webcrawler.entity.SiteInfo#10, categoryName=name1, siteCategoryId=13, targetCategory=null, listRecordSelectId=null, categoryUrl=null, moreBodySelectId=null, categoryListUrl=null}
+2025-08-06 13:44:08.864 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(560297640&lt;open&gt;)] after transaction
+2025-08-06 13:44:08.864 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-08-06 13:44:08.864 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(911919292&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.864 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2025-08-06 13:44:08.864 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - begin
+2025-08-06 13:44:08.864 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@781966ca]
+2025-08-06 13:44:08.864 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.864 [Test worker] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE
+2025-08-06 13:44:08.864 [Test worker] DEBUG org.hibernate.SQL - select si1_0.site_info_id,si1_0.contents_type,si1_0.delete_flg,si1_0.logo_url,si1_0.site_name,si1_0.site_url from site_info si1_0 where si1_0.site_info_id=?
+Hibernate: select si1_0.site_info_id,si1_0.contents_type,si1_0.delete_flg,si1_0.logo_url,si1_0.site_name,si1_0.site_url from site_info si1_0 where si1_0.site_info_id=?
+2025-08-06 13:44:08.865 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-08-06 13:44:08.865 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(911919292&lt;open&gt;)]
+2025-08-06 13:44:08.865 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - committing
+2025-08-06 13:44:08.865 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+2025-08-06 13:44:08.865 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+2025-08-06 13:44:08.865 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2025-08-06 13:44:08.865 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2025-08-06 13:44:08.865 [Test worker] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+2025-08-06 13:44:08.865 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteInfo{siteUrl=null, contentsType=null, deleteFlg=null, siteName=null, siteInfoId=10, logoUrl=null}
+2025-08-06 13:44:08.865 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(911919292&lt;open&gt;)] after transaction
+2025-08-06 13:44:08.865 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-08-06 13:44:08.866 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(1560217406&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.866 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2025-08-06 13:44:08.866 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - begin
+2025-08-06 13:44:08.866 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@5ee6984a]
+2025-08-06 13:44:08.866 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.866 [Test worker] DEBUG o.hibernate.engine.spi.ActionQueue - Executing identity-insert immediately
+2025-08-06 13:44:08.866 [Test worker] DEBUG org.hibernate.SQL - insert into site_category (body_select_id,category_list_url,category_name,category_url,contents_url_select_id,delete_flg,last_scan_time,list_record_select_id,more_body_select_id,site_info_id,target_category,title_record_select_id,site_category_id) values (?,?,?,?,?,?,?,?,?,?,?,?,default)
+Hibernate: insert into site_category (body_select_id,category_list_url,category_name,category_url,contents_url_select_id,delete_flg,last_scan_time,list_record_select_id,more_body_select_id,site_info_id,target_category,title_record_select_id,site_category_id) values (?,?,?,?,?,?,?,?,?,?,?,?,default)
+2025-08-06 13:44:08.866 [Test worker] DEBUG org.hibernate.orm.results - Initializer list is empty
+2025-08-06 13:44:08.866 [Test worker] DEBUG o.h.id.IdentifierGeneratorHelper - Extracted generated values [com.happinesea.webcrawler.entity.SiteCategory]: [Ljava.lang.Object;@4ba2b8e6
+2025-08-06 13:44:08.867 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-08-06 13:44:08.867 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(1560217406&lt;open&gt;)]
+2025-08-06 13:44:08.867 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - committing
+2025-08-06 13:44:08.867 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+2025-08-06 13:44:08.867 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+2025-08-06 13:44:08.867 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2025-08-06 13:44:08.867 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2025-08-06 13:44:08.867 [Test worker] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+2025-08-06 13:44:08.867 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteCategory{lastScanTime=null, titleRecordSelectId=null, deleteFlg=null, bodySelectId=null, contentsUrlSelectId=null, siteInfo=com.happinesea.webcrawler.entity.SiteInfo#10, categoryName=name2, siteCategoryId=14, targetCategory=null, listRecordSelectId=null, categoryUrl=null, moreBodySelectId=null, categoryListUrl=null}
+2025-08-06 13:44:08.867 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(1560217406&lt;open&gt;)] after transaction
+2025-08-06 13:44:08.867 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-08-06 13:44:08.867 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(317963901&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.867 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2025-08-06 13:44:08.867 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - begin
+2025-08-06 13:44:08.867 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@7ebc4932]
+2025-08-06 13:44:08.867 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.868 [Test worker] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE
+2025-08-06 13:44:08.868 [Test worker] DEBUG org.hibernate.SQL - select sipp1_0.site_info_process_id,sipp1_0.process_id,sipp1_0.process_status,sipp1_0.process_time,sipp1_0.site_category_id from site_info_process_pool sipp1_0 where sipp1_0.site_info_process_id=?
+Hibernate: select sipp1_0.site_info_process_id,sipp1_0.process_id,sipp1_0.process_status,sipp1_0.process_time,sipp1_0.site_category_id from site_info_process_pool sipp1_0 where sipp1_0.site_info_process_id=?
+2025-08-06 13:44:08.868 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-08-06 13:44:08.868 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(317963901&lt;open&gt;)]
+2025-08-06 13:44:08.868 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - committing
+2025-08-06 13:44:08.868 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+2025-08-06 13:44:08.868 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+2025-08-06 13:44:08.869 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 insertions, 1 updates, 0 deletions to 1 objects
+2025-08-06 13:44:08.869 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2025-08-06 13:44:08.869 [Test worker] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+2025-08-06 13:44:08.869 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteInfoProcessPool{processStatus=NONE, processId=null, siteCategory=&lt;uninitialized&gt;, processTime=2025-08-06T13:44:08.867689018, siteInfoProcessId=1}
+2025-08-06 13:44:08.869 [Test worker] DEBUG org.hibernate.SQL - update site_info_process_pool set process_id=?,process_status=?,process_time=?,site_category_id=? where site_info_process_id=?
+Hibernate: update site_info_process_pool set process_id=?,process_status=?,process_time=?,site_category_id=? where site_info_process_id=?
+2025-08-06 13:44:08.869 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(317963901&lt;open&gt;)] after transaction
+2025-08-06 13:44:08.870 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 261, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.870 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [com.happinesea.webcrawler.service.SiteContentsService.bulkInsertIfNotExists]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-08-06 13:44:08.870 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(379691007&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.870 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2025-08-06 13:44:08.870 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - begin
+2025-08-06 13:44:08.870 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@2949b708]
+2025-08-06 13:44:08.871 [Test worker] DEBUG org.hibernate.orm.sql.ast.create - Created new SQL alias : sc1_0
+2025-08-06 13:44:08.871 [Test worker] DEBUG org.hibernate.orm.sql.ast.create - Registration of TableGroup [StandardTableGroup(com.happinesea.webcrawler.entity.SiteContents(8))] with identifierForTableGroup [com.happinesea.webcrawler.entity.SiteContents] for NavigablePath [com.happinesea.webcrawler.entity.SiteContents] 
+2025-08-06 13:44:08.871 [Test worker] DEBUG org.hibernate.orm.sql.ast.create - Registration of TableGroup [org.hibernate.sql.ast.tree.from.LazyTableGroup@3a2df8d1] with identifierForTableGroup [com.happinesea.webcrawler.entity.SiteContents(8).siteCategory] for NavigablePath [com.happinesea.webcrawler.entity.SiteContents(8).siteCategory] 
+2025-08-06 13:44:08.872 [Test worker] DEBUG o.h.q.s.sql.BaseSqmToSqlAstConverter - Determining mapping-model type for SqmParameter : org.hibernate.query.sqm.tree.expression.SqmJpaCriteriaParameterWrapper@48f74916
+2025-08-06 13:44:08.872 [Test worker] DEBUG o.h.q.s.sql.BaseSqmToSqlAstConverter - Determining mapping-model type for SqmPath : SqmBasicValuedSimplePath(com.happinesea.webcrawler.entity.SiteContents(8).url) 
+2025-08-06 13:44:08.872 [Test worker] DEBUG o.h.q.s.sql.BaseSqmToSqlAstConverter - Determining mapping-model type for SqmParameter : org.hibernate.query.sqm.tree.expression.SqmJpaCriteriaParameterWrapper@1cc78e9
+2025-08-06 13:44:08.872 [Test worker] DEBUG o.h.q.s.sql.BaseSqmToSqlAstConverter - Determining mapping-model type for SqmPath : SqmBasicValuedSimplePath(com.happinesea.webcrawler.entity.SiteContents(8).url) 
+2025-08-06 13:44:08.872 [Test worker] DEBUG o.h.q.s.sql.BaseSqmToSqlAstConverter - Determining mapping-model type for SqmParameter : org.hibernate.query.sqm.tree.expression.SqmJpaCriteriaParameterWrapper@6a995f9c
+2025-08-06 13:44:08.872 [Test worker] DEBUG o.h.q.s.sql.BaseSqmToSqlAstConverter - Determining mapping-model type for SqmPath : SqmBasicValuedSimplePath(com.happinesea.webcrawler.entity.SiteContents(8).url) 
+2025-08-06 13:44:08.872 [Test worker] DEBUG o.h.q.s.sql.BaseSqmToSqlAstConverter - Determining mapping-model type for SqmParameter : org.hibernate.query.sqm.tree.expression.SqmJpaCriteriaParameterWrapper@7208e97c
+2025-08-06 13:44:08.872 [Test worker] DEBUG o.h.q.s.sql.BaseSqmToSqlAstConverter - Determining mapping-model type for SqmPath : SqmBasicValuedSimplePath(com.happinesea.webcrawler.entity.SiteContents(8).url) 
+2025-08-06 13:44:08.872 [Test worker] DEBUG org.hibernate.orm.results.graph.AST - DomainResult Graph:
+ \-EntityResultImpl [com.happinesea.webcrawler.entity.SiteContents(8)]
+ |  +-BasicFetch [com.happinesea.webcrawler.entity.SiteContents(8).contents]
+ |  +-BasicFetch [com.happinesea.webcrawler.entity.SiteContents(8).processStatus]
+ |  +-EntityDelayedFetchImpl [com.happinesea.webcrawler.entity.SiteContents(8).siteCategory]
+ |  +-BasicFetch [com.happinesea.webcrawler.entity.SiteContents(8).title]
+ |  \-BasicFetch [com.happinesea.webcrawler.entity.SiteContents(8).url]
+
+2025-08-06 13:44:08.872 [Test worker] DEBUG org.hibernate.orm.sql.ast.tree - SQL AST Tree:
+    SelectStatement {
+      FromClause {
+        StandardTableGroup (sc1 : com.happinesea.webcrawler.entity.SiteContents(8)) {
+          primaryTableReference : site_contents as sc1_0
+          TableGroupJoins {
+            left  join LazyTableGroup (sc2 : com.happinesea.webcrawler.entity.SiteContents(8).siteCategory) {
+            }
+          }
+        }
+      }
+    }
+
+2025-08-06 13:44:08.873 [Test worker] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = NORMAL
+2025-08-06 13:44:08.873 [Test worker] DEBUG org.hibernate.SQL - select sc1_0.site_contents_id,sc1_0.contents,sc1_0.process_status,sc1_0.site_categoy_id,sc1_0.title,sc1_0.url from site_contents sc1_0 where sc1_0.url in (?,?,?,?)
+Hibernate: select sc1_0.site_contents_id,sc1_0.contents,sc1_0.process_status,sc1_0.site_categoy_id,sc1_0.title,sc1_0.url from site_contents sc1_0 where sc1_0.url in (?,?,?,?)
+2025-08-06 13:44:08.873 [Test worker] DEBUG org.hibernate.orm.results - Initializer list:
+	  com.happinesea.webcrawler.entity.SiteContents(8).siteCategory -&gt; EntityDelayedFetchInitializer(com.happinesea.webcrawler.entity.SiteContents(8).siteCategory)@2029630625 (ToOneAttributeMapping(NavigableRole[com.happinesea.webcrawler.entity.SiteContents.siteCategory])@525062099)
+	  com.happinesea.webcrawler.entity.SiteContents(8) -&gt; EntityJoinedFetchInitializer(com.happinesea.webcrawler.entity.SiteContents(8))@219614716 (SingleTableEntityPersister(com.happinesea.webcrawler.entity.SiteContents))
+
+2025-08-06 13:44:08.874 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(379691007&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.874 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating in existing transaction
+2025-08-06 13:44:08.874 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.874 [Test worker] DEBUG o.hibernate.engine.spi.ActionQueue - Executing identity-insert immediately
+2025-08-06 13:44:08.874 [Test worker] DEBUG org.hibernate.SQL - insert into site_contents (contents,process_status,site_categoy_id,title,url,site_contents_id) values (?,?,?,?,?,default)
+Hibernate: insert into site_contents (contents,process_status,site_categoy_id,title,url,site_contents_id) values (?,?,?,?,?,default)
+2025-08-06 13:44:08.875 [Test worker] DEBUG org.hibernate.orm.results - Initializer list is empty
+2025-08-06 13:44:08.875 [Test worker] DEBUG o.h.id.IdentifierGeneratorHelper - Extracted generated values [com.happinesea.webcrawler.entity.SiteContents]: [Ljava.lang.Object;@4d8f0c11
+2025-08-06 13:44:08.875 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.875 [Test worker] DEBUG o.hibernate.engine.spi.ActionQueue - Executing identity-insert immediately
+2025-08-06 13:44:08.875 [Test worker] DEBUG org.hibernate.SQL - insert into site_contents (contents,process_status,site_categoy_id,title,url,site_contents_id) values (?,?,?,?,?,default)
+Hibernate: insert into site_contents (contents,process_status,site_categoy_id,title,url,site_contents_id) values (?,?,?,?,?,default)
+2025-08-06 13:44:08.875 [Test worker] DEBUG org.hibernate.orm.results - Initializer list is empty
+2025-08-06 13:44:08.876 [Test worker] DEBUG o.h.id.IdentifierGeneratorHelper - Extracted generated values [com.happinesea.webcrawler.entity.SiteContents]: [Ljava.lang.Object;@6d5068a7
+2025-08-06 13:44:08.876 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.876 [Test worker] DEBUG o.hibernate.engine.spi.ActionQueue - Executing identity-insert immediately
+2025-08-06 13:44:08.876 [Test worker] DEBUG org.hibernate.SQL - insert into site_contents (contents,process_status,site_categoy_id,title,url,site_contents_id) values (?,?,?,?,?,default)
+Hibernate: insert into site_contents (contents,process_status,site_categoy_id,title,url,site_contents_id) values (?,?,?,?,?,default)
+2025-08-06 13:44:08.876 [Test worker] DEBUG org.hibernate.orm.results - Initializer list is empty
+2025-08-06 13:44:08.876 [Test worker] DEBUG o.h.id.IdentifierGeneratorHelper - Extracted generated values [com.happinesea.webcrawler.entity.SiteContents]: [Ljava.lang.Object;@4bf5239d
+2025-08-06 13:44:08.876 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.876 [Test worker] DEBUG o.hibernate.engine.spi.ActionQueue - Executing identity-insert immediately
+2025-08-06 13:44:08.877 [Test worker] DEBUG org.hibernate.SQL - insert into site_contents (contents,process_status,site_categoy_id,title,url,site_contents_id) values (?,?,?,?,?,default)
+Hibernate: insert into site_contents (contents,process_status,site_categoy_id,title,url,site_contents_id) values (?,?,?,?,?,default)
+2025-08-06 13:44:08.877 [Test worker] DEBUG org.hibernate.orm.results - Initializer list is empty
+2025-08-06 13:44:08.877 [Test worker] DEBUG o.h.id.IdentifierGeneratorHelper - Extracted generated values [com.happinesea.webcrawler.entity.SiteContents]: [Ljava.lang.Object;@5a250f0e
+2025-08-06 13:44:08.877 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-08-06 13:44:08.877 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(379691007&lt;open&gt;)]
+2025-08-06 13:44:08.877 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - committing
+2025-08-06 13:44:08.877 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+2025-08-06 13:44:08.877 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+2025-08-06 13:44:08.878 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 0 deletions to 4 objects
+2025-08-06 13:44:08.878 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2025-08-06 13:44:08.878 [Test worker] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+2025-08-06 13:44:08.878 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteContents{siteContentsId=9, processStatus=NONE, contents=null, siteCategory=com.happinesea.webcrawler.entity.SiteCategory#13, title=null, url=http://url1}
+2025-08-06 13:44:08.878 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteContents{siteContentsId=11, processStatus=SUCCESS, contents=null, siteCategory=com.happinesea.webcrawler.entity.SiteCategory#13, title=null, url=http://url3}
+2025-08-06 13:44:08.878 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteContents{siteContentsId=10, processStatus=PROCESSING, contents=null, siteCategory=com.happinesea.webcrawler.entity.SiteCategory#13, title=null, url=http://url2}
+2025-08-06 13:44:08.878 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteContents{siteContentsId=12, processStatus=PROCESSING, contents=null, siteCategory=com.happinesea.webcrawler.entity.SiteCategory#13, title=null, url=http://url4}
+2025-08-06 13:44:08.878 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(379691007&lt;open&gt;)] after transaction
+2025-08-06 13:44:08.878 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAll]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,readOnly
+2025-08-06 13:44:08.879 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(376577608&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.879 [Test worker] DEBUG o.s.jdbc.datasource.DataSourceUtils - Setting JDBC Connection [HikariProxyConnection@1622458632 wrapping conn61: url=jdbc:h2:mem:testdb user=SA] read-only
+2025-08-06 13:44:08.879 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2025-08-06 13:44:08.879 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - begin
+2025-08-06 13:44:08.879 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@2d5d9ffe]
+2025-08-06 13:44:08.881 [Test worker] DEBUG org.hibernate.orm.sql.ast.create - Created new SQL alias : sc1_0
+2025-08-06 13:44:08.881 [Test worker] DEBUG org.hibernate.orm.sql.ast.create - Registration of TableGroup [StandardTableGroup(com.happinesea.webcrawler.entity.SiteContents(9))] with identifierForTableGroup [com.happinesea.webcrawler.entity.SiteContents] for NavigablePath [com.happinesea.webcrawler.entity.SiteContents] 
+2025-08-06 13:44:08.882 [Test worker] DEBUG org.hibernate.orm.sql.ast.create - Registration of TableGroup [org.hibernate.sql.ast.tree.from.LazyTableGroup@2ee39a02] with identifierForTableGroup [com.happinesea.webcrawler.entity.SiteContents(9).siteCategory] for NavigablePath [com.happinesea.webcrawler.entity.SiteContents(9).siteCategory] 
+2025-08-06 13:44:08.882 [Test worker] DEBUG org.hibernate.orm.results.graph.AST - DomainResult Graph:
+ \-EntityResultImpl [com.happinesea.webcrawler.entity.SiteContents(9)]
+ |  +-BasicFetch [com.happinesea.webcrawler.entity.SiteContents(9).contents]
+ |  +-BasicFetch [com.happinesea.webcrawler.entity.SiteContents(9).processStatus]
+ |  +-EntityDelayedFetchImpl [com.happinesea.webcrawler.entity.SiteContents(9).siteCategory]
+ |  +-BasicFetch [com.happinesea.webcrawler.entity.SiteContents(9).title]
+ |  \-BasicFetch [com.happinesea.webcrawler.entity.SiteContents(9).url]
+
+2025-08-06 13:44:08.882 [Test worker] DEBUG org.hibernate.orm.sql.ast.tree - SQL AST Tree:
+    SelectStatement {
+      FromClause {
+        StandardTableGroup (sc1 : com.happinesea.webcrawler.entity.SiteContents(9)) {
+          primaryTableReference : site_contents as sc1_0
+          TableGroupJoins {
+            left  join LazyTableGroup (sc2 : com.happinesea.webcrawler.entity.SiteContents(9).siteCategory) {
+            }
+          }
+        }
+      }
+    }
+
+2025-08-06 13:44:08.882 [Test worker] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = NORMAL
+2025-08-06 13:44:08.882 [Test worker] DEBUG org.hibernate.SQL - select sc1_0.site_contents_id,sc1_0.contents,sc1_0.process_status,sc1_0.site_categoy_id,sc1_0.title,sc1_0.url from site_contents sc1_0
+Hibernate: select sc1_0.site_contents_id,sc1_0.contents,sc1_0.process_status,sc1_0.site_categoy_id,sc1_0.title,sc1_0.url from site_contents sc1_0
+2025-08-06 13:44:08.883 [Test worker] DEBUG org.hibernate.orm.results - Initializer list:
+	  com.happinesea.webcrawler.entity.SiteContents(9) -&gt; EntityJoinedFetchInitializer(com.happinesea.webcrawler.entity.SiteContents(9))@1992471049 (SingleTableEntityPersister(com.happinesea.webcrawler.entity.SiteContents))
+	  com.happinesea.webcrawler.entity.SiteContents(9).siteCategory -&gt; EntityDelayedFetchInitializer(com.happinesea.webcrawler.entity.SiteContents(9).siteCategory)@1153635673 (ToOneAttributeMapping(NavigableRole[com.happinesea.webcrawler.entity.SiteContents.siteCategory])@525062099)
+
+2025-08-06 13:44:08.884 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-08-06 13:44:08.884 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(376577608&lt;open&gt;)]
+2025-08-06 13:44:08.884 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - committing
+2025-08-06 13:44:08.884 [Test worker] DEBUG o.s.jdbc.datasource.DataSourceUtils - Resetting read-only flag of JDBC Connection [HikariProxyConnection@1622458632 wrapping conn61: url=jdbc:h2:mem:testdb user=SA]
+2025-08-06 13:44:08.884 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(376577608&lt;open&gt;)] after transaction
+2025-08-06 13:44:08.884 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 262, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.885 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 263, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.885 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 264, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.886 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 265, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.886 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 266, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.886 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 267, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.886 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 268, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.886 [Test worker] DEBUG o.s.t.c.s.DirtiesContextTestExecutionListener - After test method: class [SiteContentsServiceTest], method [testBulkInsertIfNotExists], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2025-08-06 13:44:08.886 [Test worker] DEBUG o.s.t.c.w.ServletTestExecutionListener - Resetting RequestContextHolder for test class com.happinesea.webcrawler.service.SiteContentsServiceTest
+2025-08-06 13:44:08.887 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 269, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.887 [Test worker] DEBUG o.s.t.c.w.ServletTestExecutionListener - Setting up MockHttpServletRequest, MockHttpServletResponse, ServletWebRequest, and RequestContextHolder for test class com.happinesea.webcrawler.service.SiteContentsServiceTest
+2025-08-06 13:44:08.887 [Test worker] DEBUG o.s.t.c.s.DependencyInjectionTestExecutionListener - Performing dependency injection for test class com.happinesea.webcrawler.service.SiteContentsServiceTest
+2025-08-06 13:44:08.887 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 270, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.887 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 271, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.888 [Test worker] DEBUG o.s.t.c.s.DirtiesContextBeforeModesTestExecutionListener - Before test method: class [SiteContentsServiceTest], method [testFindAliveProcess], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2025-08-06 13:44:08.888 [Test worker] DEBUG o.s.t.c.t.TransactionalTestExecutionListener - Explicit transaction definition [PROPAGATION_REQUIRED,ISOLATION_DEFAULT] found for test class [com.happinesea.webcrawler.service.SiteContentsServiceTest] and test method [testFindAliveProcess]
+2025-08-06 13:44:08.888 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 272, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.888 [Test worker] DEBUG o.s.t.c.t.TransactionalTestExecutionListener - No method-level @Rollback override: using default rollback [true] for test method [void com.happinesea.webcrawler.service.SiteContentsServiceTest.testFindAliveProcess()]
+2025-08-06 13:44:08.888 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [com.happinesea.webcrawler.service.SiteContentsServiceTest.testFindAliveProcess]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-08-06 13:44:08.888 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(629327171&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.888 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2025-08-06 13:44:08.888 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - begin
+2025-08-06 13:44:08.888 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@555c91f2]
+2025-08-06 13:44:08.889 [Test worker] DEBUG o.s.t.c.t.TransactionContext - Began transaction (1) for test class [com.happinesea.webcrawler.service.SiteContentsServiceTest]; test method [testFindAliveProcess]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@1b8a4c52]; rollback [true]
+2025-08-06 13:44:08.889 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 273, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.889 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 274, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.889 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 275, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.890 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(629327171&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.890 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating in existing transaction
+2025-08-06 13:44:08.890 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.890 [Test worker] DEBUG o.hibernate.engine.spi.ActionQueue - Executing identity-insert immediately
+2025-08-06 13:44:08.890 [Test worker] DEBUG org.hibernate.SQL - insert into site_info (contents_type,delete_flg,logo_url,site_name,site_url,site_info_id) values (?,?,?,?,?,default)
+Hibernate: insert into site_info (contents_type,delete_flg,logo_url,site_name,site_url,site_info_id) values (?,?,?,?,?,default)
+2025-08-06 13:44:08.890 [Test worker] DEBUG org.hibernate.orm.results - Initializer list is empty
+2025-08-06 13:44:08.891 [Test worker] DEBUG o.h.id.IdentifierGeneratorHelper - Extracted generated values [com.happinesea.webcrawler.entity.SiteInfo]: [Ljava.lang.Object;@1328eff7
+2025-08-06 13:44:08.891 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(629327171&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.891 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating in existing transaction
+2025-08-06 13:44:08.891 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.891 [Test worker] DEBUG o.hibernate.engine.spi.ActionQueue - Executing identity-insert immediately
+2025-08-06 13:44:08.891 [Test worker] DEBUG org.hibernate.SQL - insert into site_category (body_select_id,category_list_url,category_name,category_url,contents_url_select_id,delete_flg,last_scan_time,list_record_select_id,more_body_select_id,site_info_id,target_category,title_record_select_id,site_category_id) values (?,?,?,?,?,?,?,?,?,?,?,?,default)
+Hibernate: insert into site_category (body_select_id,category_list_url,category_name,category_url,contents_url_select_id,delete_flg,last_scan_time,list_record_select_id,more_body_select_id,site_info_id,target_category,title_record_select_id,site_category_id) values (?,?,?,?,?,?,?,?,?,?,?,?,default)
+2025-08-06 13:44:08.891 [Test worker] DEBUG org.hibernate.orm.results - Initializer list is empty
+2025-08-06 13:44:08.892 [Test worker] DEBUG o.h.id.IdentifierGeneratorHelper - Extracted generated values [com.happinesea.webcrawler.entity.SiteCategory]: [Ljava.lang.Object;@7f71156
+2025-08-06 13:44:08.892 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(629327171&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.892 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating in existing transaction
+2025-08-06 13:44:08.892 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.892 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(629327171&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.892 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating in existing transaction
+2025-08-06 13:44:08.892 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.892 [Test worker] DEBUG o.hibernate.engine.spi.ActionQueue - Executing identity-insert immediately
+2025-08-06 13:44:08.892 [Test worker] DEBUG org.hibernate.SQL - insert into site_category (body_select_id,category_list_url,category_name,category_url,contents_url_select_id,delete_flg,last_scan_time,list_record_select_id,more_body_select_id,site_info_id,target_category,title_record_select_id,site_category_id) values (?,?,?,?,?,?,?,?,?,?,?,?,default)
+Hibernate: insert into site_category (body_select_id,category_list_url,category_name,category_url,contents_url_select_id,delete_flg,last_scan_time,list_record_select_id,more_body_select_id,site_info_id,target_category,title_record_select_id,site_category_id) values (?,?,?,?,?,?,?,?,?,?,?,?,default)
+2025-08-06 13:44:08.892 [Test worker] DEBUG org.hibernate.orm.results - Initializer list is empty
+2025-08-06 13:44:08.893 [Test worker] DEBUG o.h.id.IdentifierGeneratorHelper - Extracted generated values [com.happinesea.webcrawler.entity.SiteCategory]: [Ljava.lang.Object;@5dca90c4
+2025-08-06 13:44:08.893 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(629327171&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.893 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating in existing transaction
+2025-08-06 13:44:08.893 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.893 [Test worker] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE
+2025-08-06 13:44:08.893 [Test worker] DEBUG org.hibernate.SQL - select sipp1_0.site_info_process_id,sipp1_0.process_id,sipp1_0.process_status,sipp1_0.process_time,sipp1_0.site_category_id from site_info_process_pool sipp1_0 where sipp1_0.site_info_process_id=?
+Hibernate: select sipp1_0.site_info_process_id,sipp1_0.process_id,sipp1_0.process_status,sipp1_0.process_time,sipp1_0.site_category_id from site_info_process_pool sipp1_0 where sipp1_0.site_info_process_id=?
+2025-08-06 13:44:08.894 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 276, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.894 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(629327171&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.894 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating in existing transaction
+2025-08-06 13:44:08.894 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.894 [Test worker] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE
+2025-08-06 13:44:08.894 [Test worker] DEBUG org.hibernate.SQL - select sipp1_0.site_info_process_id,sipp1_0.process_id,sipp1_0.process_status,sipp1_0.process_time,sipp1_0.site_category_id from site_info_process_pool sipp1_0 where sipp1_0.site_info_process_id=?
+Hibernate: select sipp1_0.site_info_process_id,sipp1_0.process_id,sipp1_0.process_status,sipp1_0.process_time,sipp1_0.site_category_id from site_info_process_pool sipp1_0 where sipp1_0.site_info_process_id=?
+2025-08-06 13:44:08.895 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+2025-08-06 13:44:08.896 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+2025-08-06 13:44:08.896 [Test worker] DEBUG org.hibernate.orm.sql.ast.create - Created new SQL alias : sipp1_0
+2025-08-06 13:44:08.896 [Test worker] DEBUG org.hibernate.orm.sql.ast.create - Registration of TableGroup [StandardTableGroup(com.happinesea.webcrawler.entity.SiteInfoProcessPool(6))] with identifierForTableGroup [com.happinesea.webcrawler.entity.SiteInfoProcessPool] for NavigablePath [com.happinesea.webcrawler.entity.SiteInfoProcessPool] 
+2025-08-06 13:44:08.896 [Test worker] DEBUG org.hibernate.orm.sql.ast.create - Registration of TableGroup [org.hibernate.sql.ast.tree.from.LazyTableGroup@ebb7ad7] with identifierForTableGroup [com.happinesea.webcrawler.entity.SiteInfoProcessPool(6).siteCategory] for NavigablePath [com.happinesea.webcrawler.entity.SiteInfoProcessPool(6).siteCategory] 
+2025-08-06 13:44:08.896 [Test worker] DEBUG o.h.q.s.sql.BaseSqmToSqlAstConverter - Determining mapping-model type for SqmParameter : org.hibernate.query.sqm.tree.expression.SqmJpaCriteriaParameterWrapper@2bb75752
+2025-08-06 13:44:08.896 [Test worker] DEBUG o.h.q.s.sql.BaseSqmToSqlAstConverter - Determining mapping-model type for SqmPath : SqmBasicValuedSimplePath(com.happinesea.webcrawler.entity.SiteInfoProcessPool(6).processStatus) 
+2025-08-06 13:44:08.896 [Test worker] DEBUG org.hibernate.orm.results.graph.AST - DomainResult Graph:
+ \-EntityResultImpl [com.happinesea.webcrawler.entity.SiteInfoProcessPool(6)]
+ |  +-BasicFetch [com.happinesea.webcrawler.entity.SiteInfoProcessPool(6).processId]
+ |  +-BasicFetch [com.happinesea.webcrawler.entity.SiteInfoProcessPool(6).processStatus]
+ |  +-BasicFetch [com.happinesea.webcrawler.entity.SiteInfoProcessPool(6).processTime]
+ |  \-EntityDelayedFetchImpl [com.happinesea.webcrawler.entity.SiteInfoProcessPool(6).siteCategory]
+
+2025-08-06 13:44:08.896 [Test worker] DEBUG org.hibernate.orm.sql.ast.tree - SQL AST Tree:
+    SelectStatement {
+      FromClause {
+        StandardTableGroup (sipp1 : com.happinesea.webcrawler.entity.SiteInfoProcessPool(6)) {
+          primaryTableReference : site_info_process_pool as sipp1_0
+          TableGroupJoins {
+            left  join LazyTableGroup (sc1 : com.happinesea.webcrawler.entity.SiteInfoProcessPool(6).siteCategory) {
+            }
+          }
+        }
+      }
+    }
+
+2025-08-06 13:44:08.897 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 insertions, 2 updates, 0 deletions to 5 objects
+2025-08-06 13:44:08.897 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2025-08-06 13:44:08.897 [Test worker] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+2025-08-06 13:44:08.897 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteInfo{siteUrl=null, contentsType=null, deleteFlg=null, siteName=null, siteInfoId=11, logoUrl=null}
+2025-08-06 13:44:08.897 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteCategory{lastScanTime=null, titleRecordSelectId=null, deleteFlg=null, bodySelectId=null, contentsUrlSelectId=null, siteInfo=com.happinesea.webcrawler.entity.SiteInfo#11, categoryName=name1, siteCategoryId=15, targetCategory=null, listRecordSelectId=null, categoryUrl=null, moreBodySelectId=null, categoryListUrl=null}
+2025-08-06 13:44:08.897 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteInfoProcessPool{processStatus=NONE, processId=null, siteCategory=com.happinesea.webcrawler.entity.SiteCategory#15, processTime=2025-08-06T13:44:08.893221221, siteInfoProcessId=1}
+2025-08-06 13:44:08.897 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteInfoProcessPool{processStatus=PROCESSING, processId=null, siteCategory=com.happinesea.webcrawler.entity.SiteCategory#16, processTime=2025-08-06T13:44:08.894584324, siteInfoProcessId=2}
+2025-08-06 13:44:08.897 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteCategory{lastScanTime=null, titleRecordSelectId=null, deleteFlg=null, bodySelectId=null, contentsUrlSelectId=null, siteInfo=com.happinesea.webcrawler.entity.SiteInfo#11, categoryName=name2, siteCategoryId=16, targetCategory=null, listRecordSelectId=null, categoryUrl=null, moreBodySelectId=null, categoryListUrl=null}
+2025-08-06 13:44:08.897 [Test worker] DEBUG o.hibernate.engine.spi.ActionQueue - Changes must be flushed to space: site_info_process_pool
+2025-08-06 13:44:08.897 [Test worker] DEBUG org.hibernate.SQL - update site_info_process_pool set process_id=?,process_status=?,process_time=?,site_category_id=? where site_info_process_id=?
+Hibernate: update site_info_process_pool set process_id=?,process_status=?,process_time=?,site_category_id=? where site_info_process_id=?
+2025-08-06 13:44:08.898 [Test worker] DEBUG org.hibernate.SQL - update site_info_process_pool set process_id=?,process_status=?,process_time=?,site_category_id=? where site_info_process_id=?
+Hibernate: update site_info_process_pool set process_id=?,process_status=?,process_time=?,site_category_id=? where site_info_process_id=?
+2025-08-06 13:44:08.898 [Test worker] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = NORMAL
+2025-08-06 13:44:08.898 [Test worker] DEBUG org.hibernate.SQL - select sipp1_0.site_info_process_id,sipp1_0.process_id,sipp1_0.process_status,sipp1_0.process_time,sipp1_0.site_category_id from site_info_process_pool sipp1_0 where sipp1_0.process_status&lt;&gt;?
+Hibernate: select sipp1_0.site_info_process_id,sipp1_0.process_id,sipp1_0.process_status,sipp1_0.process_time,sipp1_0.site_category_id from site_info_process_pool sipp1_0 where sipp1_0.process_status&lt;&gt;?
+2025-08-06 13:44:08.899 [Test worker] DEBUG org.hibernate.orm.results - Initializer list:
+	  com.happinesea.webcrawler.entity.SiteInfoProcessPool(6).siteCategory -&gt; EntityDelayedFetchInitializer(com.happinesea.webcrawler.entity.SiteInfoProcessPool(6).siteCategory)@1344579133 (ToOneAttributeMapping(NavigableRole[com.happinesea.webcrawler.entity.SiteInfoProcessPool.siteCategory])@980073751)
+	  com.happinesea.webcrawler.entity.SiteInfoProcessPool(6) -&gt; EntityJoinedFetchInitializer(com.happinesea.webcrawler.entity.SiteInfoProcessPool(6))@123214833 (SingleTableEntityPersister(com.happinesea.webcrawler.entity.SiteInfoProcessPool))
+
+2025-08-06 13:44:08.899 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 277, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.900 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 278, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.900 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 279, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.900 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 280, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.900 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 281, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.901 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 282, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.901 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 283, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.901 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction rollback
+2025-08-06 13:44:08.901 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Rolling back JPA transaction on EntityManager [SessionImpl(629327171&lt;open&gt;)]
+2025-08-06 13:44:08.901 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - rolling back
+2025-08-06 13:44:08.901 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(629327171&lt;open&gt;)] after transaction
+2025-08-06 13:44:08.901 [Test worker] DEBUG o.s.t.c.t.TransactionContext - Rolled back transaction (1) for test class [com.happinesea.webcrawler.service.SiteContentsServiceTest]; test method [testFindAliveProcess]
+2025-08-06 13:44:08.902 [Test worker] DEBUG o.s.t.c.s.DirtiesContextTestExecutionListener - After test method: class [SiteContentsServiceTest], method [testFindAliveProcess], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2025-08-06 13:44:08.902 [Test worker] DEBUG o.s.t.c.w.ServletTestExecutionListener - Resetting RequestContextHolder for test class com.happinesea.webcrawler.service.SiteContentsServiceTest
+2025-08-06 13:44:08.902 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 284, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.902 [Test worker] DEBUG o.s.t.c.w.ServletTestExecutionListener - Setting up MockHttpServletRequest, MockHttpServletResponse, ServletWebRequest, and RequestContextHolder for test class com.happinesea.webcrawler.service.SiteContentsServiceTest
+2025-08-06 13:44:08.902 [Test worker] DEBUG o.s.t.c.s.DependencyInjectionTestExecutionListener - Performing dependency injection for test class com.happinesea.webcrawler.service.SiteContentsServiceTest
+2025-08-06 13:44:08.902 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 285, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.902 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 286, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.903 [Test worker] DEBUG o.s.t.c.s.DirtiesContextBeforeModesTestExecutionListener - Before test method: class [SiteContentsServiceTest], method [testChangSiteInfoProcess2Fail], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2025-08-06 13:44:08.903 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 287, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.903 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 288, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.904 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 289, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.904 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-08-06 13:44:08.904 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(1096136943&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.904 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2025-08-06 13:44:08.904 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - begin
+2025-08-06 13:44:08.904 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@34b5ebb6]
+2025-08-06 13:44:08.904 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.904 [Test worker] DEBUG o.hibernate.engine.spi.ActionQueue - Executing identity-insert immediately
+2025-08-06 13:44:08.905 [Test worker] DEBUG org.hibernate.SQL - insert into site_info (contents_type,delete_flg,logo_url,site_name,site_url,site_info_id) values (?,?,?,?,?,default)
+Hibernate: insert into site_info (contents_type,delete_flg,logo_url,site_name,site_url,site_info_id) values (?,?,?,?,?,default)
+2025-08-06 13:44:08.905 [Test worker] DEBUG org.hibernate.orm.results - Initializer list is empty
+2025-08-06 13:44:08.905 [Test worker] DEBUG o.h.id.IdentifierGeneratorHelper - Extracted generated values [com.happinesea.webcrawler.entity.SiteInfo]: [Ljava.lang.Object;@4592b732
+2025-08-06 13:44:08.905 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-08-06 13:44:08.905 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(1096136943&lt;open&gt;)]
+2025-08-06 13:44:08.905 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - committing
+2025-08-06 13:44:08.905 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+2025-08-06 13:44:08.905 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+2025-08-06 13:44:08.905 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2025-08-06 13:44:08.906 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2025-08-06 13:44:08.906 [Test worker] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+2025-08-06 13:44:08.906 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteInfo{siteUrl=null, contentsType=null, deleteFlg=null, siteName=null, siteInfoId=12, logoUrl=null}
+2025-08-06 13:44:08.906 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(1096136943&lt;open&gt;)] after transaction
+2025-08-06 13:44:08.906 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-08-06 13:44:08.906 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(1268218532&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.906 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2025-08-06 13:44:08.906 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - begin
+2025-08-06 13:44:08.906 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@5b8df85d]
+2025-08-06 13:44:08.906 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.906 [Test worker] DEBUG o.hibernate.engine.spi.ActionQueue - Executing identity-insert immediately
+2025-08-06 13:44:08.906 [Test worker] DEBUG org.hibernate.SQL - insert into site_category (body_select_id,category_list_url,category_name,category_url,contents_url_select_id,delete_flg,last_scan_time,list_record_select_id,more_body_select_id,site_info_id,target_category,title_record_select_id,site_category_id) values (?,?,?,?,?,?,?,?,?,?,?,?,default)
+Hibernate: insert into site_category (body_select_id,category_list_url,category_name,category_url,contents_url_select_id,delete_flg,last_scan_time,list_record_select_id,more_body_select_id,site_info_id,target_category,title_record_select_id,site_category_id) values (?,?,?,?,?,?,?,?,?,?,?,?,default)
+2025-08-06 13:44:08.907 [Test worker] DEBUG org.hibernate.orm.results - Initializer list is empty
+2025-08-06 13:44:08.907 [Test worker] DEBUG o.h.id.IdentifierGeneratorHelper - Extracted generated values [com.happinesea.webcrawler.entity.SiteCategory]: [Ljava.lang.Object;@6a6fce73
+2025-08-06 13:44:08.907 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-08-06 13:44:08.907 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(1268218532&lt;open&gt;)]
+2025-08-06 13:44:08.907 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - committing
+2025-08-06 13:44:08.907 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+2025-08-06 13:44:08.907 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+2025-08-06 13:44:08.907 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2025-08-06 13:44:08.907 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2025-08-06 13:44:08.907 [Test worker] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+2025-08-06 13:44:08.907 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteCategory{lastScanTime=null, titleRecordSelectId=null, deleteFlg=null, bodySelectId=null, contentsUrlSelectId=null, siteInfo=com.happinesea.webcrawler.entity.SiteInfo#12, categoryName=name1, siteCategoryId=17, targetCategory=null, listRecordSelectId=null, categoryUrl=null, moreBodySelectId=null, categoryListUrl=null}
+2025-08-06 13:44:08.908 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(1268218532&lt;open&gt;)] after transaction
+2025-08-06 13:44:08.908 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-08-06 13:44:08.908 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(1360204997&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.908 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2025-08-06 13:44:08.908 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - begin
+2025-08-06 13:44:08.908 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@a67caa9]
+2025-08-06 13:44:08.908 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.908 [Test worker] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE
+2025-08-06 13:44:08.908 [Test worker] DEBUG org.hibernate.SQL - select si1_0.site_info_id,si1_0.contents_type,si1_0.delete_flg,si1_0.logo_url,si1_0.site_name,si1_0.site_url from site_info si1_0 where si1_0.site_info_id=?
+Hibernate: select si1_0.site_info_id,si1_0.contents_type,si1_0.delete_flg,si1_0.logo_url,si1_0.site_name,si1_0.site_url from site_info si1_0 where si1_0.site_info_id=?
+2025-08-06 13:44:08.909 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-08-06 13:44:08.909 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(1360204997&lt;open&gt;)]
+2025-08-06 13:44:08.909 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - committing
+2025-08-06 13:44:08.909 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+2025-08-06 13:44:08.909 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+2025-08-06 13:44:08.909 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2025-08-06 13:44:08.909 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2025-08-06 13:44:08.909 [Test worker] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+2025-08-06 13:44:08.909 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteInfo{siteUrl=null, contentsType=null, deleteFlg=null, siteName=null, siteInfoId=12, logoUrl=null}
+2025-08-06 13:44:08.909 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(1360204997&lt;open&gt;)] after transaction
+2025-08-06 13:44:08.909 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-08-06 13:44:08.909 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(1457718384&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.909 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2025-08-06 13:44:08.909 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - begin
+2025-08-06 13:44:08.909 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@620c6cdf]
+2025-08-06 13:44:08.910 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.910 [Test worker] DEBUG o.hibernate.engine.spi.ActionQueue - Executing identity-insert immediately
+2025-08-06 13:44:08.910 [Test worker] DEBUG org.hibernate.SQL - insert into site_category (body_select_id,category_list_url,category_name,category_url,contents_url_select_id,delete_flg,last_scan_time,list_record_select_id,more_body_select_id,site_info_id,target_category,title_record_select_id,site_category_id) values (?,?,?,?,?,?,?,?,?,?,?,?,default)
+Hibernate: insert into site_category (body_select_id,category_list_url,category_name,category_url,contents_url_select_id,delete_flg,last_scan_time,list_record_select_id,more_body_select_id,site_info_id,target_category,title_record_select_id,site_category_id) values (?,?,?,?,?,?,?,?,?,?,?,?,default)
+2025-08-06 13:44:08.910 [Test worker] DEBUG org.hibernate.orm.results - Initializer list is empty
+2025-08-06 13:44:08.910 [Test worker] DEBUG o.h.id.IdentifierGeneratorHelper - Extracted generated values [com.happinesea.webcrawler.entity.SiteCategory]: [Ljava.lang.Object;@181da781
+2025-08-06 13:44:08.910 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-08-06 13:44:08.910 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(1457718384&lt;open&gt;)]
+2025-08-06 13:44:08.910 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - committing
+2025-08-06 13:44:08.910 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+2025-08-06 13:44:08.910 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+2025-08-06 13:44:08.911 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2025-08-06 13:44:08.911 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2025-08-06 13:44:08.911 [Test worker] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+2025-08-06 13:44:08.911 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteCategory{lastScanTime=null, titleRecordSelectId=null, deleteFlg=null, bodySelectId=null, contentsUrlSelectId=null, siteInfo=com.happinesea.webcrawler.entity.SiteInfo#12, categoryName=name2, siteCategoryId=18, targetCategory=null, listRecordSelectId=null, categoryUrl=null, moreBodySelectId=null, categoryListUrl=null}
+2025-08-06 13:44:08.911 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(1457718384&lt;open&gt;)] after transaction
+2025-08-06 13:44:08.911 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-08-06 13:44:08.911 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(511708132&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.911 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2025-08-06 13:44:08.911 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - begin
+2025-08-06 13:44:08.911 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@24470484]
+2025-08-06 13:44:08.911 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.911 [Test worker] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE
+2025-08-06 13:44:08.911 [Test worker] DEBUG org.hibernate.SQL - select sipp1_0.site_info_process_id,sipp1_0.process_id,sipp1_0.process_status,sipp1_0.process_time,sipp1_0.site_category_id from site_info_process_pool sipp1_0 where sipp1_0.site_info_process_id=?
+Hibernate: select sipp1_0.site_info_process_id,sipp1_0.process_id,sipp1_0.process_status,sipp1_0.process_time,sipp1_0.site_category_id from site_info_process_pool sipp1_0 where sipp1_0.site_info_process_id=?
+2025-08-06 13:44:08.912 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-08-06 13:44:08.912 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(511708132&lt;open&gt;)]
+2025-08-06 13:44:08.912 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - committing
+2025-08-06 13:44:08.912 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+2025-08-06 13:44:08.912 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+2025-08-06 13:44:08.912 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 insertions, 1 updates, 0 deletions to 1 objects
+2025-08-06 13:44:08.912 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2025-08-06 13:44:08.912 [Test worker] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+2025-08-06 13:44:08.912 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteInfoProcessPool{processStatus=NONE, processId=null, siteCategory=&lt;uninitialized&gt;, processTime=2025-08-06T13:44:08.911360791, siteInfoProcessId=1}
+2025-08-06 13:44:08.913 [Test worker] DEBUG org.hibernate.SQL - update site_info_process_pool set process_id=?,process_status=?,process_time=?,site_category_id=? where site_info_process_id=?
+Hibernate: update site_info_process_pool set process_id=?,process_status=?,process_time=?,site_category_id=? where site_info_process_id=?
+2025-08-06 13:44:08.913 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(511708132&lt;open&gt;)] after transaction
+2025-08-06 13:44:08.913 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 290, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.914 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [com.happinesea.webcrawler.service.SiteContentsService.changSiteInfoProcess2Fail]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-08-06 13:44:08.914 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(9896976&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.914 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2025-08-06 13:44:08.914 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - begin
+2025-08-06 13:44:08.914 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@1d8e264]
+2025-08-06 13:44:08.914 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(9896976&lt;open&gt;)] for JPA transaction
+2025-08-06 13:44:08.914 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating in existing transaction
+2025-08-06 13:44:08.914 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2025-08-06 13:44:08.914 [Test worker] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE
+2025-08-06 13:44:08.914 [Test worker] DEBUG org.hibernate.SQL - select sipp1_0.site_info_process_id,sipp1_0.process_id,sipp1_0.process_status,sipp1_0.process_time,sipp1_0.site_category_id from site_info_process_pool sipp1_0 where sipp1_0.site_info_process_id=?
+Hibernate: select sipp1_0.site_info_process_id,sipp1_0.process_id,sipp1_0.process_status,sipp1_0.process_time,sipp1_0.site_category_id from site_info_process_pool sipp1_0 where sipp1_0.site_info_process_id=?
+2025-08-06 13:44:08.915 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction commit
+2025-08-06 13:44:08.915 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Committing JPA transaction on EntityManager [SessionImpl(9896976&lt;open&gt;)]
+2025-08-06 13:44:08.915 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - committing
+2025-08-06 13:44:08.915 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+2025-08-06 13:44:08.915 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+2025-08-06 13:44:08.915 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 insertions, 1 updates, 0 deletions to 1 objects
+2025-08-06 13:44:08.915 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2025-08-06 13:44:08.915 [Test worker] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+2025-08-06 13:44:08.915 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteInfoProcessPool{processStatus=FAIL, processId=null, siteCategory=&lt;uninitialized&gt;, processTime=2025-08-06T13:44:08.914435699, siteInfoProcessId=1}
+2025-08-06 13:44:08.915 [Test worker] DEBUG org.hibernate.SQL - update site_info_process_pool set process_id=?,process_status=?,process_time=?,site_category_id=? where site_info_process_id=?
+Hibernate: update site_info_process_pool set process_id=?,process_status=?,process_time=?,site_category_id=? where site_info_process_id=?
+2025-08-06 13:44:08.916 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(9896976&lt;open&gt;)] after transaction
+2025-08-06 13:44:08.916 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 291, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.916 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 292, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.917 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 293, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.917 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 294, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.917 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 295, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.917 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 296, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.917 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 297, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.917 [Test worker] DEBUG o.s.t.c.s.DirtiesContextTestExecutionListener - After test method: class [SiteContentsServiceTest], method [testChangSiteInfoProcess2Fail], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2025-08-06 13:44:08.918 [Test worker] DEBUG o.s.t.c.w.ServletTestExecutionListener - Resetting RequestContextHolder for test class com.happinesea.webcrawler.service.SiteContentsServiceTest
+2025-08-06 13:44:08.918 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 298, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.918 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@78bd654a size = 2, maxSize = 32, parentContextCount = 0, hitCount = 299, missCount = 2, failureCount = 0]
+2025-08-06 13:44:08.918 [Test worker] DEBUG o.s.t.c.s.DirtiesContextTestExecutionListener - After test class: class [SiteContentsServiceTest], class annotated with @DirtiesContext [false] with mode [null]
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.11.1</a> at Aug 6, 2025, 1:44:09 PM</p>
+</div>
+</div>
+</body>
+</html>

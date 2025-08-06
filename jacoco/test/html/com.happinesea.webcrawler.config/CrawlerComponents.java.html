@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CrawlerComponents.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">web-crawler</a> &gt; <a href="index.source.html" class="el_package">com.happinesea.webcrawler.config</a> &gt; <span class="el_source">CrawlerComponents.java</span></div><h1>CrawlerComponents.java</h1><pre class="source lang-java linenums">package com.happinesea.webcrawler.config;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.batch.item.ItemProcessor;
+import org.springframework.batch.item.ItemReader;
+import org.springframework.batch.item.ItemWriter;
+import org.springframework.batch.item.support.ListItemReader;
+import org.springframework.batch.item.support.SynchronizedItemReader;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.happinesea.webcrawler.ContentsParser;
+import com.happinesea.webcrawler.NotFoundContentsException;
+import com.happinesea.webcrawler.entity.SiteCategory;
+import com.happinesea.webcrawler.entity.SiteContents;
+import com.happinesea.webcrawler.entity.SiteInfoProcessPool;
+import com.happinesea.webcrawler.service.SiteContentsService;
+
+import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
+
+@Configuration
+<span class="fc" id="L26">@Slf4j</span>
+@Data
+public class CrawlerComponents {
+
+	@Autowired
+	private SiteContentsService siteContentsService;
+
+	@Autowired
+	private ContentsParser contentsParser;
+
+	@Bean
+	public ItemReader&lt;SiteInfoProcessPool&gt; siteInfoProcessReader() {
+<span class="fc" id="L38">		List&lt;SiteInfoProcessPool&gt; aliveList = siteContentsService.findAliveProcess();</span>
+<span class="fc" id="L39">		return new SynchronizedItemReader&lt;&gt;(new ListItemReader&lt;&gt;(aliveList));</span>
+	}
+
+	@Bean
+	public ItemProcessor&lt;SiteInfoProcessPool, SiteInfoProcessPool&gt; siteInfoProcessor() {
+<span class="fc" id="L44">		return process -&gt; {</span>
+<span class="fc" id="L45">			siteContentsService.changSiteInfoProcess2Processing(process); // 状態を更新</span>
+
+			try {
+<span class="fc" id="L48">				SiteCategory category = process.getSiteCategory();</span>
+
+				// コンテンツ一覧を取得
+<span class="fc" id="L51">				List&lt;SiteContents&gt; contentsList = contentsParser.loadCategoryContentsList(category);</span>
+<span class="fc bfc" id="L52" title="All 4 branches covered.">				if (contentsList == null || contentsList.isEmpty()) {</span>
+<span class="fc" id="L53">					log.warn(&quot;No contents found for category: {}&quot;, category.getCategoryUrl());</span>
+<span class="fc" id="L54">					siteContentsService.changSiteInfoProcess2Fail(process);</span>
+<span class="fc" id="L55">					return process;</span>
+				}
+
+				// 各コンテンツの詳細を取得
+<span class="fc" id="L59">				List&lt;SiteContents&gt; loadedContents = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L60" title="All 2 branches covered.">				for (SiteContents contents : contentsList) {</span>
+					try {
+<span class="fc" id="L62">						SiteContents fullContents = contentsParser.loadContents(contents);</span>
+<span class="fc" id="L63">						loadedContents.add(fullContents);</span>
+<span class="fc" id="L64">					} catch (NotFoundContentsException e) {</span>
+<span class="fc" id="L65">						log.warn(&quot;Content not found: {}&quot;, contents.getUrl(), e);</span>
+<span class="fc" id="L66">					}</span>
+<span class="fc" id="L67">				}</span>
+
+				// DBに保存（重複除外）
+<span class="fc" id="L70">				siteContentsService.bulkInsertIfNotExists(loadedContents);</span>
+<span class="fc" id="L71">				return process;</span>
+<span class="fc" id="L72">			} catch (Exception e) {</span>
+<span class="fc" id="L73">				log.warn(&quot;Error processing siteInfoProcessPool: {}&quot;, process.getSiteInfoProcessId(), e);</span>
+<span class="fc" id="L74">				return siteContentsService.changSiteInfoProcess2Fail(process);</span>
+			}
+		};
+	}
+
+	@Bean
+	public ItemWriter&lt;SiteInfoProcessPool&gt; siteInfoProcessWriter() {
+<span class="fc" id="L81">		return chunk -&gt; siteContentsService.saveAllProcessPools(chunk.getItems());</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

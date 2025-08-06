@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SiteContentsService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">web-crawler</a> &gt; <a href="index.source.html" class="el_package">com.happinesea.webcrawler.service</a> &gt; <span class="el_source">SiteContentsService.java</span></div><h1>SiteContentsService.java</h1><pre class="source lang-java linenums">package com.happinesea.webcrawler.service;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+import com.happinesea.webcrawler.Const.ProcessStatus;
+import com.happinesea.webcrawler.entity.SiteCategory;
+import com.happinesea.webcrawler.entity.SiteContents;
+import com.happinesea.webcrawler.entity.SiteInfoProcessPool;
+import com.happinesea.webcrawler.repository.SiteContentsRepository;
+import com.happinesea.webcrawler.repository.SiteInfoProcessRepository;
+
+import jakarta.transaction.Transactional;
+import lombok.extern.slf4j.Slf4j;
+
+<span class="fc" id="L22">@Slf4j</span>
+@Service
+<span class="fc" id="L24">public class SiteContentsService {</span>
+	@Autowired
+	private SiteContentsRepository siteContentsRepository;
+	@Autowired
+	private SiteInfoProcessRepository siteInfoProcessRepository;
+	@Value(&quot;${web-crawler.post-contents-limit-count}&quot;)
+	private int postContentsLimitCount;
+
+	public List&lt;SiteInfoProcessPool&gt; findAliveProcess() {
+<span class="fc" id="L33">		return siteInfoProcessRepository.findByProcessStatusNot(ProcessStatus.PROCESSING);</span>
+	}
+
+	@Transactional
+	public SiteInfoProcessPool changSiteInfoProcess2Processing(SiteInfoProcessPool process) {
+<span class="fc" id="L38">		process.setProcessStatus(ProcessStatus.PROCESSING);</span>
+<span class="fc" id="L39">		process.setProcessTime(LocalDateTime.now());</span>
+<span class="fc" id="L40">		return siteInfoProcessRepository.save(process);</span>
+	}
+
+	@Transactional
+	public SiteInfoProcessPool changSiteInfoProcess2Sucess(SiteInfoProcessPool process) {
+<span class="fc" id="L45">		process.setProcessStatus(ProcessStatus.SUCCESS);</span>
+<span class="fc" id="L46">		process.setProcessTime(LocalDateTime.now());</span>
+<span class="fc" id="L47">		return siteInfoProcessRepository.save(process);</span>
+
+	}
+
+	@Transactional
+	public SiteInfoProcessPool changSiteInfoProcess2Fail(SiteInfoProcessPool process) {
+<span class="fc" id="L53">		process.setProcessStatus(ProcessStatus.FAIL);</span>
+<span class="fc" id="L54">		process.setProcessTime(LocalDateTime.now());</span>
+<span class="fc" id="L55">		return siteInfoProcessRepository.save(process);</span>
+
+	}
+
+	@Transactional
+	public List&lt;SiteInfoProcessPool&gt; saveAllProcessPools(List&lt;? extends SiteInfoProcessPool&gt; pools) {
+
+<span class="fc" id="L62">		List&lt;SiteInfoProcessPool&gt; result = new ArrayList&lt;SiteInfoProcessPool&gt;();</span>
+<span class="fc bfc" id="L63" title="All 2 branches covered.">		for (SiteInfoProcessPool siteInfoProcessPool : pools) {</span>
+<span class="fc bfc" id="L64" title="All 2 branches covered.">			if (ProcessStatus.PROCESSING.equals(siteInfoProcessPool.getProcessStatus())) {</span>
+				// TODO CMSにコンテンツ登録
+<span class="fc" id="L66">				SiteCategory category = siteInfoProcessPool.getSiteCategory();</span>
+<span class="fc" id="L67">				List&lt;SiteContents&gt; contentsList = siteContentsRepository.findContents4Post(category,</span>
+						ProcessStatus.NONE);
+<span class="pc bpc" id="L69" title="1 of 2 branches missed.">				int limit = contentsList.size() &lt; postContentsLimitCount ? contentsList.size() : postContentsLimitCount;</span>
+<span class="pc bpc" id="L70" title="1 of 2 branches missed.">				for (int i = 0; i &lt; limit; i++) {</span>
+					
+				}
+
+<span class="fc" id="L74">				log.debug(&quot;send cms  : &quot; + result);</span>
+				// 処理後、成功状態更新
+<span class="fc" id="L76">				result.add(changSiteInfoProcess2Sucess(siteInfoProcessPool));</span>
+			}
+<span class="fc" id="L78">		}</span>
+<span class="fc" id="L79">		return result;</span>
+	}
+
+	/**
+	 * 重複しないデータだけを一括保存
+	 * 
+	 * @param newContents
+	 */
+	@Transactional
+	public List&lt;SiteContents&gt; bulkInsertIfNotExists(List&lt;SiteContents&gt; newContents) {
+		// 1. URLリスト抽出
+<span class="fc" id="L90">		List&lt;String&gt; urls = newContents.stream().map(SiteContents::getUrl).toList();</span>
+
+		// 2. 既存データ取得
+<span class="fc" id="L93">		List&lt;String&gt; existingUrls = siteContentsRepository.findAllByUrlIn(urls).stream().map(SiteContents::getUrl)</span>
+<span class="fc" id="L94">				.toList();</span>
+
+		// 3. 差分だけ抽出
+<span class="pc bpc" id="L97" title="1 of 2 branches missed.">		List&lt;SiteContents&gt; filtered = newContents.stream().filter(c -&gt; !existingUrls.contains(c.getUrl())).toList();</span>
+
+		// 4. 一括保存 (saveAll → バルク insert)
+<span class="fc" id="L100">		return siteContentsRepository.saveAll(filtered);</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>
