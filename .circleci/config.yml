@@ -54,18 +54,16 @@ jobs:
 
       - run:
           name: Gradle Javadoc ビルド
-          command: chmod +x ./gradlew;./gradlew clean projectReport #javadoc をやめる
+          command: chmod +x ./gradlew;./gradlew test jacocoTestReport projectReport #javadoc をやめる
 
       - run:
           name: deploy  ディレクトリ準備 
           command: |
-            mkdir -p deploy/javadoc
-            mkdir -p deploy/jacoco
+            mkdir -p deploy
 
-            #cp -r build/docs/javadoc/* deploy/javadoc/
-            cp -r build/reports/* deploy/
+            cp -r build/reports/* deploy/.
+            cp -r docs/* deploy/.
 
-            #./scripts/generate-site.sh > deploy/index.html
             touch deploy/.nojekyll
             echo "docs.happinesea.com" > deploy/CNAME
 
@@ -78,7 +76,12 @@ jobs:
           command: |
             git clone git@github.com:loveapple/web-crawler.git out -b gh-pages
             rm -rf out/*
-            cp -r deploy/* out/
+            echo "list files: "
+            ls -l
+            echo "list deploy: "
+            ls -l deploy
+            echo "installing.... "
+            cp -r deploy/* out/.
             cd out
             git add .
             git commit -m "Update docs [ci skip]" || echo "No changes"
