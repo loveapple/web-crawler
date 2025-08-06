@@ -61,8 +61,8 @@ jobs:
           command: |
             mkdir -p deploy
 
-            cp -rP build/reports/* deploy/.
-            cp -rP docs/* deploy/.
+            cp -r build/reports/* deploy/.
+            cp -r docs/* deploy/.
 
             touch deploy/.nojekyll
             echo "docs.happinesea.com" > deploy/CNAME
@@ -77,8 +77,10 @@ jobs:
             git clone git@github.com:loveapple/web-crawler.git out -b gh-pages
             rm -rf out/*
             ls -l
-            cp -rP deploy/* out/.
-            cp -rP
+            ls -l deploy
+            ls -l docs
+            cp -r deploy/* out/.
+            cp -r
             cd out
             git add .
             git commit -m "Update docs [ci skip]" || echo "No changes"
