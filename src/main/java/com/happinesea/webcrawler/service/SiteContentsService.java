@@ -26,7 +26,7 @@ public class SiteContentsService {
 	private SiteContentsRepository siteContentsRepository;
 	@Autowired
 	private SiteInfoProcessRepository siteInfoProcessRepository;
-	@Value("post-contents-limit-count")
+	@Value("${web-crawler.post-contents-limit-count}")
 	private int postContentsLimitCount;
 
 	public List<SiteInfoProcessPool> findAliveProcess() {
