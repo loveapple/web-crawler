@@ -79,8 +79,8 @@ jobs:
             ls -l
             ls -l deploy
             ls -l docs
+            ls -l build
             cp -r deploy/* out/.
-            cp -r
             cd out
             git add .
             git commit -m "Update docs [ci skip]" || echo "No changes"
