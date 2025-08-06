@@ -2,10 +2,12 @@ package com.happinesea.webcrawler.config;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -37,6 +39,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.PlatformTransactionManager;
 
 import com.happinesea.webcrawler.ContentsParser;
+import com.happinesea.webcrawler.NotFoundContentsException;
 import com.happinesea.webcrawler.entity.SiteCategory;
 import com.happinesea.webcrawler.entity.SiteContents;
 import com.happinesea.webcrawler.entity.SiteInfo;
@@ -154,29 +157,11 @@ class CrawlerComponentsTest {
 		verify(siteContentsServiceMock).saveAllProcessPools(List.of(process));
 	}
 
-	// TODO siteInfoProcessWriter失敗のテストは必要か？不明のため、一旦放置
-//	@Test
-//	void testSiteInfoProcessWriter_shouldHandleExceptionAndUpdateStatusToFail() throws Exception {
-//		ItemWriter<SiteInfoProcessPool> writer = crawlerComponents.siteInfoProcessWriter();
-//
-//		SiteCategory dummyContents = new SiteCategory();
-//		when(process.getSiteCategory()).thenReturn(dummyContents);
-//
-//		// bulkInsertIfNotExists を呼び出すと例外スロー
-//		doThrow(new IllegalStateException("DB Error")).when(siteContentsServiceMock).bulkInsertIfNotExists(any());
-//
-//		// 実行
-//		writer.write(new Chunk<>(List.of(process)));
-//
-//		// 検証
-//		verify(siteContentsServiceMock).bulkInsertIfNotExists(any());
-//		verify(siteContentsServiceMock).changSiteInfoProcess2Fail(any(SiteInfoProcessPool.class));
-//	}
-
 	@Test
 	void testParallelExecution_withMultipleThreads() throws Exception {
 		// ① JobExecution を jobRepository から作成
-		JobParameters jobParameters = new JobParametersBuilder().addLong("time", System.currentTimeMillis()).toJobParameters();
+		JobParameters jobParameters = new JobParametersBuilder().addLong("time", System.currentTimeMillis())
+				.toJobParameters();
 		JobExecution jobExecution = jobRepository.createJobExecution("testJob", jobParameters);
 
 		// ② StepExecution を jobExecution から取得
@@ -203,9 +188,17 @@ class CrawlerComponentsTest {
 				}
 			}
 
-			@Override public void open(ExecutionContext executionContext) {}
-			@Override public void update(ExecutionContext executionContext) {}
-			@Override public void close() {}
+			@Override
+			public void open(ExecutionContext executionContext) {
+			}
+
+			@Override
+			public void update(ExecutionContext executionContext) {
+			}
+
+			@Override
+			public void close() {
+			}
 		};
 
 		SynchronizedItemStreamReader<SiteInfoProcessPool> synchronizedReader = new SynchronizedItemStreamReader<>();
@@ -228,19 +221,14 @@ class CrawlerComponentsTest {
 
 		// ⑦ Step 構築
 		Step step = new StepBuilder("testStep", jobRepository)
-				.<SiteInfoProcessPool, SiteInfoProcessPool>chunk(2, transactionManager)
-				.reader(synchronizedReader)
-				.processor(processor)
-				.writer(writer)
-				.taskExecutor(executor)
-				.build();
+				.<SiteInfoProcessPool, SiteInfoProcessPool>chunk(2, transactionManager).reader(synchronizedReader)
+				.processor(processor).writer(writer).taskExecutor(executor).build();
 
 		// ⑧ Step 実行
 		step.execute(stepExecution);
 
 		System.out.println("Completed all steps.");
 	}
-
 
 	private TaskExecutor createTaskExecutor() {
 		ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
@@ -250,6 +238,67 @@ class CrawlerComponentsTest {
 		executor.setThreadNamePrefix("test-thread-");
 		executor.initialize();
 		return executor;
+	}
+
+	@Test
+	void testSiteInfoProcessor_shouldHandleNotFoundContentsException() throws Exception {
+		// arrange
+		when(contentsParser.loadCategoryContentsList(category)).thenReturn(List.of(contents));
+		when(contentsParser.loadContents(contents)).thenThrow(new NotFoundContentsException("not found"));
+		when(siteContentsServiceMock.changSiteInfoProcess2Processing(any())).thenReturn(process);
+
+		// act
+		SiteInfoProcessPool result = crawlerComponents.siteInfoProcessor().process(process);
+
+		// assert
+		assertEquals(process, result); // 処理が継続されてること
+
+		verify(siteContentsServiceMock).changSiteInfoProcess2Processing(any());
+		verify(contentsParser).loadCategoryContentsList(category);
+		verify(contentsParser).loadContents(contents);
+
+		// changSiteInfoProcess2Fail は呼ばれない（通常例外時だけ）
+		verify(siteContentsServiceMock, never()).changSiteInfoProcess2Fail(any());
+	}
+
+	@Test
+	void testSiteInfoProcessor_shouldFailWhenContentsListIsNull() throws Exception {
+		// arrange
+		when(contentsParser.loadCategoryContentsList(category)).thenReturn(null);
+		when(siteContentsServiceMock.changSiteInfoProcess2Processing(any())).thenReturn(process);
+
+		// act
+		SiteInfoProcessPool result = crawlerComponents.siteInfoProcessor().process(process);
+
+		// assert
+		assertEquals(process, result);
+
+		verify(siteContentsServiceMock).changSiteInfoProcess2Processing(process);
+		verify(siteContentsServiceMock).changSiteInfoProcess2Fail(process);
+		verify(contentsParser).loadCategoryContentsList(category);
+
+		// loadContents は呼ばれない
+		verify(contentsParser, never()).loadContents(any());
+	}
+
+	@Test
+	void testSiteInfoProcessor_shouldFailWhenContentsListIsEmpty() throws Exception {
+		// arrange
+		when(contentsParser.loadCategoryContentsList(category)).thenReturn(Collections.emptyList());
+		when(siteContentsServiceMock.changSiteInfoProcess2Processing(any())).thenReturn(process);
+
+		// act
+		SiteInfoProcessPool result = crawlerComponents.siteInfoProcessor().process(process);
+
+		// assert
+		assertEquals(process, result);
+
+		verify(siteContentsServiceMock).changSiteInfoProcess2Processing(process);
+		verify(siteContentsServiceMock).changSiteInfoProcess2Fail(process);
+		verify(contentsParser).loadCategoryContentsList(category);
+
+		// loadContents は呼ばれない
+		verify(contentsParser, never()).loadContents(any());
 	}
 
 }
