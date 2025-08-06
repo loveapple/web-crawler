@@ -62,6 +62,7 @@ jobs:
             mkdir -p deploy
 
             cp -rP build/reports/* deploy/.
+            cp -rP docs/* deploy/.
 
             touch deploy/.nojekyll
             echo "docs.happinesea.com" > deploy/CNAME
@@ -75,7 +76,6 @@ jobs:
           command: |
             git clone git@github.com:loveapple/web-crawler.git out -b gh-pages
             rm -rf out/*
-            cp -rP docs/* out/.
             cp -rP deploy/* out/.
             cp -rP
             cd out
