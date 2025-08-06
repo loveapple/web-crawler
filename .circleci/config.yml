@@ -37,10 +37,59 @@ jobs:
       - run:
           name: deploy
           command: '#e.g. ./deploy.sh'
+
+
+
+  deploy-docs:
+    docker:
+      - image: cimg/openjdk:23.0.2
+    steps:
+      - checkout
+
+      - run:
+          name: Git 設定
+          command: |
+            git config --global user.name "CircleCI Bot"
+            git config --global user.email "ci@example.com"
+
+      - run:
+          name: Gradle Javadoc ビルド
+          command: chmod +x ./gradlew;./gradlew clean projectReport #javadoc をやめる
+
+      - run:
+          name: deploy  ディレクトリ準備 
+          command: |
+            mkdir -p deploy/javadoc
+            mkdir -p deploy/jacoco
+
+            #cp -r build/docs/javadoc/* deploy/javadoc/
+            cp -r build/reports/* deploy/
+
+            #./scripts/generate-site.sh > deploy/index.html
+            touch deploy/.nojekyll
+            echo "docs.happinesea.com" > deploy/CNAME
+
+      - add_ssh_keys:
+          fingerprints:
+            - "64:ab:b5:02:f7:08:25:91:ec:96:26:74:1b:9f:7a:6c"
+
+      - run:
+          name: GitHub Pages へデプロイ
+          command: |
+            git clone git@github.com:loveapple/web-crawler.git out -b gh-pages
+            rm -rf out/*
+            cp -r deploy/* out/
+            cd out
+            git add .
+            git commit -m "Update docs [ci skip]" || echo "No changes"
+            git push origin gh-pages
 workflows:
-  build-and-test:
+  build-and-deploy:
     jobs:
       - test-java
-    # - deploy:
-    #     requires:
-    #       - test-java
+      - deploy-docs:
+          requires:
+            - test-java
+          filters:
+            branches:
+              only: main
