@@ -78,11 +78,17 @@ jobs:
           command: |
             git clone git@github.com:loveapple/web-crawler.git out -b gh-pages
             mkdir -p out
+            mkdir -p static
             rm -rf out/*
-            cp -r deploy/* out/
+            rm -rf static/*
+            cp -rP deploy/* out/
+            cp -rP docs/* ./
             cd out
             git add .
             git commit -m "Update docs [ci skip]" || echo "No changes"
+            cd ../;cd static
+            git commit -m "Update docs [ci skip]" || echo "No changes"
+            cd ..
             git push origin gh-pages
 workflows:
   build-and-deploy:
