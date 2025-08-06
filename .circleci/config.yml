@@ -76,6 +76,7 @@ jobs:
           command: |
             git clone git@github.com:loveapple/web-crawler.git out -b gh-pages
             rm -rf out/*
+            ls -l
             cp -rP deploy/* out/.
             cp -rP
             cd out
