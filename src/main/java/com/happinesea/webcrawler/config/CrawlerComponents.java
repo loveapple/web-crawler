@@ -13,10 +13,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.happinesea.webcrawler.ContentsParser;
-import com.happinesea.webcrawler.NotFoundContentsException;
 import com.happinesea.webcrawler.entity.SiteCategory;
 import com.happinesea.webcrawler.entity.SiteContents;
 import com.happinesea.webcrawler.entity.SiteInfoProcessPool;
+import com.happinesea.webcrawler.exception.NotFoundContentsException;
 import com.happinesea.webcrawler.service.SiteContentsService;
 
 import lombok.Data;

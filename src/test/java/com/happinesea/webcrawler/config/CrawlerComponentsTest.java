@@ -39,11 +39,11 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.PlatformTransactionManager;
 
 import com.happinesea.webcrawler.ContentsParser;
-import com.happinesea.webcrawler.NotFoundContentsException;
 import com.happinesea.webcrawler.entity.SiteCategory;
 import com.happinesea.webcrawler.entity.SiteContents;
 import com.happinesea.webcrawler.entity.SiteInfo;
 import com.happinesea.webcrawler.entity.SiteInfoProcessPool;
+import com.happinesea.webcrawler.exception.NotFoundContentsException;
 import com.happinesea.webcrawler.repository.SiteCategoryRepository;
 import com.happinesea.webcrawler.repository.SiteContentsRepository;
 import com.happinesea.webcrawler.repository.SiteInfoProcessRepository;

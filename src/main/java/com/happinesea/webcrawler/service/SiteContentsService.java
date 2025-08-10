@@ -2,17 +2,21 @@ package com.happinesea.webcrawler.service;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.Collections;
 import java.util.List;
 
+import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.happinesea.webcrawler.Const.ProcessStatus;
+import com.happinesea.webcrawler.dto.PostContentsResult;
 import com.happinesea.webcrawler.entity.SiteCategory;
 import com.happinesea.webcrawler.entity.SiteContents;
 import com.happinesea.webcrawler.entity.SiteInfoProcessPool;
+import com.happinesea.webcrawler.repository.ContentsPostRepository;
+import com.happinesea.webcrawler.repository.SiteCategoryRepository;
 import com.happinesea.webcrawler.repository.SiteContentsRepository;
 import com.happinesea.webcrawler.repository.SiteInfoProcessRepository;
 
@@ -22,12 +26,19 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Service
 public class SiteContentsService {
+
+    private final SiteCategoryRepository siteCategoryRepository;
 	@Autowired
 	private SiteContentsRepository siteContentsRepository;
 	@Autowired
 	private SiteInfoProcessRepository siteInfoProcessRepository;
-	@Value("${web-crawler.post-contents-limit-count}")
-	private int postContentsLimitCount;
+	
+	@Autowired
+	private ContentsPostRepository contentsPostRepository;
+
+    SiteContentsService(SiteCategoryRepository siteCategoryRepository) {
+        this.siteCategoryRepository = siteCategoryRepository;
+    }
 
 	public List<SiteInfoProcessPool> findAliveProcess() {
 		return siteInfoProcessRepository.findByProcessStatusNot(ProcessStatus.PROCESSING);
@@ -66,9 +77,14 @@ public class SiteContentsService {
 				SiteCategory category = siteInfoProcessPool.getSiteCategory();
 				List<SiteContents> contentsList = siteContentsRepository.findContents4Post(category,
 						ProcessStatus.NONE);
-				int limit = contentsList.size() < postContentsLimitCount ? contentsList.size() : postContentsLimitCount;
-				for (int i = 0; i < limit; i++) {
-					
+				
+				PostContentsResult postResult = contentsPostRepository.postContents(contentsList);
+				
+				if(CollectionUtils.isNotEmpty(postResult.getResultList())) {
+					postResult.getResultList().forEach(contents -> contents = changeStatus4Sucess(contents));
+				}
+				if(CollectionUtils.isNotEmpty(postResult.getFailedResultList())) {
+					postResult.getResultList().forEach(contents -> contents = changeStatus4Fail(contents));
 				}
 
 				log.debug("send cms  : " + result);
@@ -79,6 +95,14 @@ public class SiteContentsService {
 		return result;
 	}
 
+	private SiteContents changeStatus4Sucess(SiteContents contents) {
+		contents.setProcessStatus(ProcessStatus.SUCCESS);
+		return siteContentsRepository.save(contents);
+	}
+	private SiteContents changeStatus4Fail(SiteContents contents) {
+		contents.setProcessStatus(ProcessStatus.FAIL);
+		return siteContentsRepository.save(contents);
+	}
 	/**
 	 * 重複しないデータだけを一括保存
 	 * 

@@ -1,0 +1,27 @@
+{"properties": [
+  {
+    "name": "web-crawler.host-info.url",
+    "type": "java.lang.String",
+    "description": "A description for 'web-crawler.host-info.url'"
+  },
+  {
+    "name": "web-crawler.host-info.login-pw",
+    "type": "java.lang.String",
+    "description": "A description for 'web-crawler.host-info.login-pw'"
+  },
+  {
+    "name": "web-crawler.host-info.port",
+    "type": "java.lang.String",
+    "description": "A description for 'web-crawler.host-info.port'"
+  },
+  {
+    "name": "web-crawler.host-info.login-id",
+    "type": "java.lang.String",
+    "description": "A description for 'web-crawler.host-info.login-id'"
+  },
+  {
+    "name": "web-crawler.host-info.post-contents-limit-count",
+    "type": "java.lang.Integer",
+    "description": "A description for 'web-crawler.host-info.post-contents-limit-count'"
+  }
+]}

@@ -1,4 +1,4 @@
-package com.happinesea.webcrawler;
+package com.happinesea.webcrawler.exception;
 
 public class NotFoundContentsException extends Exception {
 

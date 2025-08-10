@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 
 import com.happinesea.webcrawler.entity.SiteCategory;
 import com.happinesea.webcrawler.entity.SiteContents;
+import com.happinesea.webcrawler.exception.NotFoundContentsException;
 
 import lombok.extern.slf4j.Slf4j;
 

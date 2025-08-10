@@ -29,6 +29,7 @@ import org.springframework.boot.test.system.OutputCaptureExtension;
 
 import com.happinesea.webcrawler.entity.SiteCategory;
 import com.happinesea.webcrawler.entity.SiteContents;
+import com.happinesea.webcrawler.exception.NotFoundContentsException;
 
 import ch.qos.logback.classic.Logger;
 import ch.qos.logback.classic.spi.ILoggingEvent;

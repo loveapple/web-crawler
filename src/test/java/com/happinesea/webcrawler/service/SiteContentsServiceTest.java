@@ -1,22 +1,35 @@
 package com.happinesea.webcrawler.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.anyList;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.util.ReflectionTestUtils;
 
 import com.happinesea.webcrawler.Const.ProcessStatus;
+import com.happinesea.webcrawler.dto.PostContentsResult;
 import com.happinesea.webcrawler.entity.SiteCategory;
 import com.happinesea.webcrawler.entity.SiteContents;
 import com.happinesea.webcrawler.entity.SiteInfo;
 import com.happinesea.webcrawler.entity.SiteInfoProcessPool;
+import com.happinesea.webcrawler.repository.ContentsPostRepository;
 import com.happinesea.webcrawler.repository.SiteCategoryRepository;
 import com.happinesea.webcrawler.repository.SiteContentsRepository;
 import com.happinesea.webcrawler.repository.SiteInfoProcessRepository;
@@ -26,6 +39,8 @@ import jakarta.transaction.Transactional;
 
 @SpringBootTest
 @ActiveProfiles("test")
+@ExtendWith(MockitoExtension.class)
+@Transactional
 class SiteContentsServiceTest {
 
 	@Autowired
@@ -42,6 +57,9 @@ class SiteContentsServiceTest {
 
 	@Autowired
 	private SiteInfoProcessRepository siteInfoProcessRepository;
+
+	@Mock
+	private ContentsPostRepository contentsPostRepository;
 
 	List<SiteContents> contentsList;
 
@@ -86,6 +104,11 @@ class SiteContentsServiceTest {
 		s4.setUrl("http://url4");
 		s4.setSiteCategory(category1);
 
+		s1 = siteContentsRepository.save(s1);
+		s2 = siteContentsRepository.save(s2);
+		s3 = siteContentsRepository.save(s3);
+		s4 = siteContentsRepository.save(s4);
+
 		contentsList.add(s1);
 		contentsList.add(s2);
 		contentsList.add(s3);
@@ -98,10 +121,14 @@ class SiteContentsServiceTest {
 		pool.setSiteCategory(category1);
 
 		pool = siteInfoProcessRepository.save(pool);
+
+		// PostRepository を手動でインジェクション
+		ReflectionTestUtils.setField(siteContentsService, "contentsPostRepository", contentsPostRepository);
 	}
 
 	@Test
 	void testBulkInsertIfNotExists() {
+
 		siteContentsService.bulkInsertIfNotExists(contentsList);
 
 		List<SiteContents> result = siteContentsRepository.findAll();
@@ -110,7 +137,6 @@ class SiteContentsServiceTest {
 	}
 
 	@Test
-	@Transactional
 	void testFindAliveProcess() {
 		SiteInfoProcessPool pool2 = new SiteInfoProcessPool();
 		pool2.setSiteInfoProcessId(2);
@@ -156,16 +182,50 @@ class SiteContentsServiceTest {
 		pool2.setProcessTime(LocalDateTime.now());
 		pool2.setSiteCategory(category2);
 		pool2 = siteInfoProcessRepository.save(pool2);
-		
+
 		List<SiteInfoProcessPool> p = new ArrayList<SiteInfoProcessPool>();
 		p.add(pool);
 		p.add(pool2);
-		
+
+		PostContentsResult postResult = new PostContentsResult();
+		List<SiteContents> resultList = new ArrayList<>();
+		resultList.add(contentsList.get(0));
+		List<SiteContents> failList = new ArrayList<>();
+		failList.add(contentsList.get(1));
+		postResult.setResultList(resultList);
+		postResult.setFailedResultList(failList);
+		when(contentsPostRepository.postContents(anyList())).thenReturn(postResult);
+
 		List<SiteInfoProcessPool> result = siteContentsService.saveAllProcessPools(p);
-		
+
 		assertEquals(1, result.size());
 		assertEquals(ProcessStatus.SUCCESS, result.get(0).getProcessStatus());
-		
+
+	}
+
+	@Test
+	void testSaveAllProcessPools_updatesProcessStatusCorrectly() {
+
+		PostContentsResult postResult = new PostContentsResult();
+		List<SiteContents> resultList = new ArrayList<>();
+		resultList.add(contentsList.get(0));
+		List<SiteContents> failList = new ArrayList<>();
+		failList.add(contentsList.get(1));
+		postResult.setResultList(resultList);
+		postResult.setFailedResultList(failList);
+
+		pool.setProcessStatus(ProcessStatus.PROCESSING);
+		List<SiteInfoProcessPool> poolList = new ArrayList<>();
+		poolList.add(pool);
+
+		when(contentsPostRepository.postContents(anyList())).thenReturn(postResult);
+
+		// Act
+		List<SiteInfoProcessPool> result = siteContentsService.saveAllProcessPools(List.of(pool));
+
+		// Assert
+		assertEquals(1, result.size());
+		assertEquals(ProcessStatus.SUCCESS, result.get(0).getProcessStatus());
 	}
 
 }

@@ -17,5 +17,9 @@ spring:
     enabled: false
 
 web-crawler:
-  host-info: baidu.tokyo
-  post-contents-limit-count: 10
+  host-info:
+    url: ${post-host-info.url}          # sample: http://xxxx.com
+    port: ${post-host-info.port}        # sample: 80 8080
+    login-id: ${post-host-info.userId}
+    login-pw: ${post-host-info.userPW}
+    post-contents-limit-count: 10
