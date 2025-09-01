@@ -23,3 +23,14 @@ web-crawler:
     login-id: ${post-host-info.userId}
     login-pw: ${post-host-info.userPW}
     post-contents-limit-count: 10
+
+  deepseek:
+    apis:
+      - name: primary
+        url: https://api.deepseek.com/v1
+        api-key: ${deepseek.primary.api-key}
+        priority: 1
+      - name: secondary
+        url: https://backup.deepseek.com/v1
+        api-key: ${deepseek.secondary.api-key}
+        priority: 2

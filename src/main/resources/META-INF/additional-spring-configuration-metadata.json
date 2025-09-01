@@ -23,5 +23,35 @@
     "name": "web-crawler.host-info.post-contents-limit-count",
     "type": "java.lang.Integer",
     "description": "A description for 'web-crawler.host-info.post-contents-limit-count'"
+  },	
+  {
+	"name": "web-crawler.deepseek.apis",
+	"type": "java.util.List",
+	"description": "DeepSeek API 接続情報のリスト"
+  },
+  {
+    "name": "web-crawler.deepseek.apis[].name",
+    "type": "java.lang.String",
+    "description": "DeepSeek API 接続先の名前（例: primary, secondary）"
+  },
+  {
+    "name": "web-crawler.deepseek.apis[].url",
+    "type": "java.lang.String",
+    "description": "DeepSeek API の接続URL"
+  },
+  {
+    "name": "web-crawler.deepseek.apis[].api-key",
+    "type": "java.lang.String",
+    "description": "DeepSeek API の認証キー"
+  },
+  {
+    "name": "web-crawler.deepseek.apis[].priority",
+    "type": "java.lang.Integer",
+    "description": "DeepSeek API の優先度（小さいほど高優先度）"
+  },
+  {
+    "name": "web-crawler.deepseek.apis",
+    "type": "java.lang.String",
+    "description": "A description for 'web-crawler.deepseek.apis'"
   }
 ]}

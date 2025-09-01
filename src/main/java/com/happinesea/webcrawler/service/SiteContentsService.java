@@ -2,12 +2,10 @@ package com.happinesea.webcrawler.service;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.happinesea.webcrawler.Const.ProcessStatus;
@@ -16,7 +14,6 @@ import com.happinesea.webcrawler.entity.SiteCategory;
 import com.happinesea.webcrawler.entity.SiteContents;
 import com.happinesea.webcrawler.entity.SiteInfoProcessPool;
 import com.happinesea.webcrawler.repository.ContentsPostRepository;
-import com.happinesea.webcrawler.repository.SiteCategoryRepository;
 import com.happinesea.webcrawler.repository.SiteContentsRepository;
 import com.happinesea.webcrawler.repository.SiteInfoProcessRepository;
 
@@ -27,18 +24,12 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 public class SiteContentsService {
 
-    private final SiteCategoryRepository siteCategoryRepository;
 	@Autowired
 	private SiteContentsRepository siteContentsRepository;
 	@Autowired
 	private SiteInfoProcessRepository siteInfoProcessRepository;
-	
 	@Autowired
 	private ContentsPostRepository contentsPostRepository;
-
-    SiteContentsService(SiteCategoryRepository siteCategoryRepository) {
-        this.siteCategoryRepository = siteCategoryRepository;
-    }
 
 	public List<SiteInfoProcessPool> findAliveProcess() {
 		return siteInfoProcessRepository.findByProcessStatusNot(ProcessStatus.PROCESSING);
@@ -69,40 +60,45 @@ public class SiteContentsService {
 
 	@Transactional
 	public List<SiteInfoProcessPool> saveAllProcessPools(List<? extends SiteInfoProcessPool> pools) {
+	    List<SiteInfoProcessPool> result = new ArrayList<>();
 
-		List<SiteInfoProcessPool> result = new ArrayList<SiteInfoProcessPool>();
-		for (SiteInfoProcessPool siteInfoProcessPool : pools) {
-			if (ProcessStatus.PROCESSING.equals(siteInfoProcessPool.getProcessStatus())) {
-				// TODO CMSにコンテンツ登録
-				SiteCategory category = siteInfoProcessPool.getSiteCategory();
-				List<SiteContents> contentsList = siteContentsRepository.findContents4Post(category,
-						ProcessStatus.NONE);
-				
-				PostContentsResult postResult = contentsPostRepository.postContents(contentsList);
-				
-				if(CollectionUtils.isNotEmpty(postResult.getResultList())) {
-					postResult.getResultList().forEach(contents -> contents = changeStatus4Sucess(contents));
-				}
-				if(CollectionUtils.isNotEmpty(postResult.getFailedResultList())) {
-					postResult.getResultList().forEach(contents -> contents = changeStatus4Fail(contents));
-				}
+	    for (SiteInfoProcessPool pool : pools) {
+	        if (ProcessStatus.PROCESSING.equals(pool.getProcessStatus())) {
+	            // 处理完成后更新状态
+	            pool.setProcessStatus(ProcessStatus.SUCCESS);
+	            pool.setProcessTime(LocalDateTime.now());
 
-				log.debug("send cms  : " + result);
-				// 処理後、成功状態更新
-				result.add(changSiteInfoProcess2Sucess(siteInfoProcessPool));
-			}
-		}
-		return result;
+	            // 发布相关内容
+	            List<SiteContents> contentsList = siteContentsRepository.findContents4Post(pool.getSiteCategory(),
+	                    ProcessStatus.NONE);
+
+	            if (!CollectionUtils.isEmpty(contentsList)) {
+	                PostContentsResult postResult = contentsPostRepository.postContents(contentsList);
+
+	                postResult.getResultList().forEach(this::changeStatus4Sucess);
+	                postResult.getFailedResultList().forEach(this::changeStatus4Fail);
+
+	                log.info("Posted {} contents for category {}, {} succeeded, {} failed", contentsList.size(),
+	                        pool.getSiteCategory().getCategoryName(), postResult.getResultList().size(),
+	                        postResult.getFailedResultList().size());
+	            }
+
+	            result.add(siteInfoProcessRepository.save(pool));
+	        }
+	    }
+	    return result;
 	}
 
 	private SiteContents changeStatus4Sucess(SiteContents contents) {
 		contents.setProcessStatus(ProcessStatus.SUCCESS);
 		return siteContentsRepository.save(contents);
 	}
+
 	private SiteContents changeStatus4Fail(SiteContents contents) {
 		contents.setProcessStatus(ProcessStatus.FAIL);
 		return siteContentsRepository.save(contents);
 	}
+
 	/**
 	 * 重複しないデータだけを一括保存
 	 * 

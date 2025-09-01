@@ -37,7 +37,7 @@ public class SiteContents {
 	private String contents;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "site_categoy_id", nullable = false)
+	@JoinColumn(name = "site_category_id", nullable = false)
 	private SiteCategory siteCategory;
 
 	@Column(name = "process_status")
