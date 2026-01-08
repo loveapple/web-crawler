@@ -1,8 +1,11 @@
 spring:
+  config:
+    activate:
+      on-profile: prod
   datasource:
-    url: jdbc:mysql://本番サーバ:3306/webcrawler
-    username: produser
-    password: prodpass
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
@@ -11,3 +14,7 @@ spring:
     open-in-view: false
   flyway:
     enabled: true
+
+web-crawler:
+  host-info: ${CMS_HOST}
+  post-contents-limit-count: ${POST_LIMIT:10}

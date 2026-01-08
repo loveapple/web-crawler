@@ -9,9 +9,9 @@ spring:
     activate:
       on-profile: dev
   datasource:
-    url: jdbc:mysql://localhost:3306/webcrawler
-    username: root
-    password: password
+    url: ${DB_URL:jdbc:mysql://localhost:3306/webcrawler}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:password}
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
@@ -20,5 +20,9 @@ spring:
     open-in-view: false
   flyway:
     enabled: true
+
+web-crawler:
+  host-info: ${CMS_HOST:baidu.tokyo}
+  post-contents-limit-count: ${POST_LIMIT:10}
 
 
