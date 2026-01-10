@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.009s</div>
+<div class="counter">0.024s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,7 +79,7 @@
 </thead>
 <tr>
 <td class="success">findActiveSites()</td>
-<td class="success">0.009s</td>
+<td class="success">0.024s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -87,57 +87,57 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2026-01-08 08:39:52.905 [Test worker] DEBUG o.s.b.t.c.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [SiteInfoRepositoryTest]: using SpringBootContextLoader
-2026-01-08 08:39:52.906 [Test worker] DEBUG o.s.t.c.s.AbstractContextLoader - Could not detect default resource locations for test class [com.happinesea.webcrawler.repository.SiteInfoRepositoryTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-2026-01-08 08:39:52.906 [Test worker] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.happinesea.webcrawler.repository.SiteInfoRepositoryTest]: SiteInfoRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2026-01-08 08:39:52.906 [Test worker] DEBUG o.s.b.t.c.SpringBootTestContextBootstrapper - Using ContextCustomizerFactory implementations for test class [SiteInfoRepositoryTest]: [BatchTestContextCustomizerFactory, OnFailureConditionReportContextCustomizerFactory, OverrideAutoConfigurationContextCustomizerFactory, ObservabilityContextCustomizerFactory, TypeExcludeFiltersContextCustomizerFactory, PropertyMappingContextCustomizerFactory, WebDriverContextCustomizerFactory, ImportsContextCustomizerFactory, ExcludeFilterContextCustomizerFactory, HttpGraphQlTesterContextCustomizerFactory, DuplicateJsonObjectContextCustomizerFactory, MockitoContextCustomizerFactory, TestRestTemplateContextCustomizerFactory, WebTestClientContextCustomizerFactory, DisableReactorResourceFactoryGlobalResourcesContextCustomizerFactory, BeanOverrideContextCustomizerFactory, MockServerContainerContextCustomizerFactory, DynamicPropertiesContextCustomizerFactory]
-2026-01-08 08:39:52.907 [Test worker] DEBUG o.s.b.t.c.SpringBootTestContextBootstrapper - Using ContextCustomizers for test class [SiteInfoRepositoryTest]: [OnFailureConditionReportContextCustomizer, DisableObservabilityContextCustomizer, PropertyMappingContextCustomizer, WebDriverContextCustomizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer, TestRestTemplateContextCustomizer, DisableReactorResourceFactoryGlobalResourcesContextCustomizerCustomizer, DynamicPropertiesContextCustomizer]
-2026-01-08 08:39:52.907 [Test worker] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.happinesea.webcrawler.WebCrawlerApplication for test class com.happinesea.webcrawler.repository.SiteInfoRepositoryTest
-2026-01-08 08:39:52.908 [Test worker] DEBUG o.s.t.c.u.TestContextSpringFactoriesUtils - Skipping candidate TestExecutionListener [org.springframework.test.context.observation.MicrometerObservationRegistryTestExecutionListener] due to a missing dependency. Specify custom TestExecutionListener classes or make the default TestExecutionListener classes and their required dependencies available. Offending class: io.micrometer.context.ThreadLocalAccessor. MicrometerObservationRegistryTestExecutionListener requires io.micrometer:micrometer-observation:1.10.8 or higher and io.micrometer:context-propagation:1.0.3 or higher.
-2026-01-08 08:39:52.908 [Test worker] DEBUG o.s.b.t.c.SpringBootTestContextBootstrapper - Using TestExecutionListeners for test class [SiteInfoRepositoryTest]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, BeanOverrideTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, CommonCachesTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, EventPublishingTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener, ResetMocksTestExecutionListener, MockitoResetTestExecutionListener]
-2026-01-08 08:39:52.908 [Test worker] DEBUG o.s.t.c.s.DirtiesContextBeforeModesTestExecutionListener - Before test class: class [SiteInfoRepositoryTest], class annotated with @DirtiesContext [false] with mode [null]
-2026-01-08 08:39:52.908 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@7fbbf219 size = 2, maxSize = 32, parentContextCount = 0, hitCount = 194, missCount = 2, failureCount = 0]
-2026-01-08 08:39:52.909 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@7fbbf219 size = 2, maxSize = 32, parentContextCount = 0, hitCount = 195, missCount = 2, failureCount = 0]
-2026-01-08 08:39:52.909 [Test worker] DEBUG o.s.t.c.w.ServletTestExecutionListener - Setting up MockHttpServletRequest, MockHttpServletResponse, ServletWebRequest, and RequestContextHolder for test class com.happinesea.webcrawler.repository.SiteInfoRepositoryTest
-2026-01-08 08:39:52.909 [Test worker] DEBUG o.s.t.c.s.DependencyInjectionTestExecutionListener - Performing dependency injection for test class com.happinesea.webcrawler.repository.SiteInfoRepositoryTest
-2026-01-08 08:39:52.909 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@7fbbf219 size = 2, maxSize = 32, parentContextCount = 0, hitCount = 196, missCount = 2, failureCount = 0]
-2026-01-08 08:39:52.909 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@7fbbf219 size = 2, maxSize = 32, parentContextCount = 0, hitCount = 197, missCount = 2, failureCount = 0]
-2026-01-08 08:39:52.910 [Test worker] DEBUG o.s.t.c.s.DirtiesContextBeforeModesTestExecutionListener - Before test method: class [SiteInfoRepositoryTest], method [findActiveSites], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
-2026-01-08 08:39:52.910 [Test worker] DEBUG o.s.t.c.t.TransactionalTestExecutionListener - Explicit transaction definition [PROPAGATION_REQUIRED,ISOLATION_DEFAULT] found for test class [com.happinesea.webcrawler.repository.SiteInfoRepositoryTest] and test method [findActiveSites]
-2026-01-08 08:39:52.910 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@7fbbf219 size = 2, maxSize = 32, parentContextCount = 0, hitCount = 198, missCount = 2, failureCount = 0]
-2026-01-08 08:39:52.910 [Test worker] DEBUG o.s.t.c.t.TransactionalTestExecutionListener - No method-level @Rollback override: using default rollback [true] for test method [void com.happinesea.webcrawler.repository.SiteInfoRepositoryTest.findActiveSites()]
-2026-01-08 08:39:52.910 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [com.happinesea.webcrawler.repository.SiteInfoRepositoryTest.findActiveSites]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
-2026-01-08 08:39:52.910 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(356484506&lt;open&gt;)] for JPA transaction
-2026-01-08 08:39:52.910 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
-2026-01-08 08:39:52.910 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - begin
-2026-01-08 08:39:52.910 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@65e1e974]
-2026-01-08 08:39:52.910 [Test worker] DEBUG o.s.t.c.t.TransactionContext - Began transaction (1) for test class [com.happinesea.webcrawler.repository.SiteInfoRepositoryTest]; test method [findActiveSites]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@61dac810]; rollback [true]
-2026-01-08 08:39:52.910 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@7fbbf219 size = 2, maxSize = 32, parentContextCount = 0, hitCount = 199, missCount = 2, failureCount = 0]
-2026-01-08 08:39:52.910 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@7fbbf219 size = 2, maxSize = 32, parentContextCount = 0, hitCount = 200, missCount = 2, failureCount = 0]
-2026-01-08 08:39:52.911 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@7fbbf219 size = 2, maxSize = 32, parentContextCount = 0, hitCount = 201, missCount = 2, failureCount = 0]
-2026-01-08 08:39:52.911 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@7fbbf219 size = 2, maxSize = 32, parentContextCount = 0, hitCount = 202, missCount = 2, failureCount = 0]
-2026-01-08 08:39:52.911 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(356484506&lt;open&gt;)] for JPA transaction
-2026-01-08 08:39:52.912 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating in existing transaction
-2026-01-08 08:39:52.912 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
-2026-01-08 08:39:52.912 [Test worker] DEBUG o.hibernate.engine.spi.ActionQueue - Executing identity-insert immediately
-2026-01-08 08:39:52.912 [Test worker] DEBUG org.hibernate.SQL - insert into site_info (contents_type,delete_flg,logo_url,site_name,site_url,site_info_id) values (?,?,?,?,?,default)
+<pre>2026-01-10 08:47:13.080 [Test worker] DEBUG o.s.b.t.c.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [SiteInfoRepositoryTest]: using SpringBootContextLoader
+2026-01-10 08:47:13.081 [Test worker] DEBUG o.s.t.c.s.AbstractContextLoader - Could not detect default resource locations for test class [com.happinesea.webcrawler.repository.SiteInfoRepositoryTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2026-01-10 08:47:13.081 [Test worker] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.happinesea.webcrawler.repository.SiteInfoRepositoryTest]: SiteInfoRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-10 08:47:13.081 [Test worker] DEBUG o.s.b.t.c.SpringBootTestContextBootstrapper - Using ContextCustomizerFactory implementations for test class [SiteInfoRepositoryTest]: [BatchTestContextCustomizerFactory, OnFailureConditionReportContextCustomizerFactory, OverrideAutoConfigurationContextCustomizerFactory, ObservabilityContextCustomizerFactory, TypeExcludeFiltersContextCustomizerFactory, PropertyMappingContextCustomizerFactory, WebDriverContextCustomizerFactory, ImportsContextCustomizerFactory, ExcludeFilterContextCustomizerFactory, HttpGraphQlTesterContextCustomizerFactory, DuplicateJsonObjectContextCustomizerFactory, MockitoContextCustomizerFactory, TestRestTemplateContextCustomizerFactory, WebTestClientContextCustomizerFactory, DisableReactorResourceFactoryGlobalResourcesContextCustomizerFactory, BeanOverrideContextCustomizerFactory, MockServerContainerContextCustomizerFactory, DynamicPropertiesContextCustomizerFactory]
+2026-01-10 08:47:13.082 [Test worker] DEBUG o.s.b.t.c.SpringBootTestContextBootstrapper - Using ContextCustomizers for test class [SiteInfoRepositoryTest]: [OnFailureConditionReportContextCustomizer, DisableObservabilityContextCustomizer, PropertyMappingContextCustomizer, WebDriverContextCustomizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer, TestRestTemplateContextCustomizer, DisableReactorResourceFactoryGlobalResourcesContextCustomizerCustomizer, DynamicPropertiesContextCustomizer]
+2026-01-10 08:47:13.083 [Test worker] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.happinesea.webcrawler.WebCrawlerApplication for test class com.happinesea.webcrawler.repository.SiteInfoRepositoryTest
+2026-01-10 08:47:13.085 [Test worker] DEBUG o.s.t.c.u.TestContextSpringFactoriesUtils - Skipping candidate TestExecutionListener [org.springframework.test.context.observation.MicrometerObservationRegistryTestExecutionListener] due to a missing dependency. Specify custom TestExecutionListener classes or make the default TestExecutionListener classes and their required dependencies available. Offending class: io.micrometer.context.ThreadLocalAccessor. MicrometerObservationRegistryTestExecutionListener requires io.micrometer:micrometer-observation:1.10.8 or higher and io.micrometer:context-propagation:1.0.3 or higher.
+2026-01-10 08:47:13.085 [Test worker] DEBUG o.s.b.t.c.SpringBootTestContextBootstrapper - Using TestExecutionListeners for test class [SiteInfoRepositoryTest]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, BeanOverrideTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, CommonCachesTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, EventPublishingTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener, ResetMocksTestExecutionListener, MockitoResetTestExecutionListener]
+2026-01-10 08:47:13.086 [Test worker] DEBUG o.s.t.c.s.DirtiesContextBeforeModesTestExecutionListener - Before test class: class [SiteInfoRepositoryTest], class annotated with @DirtiesContext [false] with mode [null]
+2026-01-10 08:47:13.086 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@4fafd979 size = 2, maxSize = 32, parentContextCount = 0, hitCount = 194, missCount = 2, failureCount = 0]
+2026-01-10 08:47:13.087 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@4fafd979 size = 2, maxSize = 32, parentContextCount = 0, hitCount = 195, missCount = 2, failureCount = 0]
+2026-01-10 08:47:13.087 [Test worker] DEBUG o.s.t.c.w.ServletTestExecutionListener - Setting up MockHttpServletRequest, MockHttpServletResponse, ServletWebRequest, and RequestContextHolder for test class com.happinesea.webcrawler.repository.SiteInfoRepositoryTest
+2026-01-10 08:47:13.088 [Test worker] DEBUG o.s.t.c.s.DependencyInjectionTestExecutionListener - Performing dependency injection for test class com.happinesea.webcrawler.repository.SiteInfoRepositoryTest
+2026-01-10 08:47:13.088 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@4fafd979 size = 2, maxSize = 32, parentContextCount = 0, hitCount = 196, missCount = 2, failureCount = 0]
+2026-01-10 08:47:13.089 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@4fafd979 size = 2, maxSize = 32, parentContextCount = 0, hitCount = 197, missCount = 2, failureCount = 0]
+2026-01-10 08:47:13.090 [Test worker] DEBUG o.s.t.c.s.DirtiesContextBeforeModesTestExecutionListener - Before test method: class [SiteInfoRepositoryTest], method [findActiveSites], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2026-01-10 08:47:13.090 [Test worker] DEBUG o.s.t.c.t.TransactionalTestExecutionListener - Explicit transaction definition [PROPAGATION_REQUIRED,ISOLATION_DEFAULT] found for test class [com.happinesea.webcrawler.repository.SiteInfoRepositoryTest] and test method [findActiveSites]
+2026-01-10 08:47:13.091 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@4fafd979 size = 2, maxSize = 32, parentContextCount = 0, hitCount = 198, missCount = 2, failureCount = 0]
+2026-01-10 08:47:13.091 [Test worker] DEBUG o.s.t.c.t.TransactionalTestExecutionListener - No method-level @Rollback override: using default rollback [true] for test method [void com.happinesea.webcrawler.repository.SiteInfoRepositoryTest.findActiveSites()]
+2026-01-10 08:47:13.091 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [com.happinesea.webcrawler.repository.SiteInfoRepositoryTest.findActiveSites]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2026-01-10 08:47:13.091 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Opened new EntityManager [SessionImpl(1541002707&lt;open&gt;)] for JPA transaction
+2026-01-10 08:47:13.091 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2026-01-10 08:47:13.091 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - begin
+2026-01-10 08:47:13.092 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@5485154c]
+2026-01-10 08:47:13.092 [Test worker] DEBUG o.s.t.c.t.TransactionContext - Began transaction (1) for test class [com.happinesea.webcrawler.repository.SiteInfoRepositoryTest]; test method [findActiveSites]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@4e3de68b]; rollback [true]
+2026-01-10 08:47:13.092 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@4fafd979 size = 2, maxSize = 32, parentContextCount = 0, hitCount = 199, missCount = 2, failureCount = 0]
+2026-01-10 08:47:13.092 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@4fafd979 size = 2, maxSize = 32, parentContextCount = 0, hitCount = 200, missCount = 2, failureCount = 0]
+2026-01-10 08:47:13.093 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@4fafd979 size = 2, maxSize = 32, parentContextCount = 0, hitCount = 201, missCount = 2, failureCount = 0]
+2026-01-10 08:47:13.094 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@4fafd979 size = 2, maxSize = 32, parentContextCount = 0, hitCount = 202, missCount = 2, failureCount = 0]
+2026-01-10 08:47:13.094 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(1541002707&lt;open&gt;)] for JPA transaction
+2026-01-10 08:47:13.094 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating in existing transaction
+2026-01-10 08:47:13.094 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2026-01-10 08:47:13.095 [Test worker] DEBUG o.hibernate.engine.spi.ActionQueue - Executing identity-insert immediately
+2026-01-10 08:47:13.095 [Test worker] DEBUG org.hibernate.SQL - insert into site_info (contents_type,delete_flg,logo_url,site_name,site_url,site_info_id) values (?,?,?,?,?,default)
 Hibernate: insert into site_info (contents_type,delete_flg,logo_url,site_name,site_url,site_info_id) values (?,?,?,?,?,default)
-2026-01-08 08:39:52.912 [Test worker] DEBUG org.hibernate.orm.results - Initializer list is empty
-2026-01-08 08:39:52.913 [Test worker] DEBUG o.h.id.IdentifierGeneratorHelper - Extracted generated values [com.happinesea.webcrawler.entity.SiteInfo]: [Ljava.lang.Object;@4ef718a
-2026-01-08 08:39:52.913 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(356484506&lt;open&gt;)] for JPA transaction
-2026-01-08 08:39:52.913 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating in existing transaction
-2026-01-08 08:39:52.913 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
-2026-01-08 08:39:52.913 [Test worker] DEBUG o.hibernate.engine.spi.ActionQueue - Executing identity-insert immediately
-2026-01-08 08:39:52.913 [Test worker] DEBUG org.hibernate.SQL - insert into site_info (contents_type,delete_flg,logo_url,site_name,site_url,site_info_id) values (?,?,?,?,?,default)
+2026-01-10 08:47:13.096 [Test worker] DEBUG org.hibernate.orm.results - Initializer list is empty
+2026-01-10 08:47:13.097 [Test worker] DEBUG o.h.id.IdentifierGeneratorHelper - Extracted generated values [com.happinesea.webcrawler.entity.SiteInfo]: [Ljava.lang.Object;@4fae3d87
+2026-01-10 08:47:13.097 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(1541002707&lt;open&gt;)] for JPA transaction
+2026-01-10 08:47:13.097 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating in existing transaction
+2026-01-10 08:47:13.097 [Test worker] DEBUG o.h.j.i.PersistenceUnitUtilImpl - jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier
+2026-01-10 08:47:13.098 [Test worker] DEBUG o.hibernate.engine.spi.ActionQueue - Executing identity-insert immediately
+2026-01-10 08:47:13.098 [Test worker] DEBUG org.hibernate.SQL - insert into site_info (contents_type,delete_flg,logo_url,site_name,site_url,site_info_id) values (?,?,?,?,?,default)
 Hibernate: insert into site_info (contents_type,delete_flg,logo_url,site_name,site_url,site_info_id) values (?,?,?,?,?,default)
-2026-01-08 08:39:52.913 [Test worker] DEBUG org.hibernate.orm.results - Initializer list is empty
-2026-01-08 08:39:52.913 [Test worker] DEBUG o.h.id.IdentifierGeneratorHelper - Extracted generated values [com.happinesea.webcrawler.entity.SiteInfo]: [Ljava.lang.Object;@75f49708
-2026-01-08 08:39:52.915 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
-2026-01-08 08:39:52.915 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
-2026-01-08 08:39:52.915 [Test worker] DEBUG org.hibernate.orm.sql.ast.create - Created new SQL alias : si1_0
-2026-01-08 08:39:52.915 [Test worker] DEBUG org.hibernate.orm.sql.ast.create - Registration of TableGroup [StandardTableGroup(com.happinesea.webcrawler.entity.SiteInfo(s))] with identifierForTableGroup [com.happinesea.webcrawler.entity.SiteInfo] for NavigablePath [com.happinesea.webcrawler.entity.SiteInfo] 
-2026-01-08 08:39:52.916 [Test worker] DEBUG o.h.q.s.sql.BaseSqmToSqlAstConverter - Determining mapping-model type for SqmPath : SqmBasicValuedSimplePath(com.happinesea.webcrawler.entity.SiteInfo(s).deleteFlg) 
-2026-01-08 08:39:52.916 [Test worker] DEBUG org.hibernate.orm.results.graph.AST - DomainResult Graph:
+2026-01-10 08:47:13.099 [Test worker] DEBUG org.hibernate.orm.results - Initializer list is empty
+2026-01-10 08:47:13.099 [Test worker] DEBUG o.h.id.IdentifierGeneratorHelper - Extracted generated values [com.happinesea.webcrawler.entity.SiteInfo]: [Ljava.lang.Object;@5e18afd9
+2026-01-10 08:47:13.103 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Processing flush-time cascades
+2026-01-10 08:47:13.103 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Dirty checking collections
+2026-01-10 08:47:13.103 [Test worker] DEBUG org.hibernate.orm.sql.ast.create - Created new SQL alias : si1_0
+2026-01-10 08:47:13.103 [Test worker] DEBUG org.hibernate.orm.sql.ast.create - Registration of TableGroup [StandardTableGroup(com.happinesea.webcrawler.entity.SiteInfo(s))] with identifierForTableGroup [com.happinesea.webcrawler.entity.SiteInfo] for NavigablePath [com.happinesea.webcrawler.entity.SiteInfo] 
+2026-01-10 08:47:13.104 [Test worker] DEBUG o.h.q.s.sql.BaseSqmToSqlAstConverter - Determining mapping-model type for SqmPath : SqmBasicValuedSimplePath(com.happinesea.webcrawler.entity.SiteInfo(s).deleteFlg) 
+2026-01-10 08:47:13.104 [Test worker] DEBUG org.hibernate.orm.results.graph.AST - DomainResult Graph:
  \-EntityResultImpl [com.happinesea.webcrawler.entity.SiteInfo(s)]
  |  +-BasicFetch [com.happinesea.webcrawler.entity.SiteInfo(s).contentsType]
  |  +-BasicFetch [com.happinesea.webcrawler.entity.SiteInfo(s).deleteFlg]
@@ -145,7 +145,7 @@ Hibernate: insert into site_info (contents_type,delete_flg,logo_url,site_name,si
  |  +-BasicFetch [com.happinesea.webcrawler.entity.SiteInfo(s).siteName]
  |  \-BasicFetch [com.happinesea.webcrawler.entity.SiteInfo(s).siteUrl]
 
-2026-01-08 08:39:52.916 [Test worker] DEBUG org.hibernate.orm.sql.ast.tree - SQL AST Tree:
+2026-01-10 08:47:13.104 [Test worker] DEBUG org.hibernate.orm.sql.ast.tree - SQL AST Tree:
     SelectStatement {
       FromClause {
         StandardTableGroup (si1 : com.happinesea.webcrawler.entity.SiteInfo(s)) {
@@ -154,34 +154,34 @@ Hibernate: insert into site_info (contents_type,delete_flg,logo_url,site_name,si
       }
     }
 
-2026-01-08 08:39:52.916 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 0 deletions to 2 objects
-2026-01-08 08:39:52.916 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
-2026-01-08 08:39:52.916 [Test worker] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
-2026-01-08 08:39:52.916 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteInfo{siteUrl=https://example2.com, contentsType=HTML, deleteFlg=ON, siteName=Test Site2, siteInfoId=6, logoUrl=null}
-2026-01-08 08:39:52.916 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteInfo{siteUrl=https://example.com, contentsType=HTML, deleteFlg=OFF, siteName=Test Site, siteInfoId=5, logoUrl=null}
-2026-01-08 08:39:52.916 [Test worker] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = NORMAL
-2026-01-08 08:39:52.916 [Test worker] DEBUG org.hibernate.SQL - select si1_0.site_info_id,si1_0.contents_type,si1_0.delete_flg,si1_0.logo_url,si1_0.site_name,si1_0.site_url from site_info si1_0 where si1_0.delete_flg='0'
+2026-01-10 08:47:13.105 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 0 deletions to 2 objects
+2026-01-10 08:47:13.105 [Test worker] DEBUG o.h.e.i.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2026-01-10 08:47:13.105 [Test worker] DEBUG o.h.internal.util.EntityPrinter - Listing entities:
+2026-01-10 08:47:13.105 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteInfo{siteUrl=https://example2.com, contentsType=HTML, deleteFlg=ON, siteName=Test Site2, siteInfoId=6, logoUrl=null}
+2026-01-10 08:47:13.105 [Test worker] DEBUG o.h.internal.util.EntityPrinter - com.happinesea.webcrawler.entity.SiteInfo{siteUrl=https://example.com, contentsType=HTML, deleteFlg=OFF, siteName=Test Site, siteInfoId=5, logoUrl=null}
+2026-01-10 08:47:13.105 [Test worker] DEBUG org.hibernate.orm.sql.exec - Skipping reading Query result cache data: cache-enabled = false, cache-mode = NORMAL
+2026-01-10 08:47:13.105 [Test worker] DEBUG org.hibernate.SQL - select si1_0.site_info_id,si1_0.contents_type,si1_0.delete_flg,si1_0.logo_url,si1_0.site_name,si1_0.site_url from site_info si1_0 where si1_0.delete_flg='0'
 Hibernate: select si1_0.site_info_id,si1_0.contents_type,si1_0.delete_flg,si1_0.logo_url,si1_0.site_name,si1_0.site_url from site_info si1_0 where si1_0.delete_flg='0'
-2026-01-08 08:39:52.917 [Test worker] DEBUG org.hibernate.orm.results - Initializer list:
-	  com.happinesea.webcrawler.entity.SiteInfo(s) -&gt; EntityJoinedFetchInitializer(com.happinesea.webcrawler.entity.SiteInfo(s))@1660141002 (SingleTableEntityPersister(com.happinesea.webcrawler.entity.SiteInfo))
+2026-01-10 08:47:13.107 [Test worker] DEBUG org.hibernate.orm.results - Initializer list:
+	  com.happinesea.webcrawler.entity.SiteInfo(s) -&gt; EntityJoinedFetchInitializer(com.happinesea.webcrawler.entity.SiteInfo(s))@1293053249 (SingleTableEntityPersister(com.happinesea.webcrawler.entity.SiteInfo))
 
-2026-01-08 08:39:52.917 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@7fbbf219 size = 2, maxSize = 32, parentContextCount = 0, hitCount = 203, missCount = 2, failureCount = 0]
-2026-01-08 08:39:52.917 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@7fbbf219 size = 2, maxSize = 32, parentContextCount = 0, hitCount = 204, missCount = 2, failureCount = 0]
-2026-01-08 08:39:52.918 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@7fbbf219 size = 2, maxSize = 32, parentContextCount = 0, hitCount = 205, missCount = 2, failureCount = 0]
-2026-01-08 08:39:52.918 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@7fbbf219 size = 2, maxSize = 32, parentContextCount = 0, hitCount = 206, missCount = 2, failureCount = 0]
-2026-01-08 08:39:52.918 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@7fbbf219 size = 2, maxSize = 32, parentContextCount = 0, hitCount = 207, missCount = 2, failureCount = 0]
-2026-01-08 08:39:52.918 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@7fbbf219 size = 2, maxSize = 32, parentContextCount = 0, hitCount = 208, missCount = 2, failureCount = 0]
-2026-01-08 08:39:52.918 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@7fbbf219 size = 2, maxSize = 32, parentContextCount = 0, hitCount = 209, missCount = 2, failureCount = 0]
-2026-01-08 08:39:52.918 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction rollback
-2026-01-08 08:39:52.918 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Rolling back JPA transaction on EntityManager [SessionImpl(356484506&lt;open&gt;)]
-2026-01-08 08:39:52.918 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - rolling back
-2026-01-08 08:39:52.919 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(356484506&lt;open&gt;)] after transaction
-2026-01-08 08:39:52.919 [Test worker] DEBUG o.s.t.c.t.TransactionContext - Rolled back transaction (1) for test class [com.happinesea.webcrawler.repository.SiteInfoRepositoryTest]; test method [findActiveSites]
-2026-01-08 08:39:52.919 [Test worker] DEBUG o.s.t.c.s.DirtiesContextTestExecutionListener - After test method: class [SiteInfoRepositoryTest], method [findActiveSites], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
-2026-01-08 08:39:52.919 [Test worker] DEBUG o.s.t.c.w.ServletTestExecutionListener - Resetting RequestContextHolder for test class com.happinesea.webcrawler.repository.SiteInfoRepositoryTest
-2026-01-08 08:39:52.919 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@7fbbf219 size = 2, maxSize = 32, parentContextCount = 0, hitCount = 210, missCount = 2, failureCount = 0]
-2026-01-08 08:39:52.919 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@7fbbf219 size = 2, maxSize = 32, parentContextCount = 0, hitCount = 211, missCount = 2, failureCount = 0]
-2026-01-08 08:39:52.919 [Test worker] DEBUG o.s.t.c.s.DirtiesContextTestExecutionListener - After test class: class [SiteInfoRepositoryTest], class annotated with @DirtiesContext [false] with mode [null]
+2026-01-10 08:47:13.108 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@4fafd979 size = 2, maxSize = 32, parentContextCount = 0, hitCount = 203, missCount = 2, failureCount = 0]
+2026-01-10 08:47:13.108 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@4fafd979 size = 2, maxSize = 32, parentContextCount = 0, hitCount = 204, missCount = 2, failureCount = 0]
+2026-01-10 08:47:13.109 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@4fafd979 size = 2, maxSize = 32, parentContextCount = 0, hitCount = 205, missCount = 2, failureCount = 0]
+2026-01-10 08:47:13.111 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@4fafd979 size = 2, maxSize = 32, parentContextCount = 0, hitCount = 206, missCount = 2, failureCount = 0]
+2026-01-10 08:47:13.111 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@4fafd979 size = 2, maxSize = 32, parentContextCount = 0, hitCount = 207, missCount = 2, failureCount = 0]
+2026-01-10 08:47:13.111 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@4fafd979 size = 2, maxSize = 32, parentContextCount = 0, hitCount = 208, missCount = 2, failureCount = 0]
+2026-01-10 08:47:13.112 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@4fafd979 size = 2, maxSize = 32, parentContextCount = 0, hitCount = 209, missCount = 2, failureCount = 0]
+2026-01-10 08:47:13.112 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Initiating transaction rollback
+2026-01-10 08:47:13.112 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Rolling back JPA transaction on EntityManager [SessionImpl(1541002707&lt;open&gt;)]
+2026-01-10 08:47:13.112 [Test worker] DEBUG o.h.e.t.internal.TransactionImpl - rolling back
+2026-01-10 08:47:13.113 [Test worker] DEBUG o.s.orm.jpa.JpaTransactionManager - Closing JPA EntityManager [SessionImpl(1541002707&lt;open&gt;)] after transaction
+2026-01-10 08:47:13.113 [Test worker] DEBUG o.s.t.c.t.TransactionContext - Rolled back transaction (1) for test class [com.happinesea.webcrawler.repository.SiteInfoRepositoryTest]; test method [findActiveSites]
+2026-01-10 08:47:13.113 [Test worker] DEBUG o.s.t.c.s.DirtiesContextTestExecutionListener - After test method: class [SiteInfoRepositoryTest], method [findActiveSites], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2026-01-10 08:47:13.113 [Test worker] DEBUG o.s.t.c.w.ServletTestExecutionListener - Resetting RequestContextHolder for test class com.happinesea.webcrawler.repository.SiteInfoRepositoryTest
+2026-01-10 08:47:13.114 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@4fafd979 size = 2, maxSize = 32, parentContextCount = 0, hitCount = 210, missCount = 2, failureCount = 0]
+2026-01-10 08:47:13.115 [Test worker] DEBUG o.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@4fafd979 size = 2, maxSize = 32, parentContextCount = 0, hitCount = 211, missCount = 2, failureCount = 0]
+2026-01-10 08:47:13.115 [Test worker] DEBUG o.s.t.c.s.DirtiesContextTestExecutionListener - After test class: class [SiteInfoRepositoryTest], class annotated with @DirtiesContext [false] with mode [null]
 </pre>
 </span>
 </div>
@@ -193,7 +193,7 @@ Hibernate: select si1_0.site_info_id,si1_0.contents_type,si1_0.delete_flg,si1_0.
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.11.1</a> at Jan 8, 2026, 8:39:53 AM</p>
+<a href="http://www.gradle.org">Gradle 8.11.1</a> at Jan 10, 2026, 8:47:14 AM</p>
 </div>
 </div>
 </body>
