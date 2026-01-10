@@ -8,10 +8,13 @@
 このプロジェクトは、データベースやCMS接続などの機密設定に環境変数を使用します。これらの値をGitにコミットしないでください。
 
 ### 開発環境 (Codespaces)
+
 環境変数は `.devcontainer/devcontainer.json` で設定されます。MySQLが自動的にセットアップされます。
 
 ### 本番環境 (GitHub Actions)
+
 GitHubリポジトリの設定で以下のSecretsを設定してください：
+
 - `DB_URL`: データベース接続URL
 - `DB_USERNAME`: データベースユーザー名
 - `DB_PASSWORD`: データベースパスワード
@@ -19,7 +22,9 @@ GitHubリポジトリの設定で以下のSecretsを設定してください：
 - `POST_LIMIT`: コンテンツ投稿制限数 (オプション、デフォルト: 10)
 
 ### ローカル開発
+
 プロジェクトルートに `.env` ファイルを作成してください (Gitで無視されます)：
+
 ```
 DB_URL=jdbc:mysql://localhost:3306/webcrawler
 DB_USERNAME=root
@@ -33,5 +38,3 @@ POST_LIMIT=10
 ## ライセンス
 
 番创知库(loveapple.cn)
-
-
